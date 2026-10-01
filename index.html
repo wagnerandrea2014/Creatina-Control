@@ -7,6 +7,9 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Creatina">
+<meta name="application-name" content="Creatina Control">
+<meta name="description" content="Controle sua suplementação de creatina com dose por peso, hidratação, evolução e 365 dicas.">
 <meta name="theme-color" content="#070f1f">
 <title>Creatina Control</title>
 <style>
@@ -249,6 +252,9 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;bac
 .blk-cloud.purple{background:rgba(178,139,255,.08);border-color:rgba(178,139,255,.3)}
 .blk-cloud.purple h4{color:#b28bff}
 .blk-cloud.purple p{color:#c4a5ff}
+.blk-cloud.success{background:rgba(55,224,122,.08);border-color:rgba(55,224,122,.3)}
+.blk-cloud.success h4{color:var(--success)}
+.blk-cloud.success p{color:#a5f0c4}
 .profile-hero{background:linear-gradient(160deg,rgba(20,32,54,.9),rgba(12,20,38,.9));border:1px solid var(--border-strong);border-radius:18px;padding:16px 14px;margin-bottom:12px;position:relative;overflow:hidden}
 .profile-hero::before{content:'';position:absolute;inset:-30% -20% auto -20%;height:130%;background:radial-gradient(closest-side,rgba(76,184,255,.18),transparent 70%);pointer-events:none}
 .profile-hero .ph-top{display:flex;align-items:center;gap:12px;position:relative;width:100%}
@@ -307,295 +313,116 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;bac
 .notif-preview .np-app{font-size:10px;color:var(--dim);font-weight:700;margin-top:4px;text-transform:uppercase;letter-spacing:.3px}
 .notif-warning{background:rgba(255,200,87,.08);border:1px solid rgba(255,200,87,.3);border-radius:12px;padding:11px;margin-bottom:10px;font-size:11px;line-height:1.5;color:#e4c580;font-weight:600;display:flex;gap:8px;align-items:flex-start}
 .notif-warning strong{color:var(--gold)}
-
-/* ===== DICAS — v4.6 ===== */
-.dica-card{
-  position:relative;border-radius:20px;padding:16px 16px 14px;
-  background:
-    radial-gradient(80% 60% at 50% 0%,rgba(255,255,255,.06) 0%,transparent 70%),
-    linear-gradient(160deg,rgba(178,139,255,.12) 0%,rgba(100,60,180,.06) 100%);
-  border:1px solid rgba(178,139,255,.35);
-  box-shadow:var(--shadow);
-  margin-bottom:12px;cursor:pointer;
-  transition:all .2s;
-  overflow:hidden;
-  width:100%;
-}
+.dica-card{position:relative;border-radius:20px;padding:16px 16px 14px;background:radial-gradient(80% 60% at 50% 0%,rgba(255,255,255,.06) 0%,transparent 70%),linear-gradient(160deg,rgba(178,139,255,.12) 0%,rgba(100,60,180,.06) 100%);border:1px solid rgba(178,139,255,.35);box-shadow:var(--shadow);margin-bottom:12px;cursor:pointer;transition:all .2s;overflow:hidden;width:100%}
 .dica-card:active{transform:scale(.985)}
-.dica-card::before{
-  content:'';position:absolute;inset:-30% -20% auto -20%;height:130%;
-  background:radial-gradient(closest-side,rgba(178,139,255,.25),transparent 70%);
-  pointer-events:none;
-}
-.dica-card .dc-header{
-  display:flex;align-items:center;justify-content:space-between;
-  gap:8px;margin-bottom:10px;position:relative;
-}
-.dica-card .dc-badge{
-  display:inline-flex;align-items:center;gap:5px;
-  background:rgba(178,139,255,.20);
-  border:1px solid rgba(178,139,255,.4);
-  color:#c4a5ff;
-  font-size:9.5px;font-weight:800;
-  padding:3.5px 9px;border-radius:8px;
-  text-transform:uppercase;letter-spacing:.4px;
-}
-.dica-card .dc-count{
-  font-size:10px;font-weight:800;color:var(--dim);
-  background:rgba(0,0,0,.3);padding:3.5px 9px;border-radius:8px;
-}
-.dica-card .dc-body{
-  display:flex;gap:12px;align-items:flex-start;position:relative;
-}
-.dica-card .dc-emoji{
-  width:44px;height:44px;flex-shrink:0;border-radius:14px;
-  background:linear-gradient(135deg,#b28bff,#7e56d4);
-  display:grid;place-items:center;font-size:22px;
-  box-shadow:0 8px 20px rgba(178,139,255,.35);
-}
+.dica-card::before{content:'';position:absolute;inset:-30% -20% auto -20%;height:130%;background:radial-gradient(closest-side,rgba(178,139,255,.25),transparent 70%);pointer-events:none}
+.dica-card .dc-header{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:10px;position:relative}
+.dica-card .dc-badge{display:inline-flex;align-items:center;gap:5px;background:rgba(178,139,255,.20);border:1px solid rgba(178,139,255,.4);color:#c4a5ff;font-size:9.5px;font-weight:800;padding:3.5px 9px;border-radius:8px;text-transform:uppercase;letter-spacing:.4px}
+.dica-card .dc-count{font-size:10px;font-weight:800;color:var(--dim);background:rgba(0,0,0,.3);padding:3.5px 9px;border-radius:8px}
+.dica-card .dc-body{display:flex;gap:12px;align-items:flex-start;position:relative}
+.dica-card .dc-emoji{width:44px;height:44px;flex-shrink:0;border-radius:14px;background:linear-gradient(135deg,#b28bff,#7e56d4);display:grid;place-items:center;font-size:22px;box-shadow:0 8px 20px rgba(178,139,255,.35)}
 .dica-card .dc-content{flex:1;min-width:0;overflow:hidden}
-.dica-card .dc-title{
-  font-size:13.5px;font-weight:900;letter-spacing:-.2px;
-  color:var(--text);line-height:1.25;
-  margin-bottom:4px;
-}
-.dica-card .dc-text{
-  font-size:11.5px;color:var(--dim);line-height:1.5;font-weight:600;
-  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;
-  overflow:hidden;
-}
-.dica-card .dc-footer{
-  display:flex;align-items:center;justify-content:space-between;
-  margin-top:12px;padding-top:10px;
-  border-top:1px solid rgba(178,139,255,.20);
-  position:relative;
-}
-.dica-card .dc-hint{
-  font-size:10.5px;font-weight:800;color:#c4a5ff;
-  text-transform:uppercase;letter-spacing:.4px;
-}
+.dica-card .dc-title{font-size:13.5px;font-weight:900;letter-spacing:-.2px;color:var(--text);line-height:1.25;margin-bottom:4px}
+.dica-card .dc-text{font-size:11.5px;color:var(--dim);line-height:1.5;font-weight:600;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.dica-card .dc-footer{display:flex;align-items:center;justify-content:space-between;margin-top:12px;padding-top:10px;border-top:1px solid rgba(178,139,255,.20);position:relative}
+.dica-card .dc-hint{font-size:10.5px;font-weight:800;color:#c4a5ff;text-transform:uppercase;letter-spacing:.4px}
 .dica-card .dc-actions{display:flex;gap:6px}
-.dica-card .dc-mini-btn{
-  width:32px;height:32px;border-radius:10px;border:1px solid var(--border);
-  background:rgba(20,32,54,.7);display:grid;place-items:center;
-  cursor:pointer;transition:all .15s;font-size:14px;
-  padding:0;font-family:inherit;
-}
+.dica-card .dc-mini-btn{width:32px;height:32px;border-radius:10px;border:1px solid var(--border);background:rgba(20,32,54,.7);display:grid;place-items:center;cursor:pointer;transition:all .15s;font-size:14px;padding:0;font-family:inherit}
 .dica-card .dc-mini-btn:active{transform:scale(.9)}
-
-/* ===== MODAL DICA (flutuante) ===== */
-.dica-modal-sheet{
-  background:linear-gradient(180deg,#1a2647,#0d1729);
-  border-radius:24px 24px 0 0;
-  padding:22px 18px calc(22px + env(safe-area-inset-bottom, 0px));
-  width:100%;max-width:100vw;max-height:92vh;overflow-y:auto;
-  animation:slideUp .32s cubic-bezier(.3,.8,.4,1);
-  border-top:1px solid rgba(178,139,255,.4);
-  -webkit-overflow-scrolling:touch;
-  position:relative;
-}
-.dica-modal-sheet::before{
-  content:'';position:absolute;top:0;left:0;right:0;height:160px;
-  background:radial-gradient(closest-side,rgba(178,139,255,.20),transparent 70%);
-  pointer-events:none;
-}
-.dica-hero{
-  text-align:center;margin-bottom:18px;position:relative;
-}
-.dica-hero .dh-icon{
-  width:72px;height:72px;border-radius:22px;
-  background:linear-gradient(135deg,#b28bff,#7e56d4);
-  display:grid;place-items:center;font-size:36px;
-  margin:0 auto 12px;
-  box-shadow:0 14px 34px rgba(178,139,255,.40);
-  animation:dicaPulse 3s ease-in-out infinite;
-}
-@keyframes dicaPulse{
-  0%,100%{transform:scale(1);box-shadow:0 14px 34px rgba(178,139,255,.40)}
-  50%{transform:scale(1.05);box-shadow:0 16px 40px rgba(178,139,255,.55)}
-}
-.dica-hero .dh-counter{
-  display:inline-flex;align-items:center;gap:6px;
-  font-size:10px;font-weight:800;
-  background:rgba(178,139,255,.18);
-  border:1px solid rgba(178,139,255,.35);
-  color:#c4a5ff;
-  padding:4px 11px;border-radius:100px;
-  text-transform:uppercase;letter-spacing:.5px;
-  margin-bottom:8px;
-}
-.dica-hero .dh-cat{
-  font-size:10.5px;font-weight:800;color:var(--dim);
-  text-transform:uppercase;letter-spacing:.6px;
-}
-.dica-content{
-  background:rgba(0,0,0,.25);
-  border:1px solid var(--border);
-  border-radius:16px;
-  padding:16px;
-  margin-bottom:14px;
-}
-.dica-content .dt-title{
-  font-size:17px;font-weight:900;letter-spacing:-.3px;
-  line-height:1.3;margin-bottom:10px;
-  background:linear-gradient(135deg,#c4a5ff,#b28bff);
-  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
-}
-.dica-content .dt-text{
-  font-size:13.5px;line-height:1.65;color:var(--text);font-weight:500;
-}
+.dica-modal-sheet{background:linear-gradient(180deg,#1a2647,#0d1729);border-radius:24px 24px 0 0;padding:22px 18px calc(22px + env(safe-area-inset-bottom, 0px));width:100%;max-width:100vw;max-height:92vh;overflow-y:auto;animation:slideUp .32s cubic-bezier(.3,.8,.4,1);border-top:1px solid rgba(178,139,255,.4);-webkit-overflow-scrolling:touch;position:relative}
+.dica-modal-sheet::before{content:'';position:absolute;top:0;left:0;right:0;height:160px;background:radial-gradient(closest-side,rgba(178,139,255,.20),transparent 70%);pointer-events:none}
+.dica-hero{text-align:center;margin-bottom:18px;position:relative}
+.dica-hero .dh-icon{width:72px;height:72px;border-radius:22px;background:linear-gradient(135deg,#b28bff,#7e56d4);display:grid;place-items:center;font-size:36px;margin:0 auto 12px;box-shadow:0 14px 34px rgba(178,139,255,.40);animation:dicaPulse 3s ease-in-out infinite}
+@keyframes dicaPulse{0%,100%{transform:scale(1);box-shadow:0 14px 34px rgba(178,139,255,.40)}50%{transform:scale(1.05);box-shadow:0 16px 40px rgba(178,139,255,.55)}}
+.dica-hero .dh-counter{display:inline-flex;align-items:center;gap:6px;font-size:10px;font-weight:800;background:rgba(178,139,255,.18);border:1px solid rgba(178,139,255,.35);color:#c4a5ff;padding:4px 11px;border-radius:100px;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
+.dica-hero .dh-cat{font-size:10.5px;font-weight:800;color:var(--dim);text-transform:uppercase;letter-spacing:.6px}
+.dica-content{background:rgba(0,0,0,.25);border:1px solid var(--border);border-radius:16px;padding:16px;margin-bottom:14px}
+.dica-content .dt-title{font-size:17px;font-weight:900;letter-spacing:-.3px;line-height:1.3;margin-bottom:10px;background:linear-gradient(135deg,#c4a5ff,#b28bff);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.dica-content .dt-text{font-size:13.5px;line-height:1.65;color:var(--text);font-weight:500}
 .dica-content .dt-text strong{color:#c4a5ff;font-weight:800}
-.dica-nav{
-  display:grid;grid-template-columns:auto 1fr auto;
-  gap:8px;align-items:center;margin-bottom:12px;
-}
-.dica-nav-btn{
-  width:44px;height:44px;border-radius:13px;flex-shrink:0;
-  background:var(--card);border:1px solid var(--border);
-  display:grid;place-items:center;cursor:pointer;
-  transition:all .15s;padding:0;
-}
+.dica-nav{display:grid;grid-template-columns:auto 1fr auto;gap:8px;align-items:center;margin-bottom:12px}
+.dica-nav-btn{width:44px;height:44px;border-radius:13px;flex-shrink:0;background:var(--card);border:1px solid var(--border);display:grid;place-items:center;cursor:pointer;transition:all .15s;padding:0}
 .dica-nav-btn:active{transform:scale(.92);background:var(--card-alt)}
 .dica-nav-btn:disabled{opacity:.35;cursor:not-allowed}
 .dica-nav-btn svg{width:18px;height:18px;fill:var(--text)}
 .dica-nav-btn.fav-on{background:linear-gradient(135deg,#ffc857,#e6a32c);border-color:transparent}
 .dica-nav-btn.fav-on svg{fill:#3a2800}
-.dica-actions{
-  display:grid;grid-template-columns:1fr 1fr 1fr;
-  gap:8px;margin-bottom:8px;
-}
-.dica-action{
-  padding:11px 6px;border-radius:12px;border:1px solid var(--border);
-  background:rgba(20,32,54,.7);color:var(--text);
-  font-size:11px;font-weight:800;cursor:pointer;font-family:inherit;
-  display:flex;flex-direction:column;align-items:center;gap:5px;
-  transition:all .15s;
-}
+.dica-actions{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:8px}
+.dica-action{padding:11px 6px;border-radius:12px;border:1px solid var(--border);background:rgba(20,32,54,.7);color:var(--text);font-size:11px;font-weight:800;cursor:pointer;font-family:inherit;display:flex;flex-direction:column;align-items:center;gap:5px;transition:all .15s}
 .dica-action:active{transform:scale(.95)}
 .dica-action .da-icon{font-size:18px;line-height:1}
 .dica-action.fav-on{background:rgba(255,200,87,.15);border-color:rgba(255,200,87,.4);color:var(--gold)}
-.dica-progress{
-  display:flex;align-items:center;gap:10px;
-  padding:10px 12px;background:rgba(0,0,0,.25);
-  border:1px solid var(--border);border-radius:12px;
-  margin-bottom:14px;
-}
+.dica-progress{display:flex;align-items:center;gap:10px;padding:10px 12px;background:rgba(0,0,0,.25);border:1px solid var(--border);border-radius:12px;margin-bottom:14px}
 .dica-progress .dp-icon{font-size:18px;flex-shrink:0}
 .dica-progress .dp-info{flex:1;min-width:0}
-.dica-progress .dp-info-l{
-  font-size:10px;color:var(--dim);font-weight:800;
-  text-transform:uppercase;letter-spacing:.4px;margin-bottom:4px;
-}
-.dica-progress .dp-bar{
-  height:6px;background:rgba(0,0,0,.4);border-radius:100px;overflow:hidden;
-}
-.dica-progress .dp-bar-fill{
-  height:100%;background:linear-gradient(90deg,#b28bff,#7e56d4);
-  border-radius:100px;transition:width .8s ease;
-}
-.dica-progress .dp-count{
-  font-size:12px;font-weight:900;color:#c4a5ff;
-  white-space:nowrap;flex-shrink:0;
-}
-
-/* Lista de todas as dicas */
-.dicas-lista{
-  display:flex;flex-direction:column;gap:8px;
-}
-.dica-list-item{
-  display:flex;gap:11px;align-items:center;
-  padding:11px 12px;background:rgba(20,32,54,.6);
-  border:1px solid var(--border);border-radius:12px;
-  cursor:pointer;transition:all .15s;
-}
+.dica-progress .dp-info-l{font-size:10px;color:var(--dim);font-weight:800;text-transform:uppercase;letter-spacing:.4px;margin-bottom:4px}
+.dica-progress .dp-bar{height:6px;background:rgba(0,0,0,.4);border-radius:100px;overflow:hidden}
+.dica-progress .dp-bar-fill{height:100%;background:linear-gradient(90deg,#b28bff,#7e56d4);border-radius:100px;transition:width .8s ease}
+.dica-progress .dp-count{font-size:12px;font-weight:900;color:#c4a5ff;white-space:nowrap;flex-shrink:0}
+.dicas-lista{display:flex;flex-direction:column;gap:8px}
+.dica-list-item{display:flex;gap:11px;align-items:center;padding:11px 12px;background:rgba(20,32,54,.6);border:1px solid var(--border);border-radius:12px;cursor:pointer;transition:all .15s}
 .dica-list-item:active{transform:scale(.98);border-color:var(--border-strong)}
 .dica-list-item.lida{opacity:.55}
 .dica-list-item.fav{border-color:rgba(255,200,87,.4);background:rgba(255,200,87,.06)}
-.dica-list-item .dli-num{
-  width:32px;height:32px;border-radius:10px;flex-shrink:0;
-  background:rgba(178,139,255,.14);color:#c4a5ff;
-  display:grid;place-items:center;font-size:11px;font-weight:900;
-}
+.dica-list-item .dli-num{width:32px;height:32px;border-radius:10px;flex-shrink:0;background:rgba(178,139,255,.14);color:#c4a5ff;display:grid;place-items:center;font-size:11px;font-weight:900}
 .dica-list-item.lida .dli-num{background:rgba(55,224,122,.14);color:var(--success)}
 .dica-list-item .dli-body{flex:1;min-width:0;overflow:hidden}
-.dica-list-item .dli-title{
-  font-size:12px;font-weight:800;color:var(--text);
-  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
-}
-.dica-list-item .dli-cat{
-  font-size:9.5px;color:var(--dim);font-weight:700;margin-top:2px;
-  text-transform:uppercase;letter-spacing:.3px;
-}
-.dica-list-item .dli-status{
-  font-size:14px;flex-shrink:0;
-}
-.dica-filtro-tabs{
-  display:flex;gap:5px;background:rgba(20,32,54,.7);
-  border:1px solid var(--border);border-radius:12px;
-  padding:3px;margin-bottom:12px;
-}
-.dica-filtro-tabs button{
-  flex:1;padding:8px 4px;border-radius:9px;font-size:10.5px;
-  font-weight:800;color:var(--dim);cursor:pointer;
-  background:transparent;border:none;font-family:inherit;
-  transition:all .2s;white-space:nowrap;
-}
-.dica-filtro-tabs button.active{
-  background:linear-gradient(135deg,#b28bff,#7e56d4);
-  color:#fff;box-shadow:0 3px 10px rgba(178,139,255,.3);
-}
-
-/* Badge no header quando nova dica disponível */
-.tip-notification{
-  position:fixed;bottom:calc(env(safe-area-inset-bottom, 0px) + 16px);left:50%;
-  transform:translateX(-50%) translateY(200%);
-  background:linear-gradient(135deg,#1a2647,#0d1729);
-  border:1.5px solid rgba(178,139,255,.5);
-  border-radius:16px;
-  padding:13px 14px;
-  width:calc(100vw - 24px);max-width:480px;
-  z-index:80;
-  box-shadow:0 16px 40px rgba(0,0,0,.6),0 0 30px rgba(178,139,255,.25);
-  display:flex;gap:11px;align-items:flex-start;
-  transition:transform .5s cubic-bezier(.3,.8,.4,1);
-  cursor:pointer;
-  backdrop-filter:blur(20px);
-}
+.dica-list-item .dli-title{font-size:12px;font-weight:800;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.dica-list-item .dli-cat{font-size:9.5px;color:var(--dim);font-weight:700;margin-top:2px;text-transform:uppercase;letter-spacing:.3px}
+.dica-list-item .dli-status{font-size:14px;flex-shrink:0}
+.dica-filtro-tabs{display:flex;gap:5px;background:rgba(20,32,54,.7);border:1px solid var(--border);border-radius:12px;padding:3px;margin-bottom:12px}
+.dica-filtro-tabs button{flex:1;padding:8px 4px;border-radius:9px;font-size:10.5px;font-weight:800;color:var(--dim);cursor:pointer;background:transparent;border:none;font-family:inherit;transition:all .2s;white-space:nowrap}
+.dica-filtro-tabs button.active{background:linear-gradient(135deg,#b28bff,#7e56d4);color:#fff;box-shadow:0 3px 10px rgba(178,139,255,.3)}
+.tip-notification{position:fixed;bottom:calc(env(safe-area-inset-bottom, 0px) + 16px);left:50%;transform:translateX(-50%) translateY(200%);background:linear-gradient(135deg,#1a2647,#0d1729);border:1.5px solid rgba(178,139,255,.5);border-radius:16px;padding:13px 14px;width:calc(100vw - 24px);max-width:480px;z-index:80;box-shadow:0 16px 40px rgba(0,0,0,.6),0 0 30px rgba(178,139,255,.25);display:flex;gap:11px;align-items:flex-start;transition:transform .5s cubic-bezier(.3,.8,.4,1);cursor:pointer;backdrop-filter:blur(20px)}
 .tip-notification.show{transform:translateX(-50%) translateY(0)}
-.tip-notification .tn-icon{
-  width:42px;height:42px;border-radius:13px;flex-shrink:0;
-  background:linear-gradient(135deg,#b28bff,#7e56d4);
-  display:grid;place-items:center;font-size:20px;
-  box-shadow:0 6px 16px rgba(178,139,255,.4);
-  animation:dicaPulse 2.5s ease-in-out infinite;
-}
+.tip-notification .tn-icon{width:42px;height:42px;border-radius:13px;flex-shrink:0;background:linear-gradient(135deg,#b28bff,#7e56d4);display:grid;place-items:center;font-size:20px;box-shadow:0 6px 16px rgba(178,139,255,.4);animation:dicaPulse 2.5s ease-in-out infinite}
 .tip-notification .tn-body{flex:1;min-width:0;overflow:hidden}
-.tip-notification .tn-label{
-  font-size:9.5px;font-weight:800;color:#c4a5ff;
-  text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px;
-}
-.tip-notification .tn-title{
-  font-size:13px;font-weight:900;color:var(--text);line-height:1.3;
-  margin-bottom:3px;
-}
-.tip-notification .tn-text{
-  font-size:11px;color:var(--dim);line-height:1.4;font-weight:600;
-  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;
-  overflow:hidden;
-}
-.tip-notification .tn-close{
-  width:28px;height:28px;border-radius:9px;flex-shrink:0;
-  background:rgba(0,0,0,.35);border:1px solid var(--border);
-  display:grid;place-items:center;cursor:pointer;
-  color:var(--dim);font-size:14px;font-weight:800;
-  padding:0;line-height:1;
-}
-
-/* Animação de entrada da dica no início da home */
+.tip-notification .tn-label{font-size:9.5px;font-weight:800;color:#c4a5ff;text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px}
+.tip-notification .tn-title{font-size:13px;font-weight:900;color:var(--text);line-height:1.3;margin-bottom:3px}
+.tip-notification .tn-text{font-size:11px;color:var(--dim);line-height:1.4;font-weight:600;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.tip-notification .tn-close{width:28px;height:28px;border-radius:9px;flex-shrink:0;background:rgba(0,0,0,.35);border:1px solid var(--border);display:grid;place-items:center;cursor:pointer;color:var(--dim);font-size:14px;font-weight:800;padding:0;line-height:1}
 .dica-card.anim{animation:dicaIn .5s cubic-bezier(.3,.8,.4,1) both}
-@keyframes dicaIn{
-  from{opacity:0;transform:translateY(14px) scale(.96)}
-  to{opacity:1;transform:translateY(0) scale(1)}
+@keyframes dicaIn{from{opacity:0;transform:translateY(14px) scale(.96)}to{opacity:1;transform:translateY(0) scale(1)}}
+
+/* ===== PWA BANNER ===== */
+.pwa-banner{
+  display:none;
+  align-items:center;gap:12px;padding:14px;
+  background:linear-gradient(135deg,rgba(0,229,184,.14),rgba(0,229,184,.04));
+  border:1.5px solid rgba(0,229,184,.4);
+  border-radius:16px;margin-bottom:12px;
+  animation:dicaIn .5s cubic-bezier(.3,.8,.4,1) both;
+  position:relative;overflow:hidden;
+}
+.pwa-banner.show{display:flex}
+.pwa-banner::before{
+  content:'';position:absolute;inset:-30% -20% auto -20%;height:130%;
+  background:radial-gradient(closest-side,rgba(0,229,184,.30),transparent 70%);
+  pointer-events:none;
+}
+.pwa-banner .pb-icon{
+  width:44px;height:44px;border-radius:14px;flex-shrink:0;
+  background:linear-gradient(135deg,#00e5b8,#00a888);
+  display:grid;place-items:center;font-size:22px;
+  box-shadow:0 8px 20px rgba(0,229,184,.35);
+  position:relative;
+}
+.pwa-banner .pb-body{flex:1;min-width:0;position:relative}
+.pwa-banner .pb-title{font-size:13.5px;font-weight:900;letter-spacing:-.2px;color:var(--text)}
+.pwa-banner .pb-desc{font-size:11px;color:var(--dim);font-weight:600;margin-top:3px;line-height:1.4}
+.pwa-banner .pb-action{
+  padding:9px 14px;border-radius:11px;border:none;
+  background:linear-gradient(135deg,#00e5b8,#00a888);
+  color:#06121f;font-size:12px;font-weight:800;
+  cursor:pointer;font-family:inherit;flex-shrink:0;
+  transition:all .15s;position:relative;
+}
+.pwa-banner .pb-action:active{transform:scale(.95)}
+.pwa-banner .pb-close{
+  position:absolute;top:8px;right:8px;width:24px;height:24px;
+  border-radius:8px;background:rgba(0,0,0,.3);border:1px solid var(--border);
+  display:grid;place-items:center;cursor:pointer;color:var(--dim);
+  font-size:12px;font-weight:800;padding:0;line-height:1;
 }
 
 @media (max-width: 380px){
@@ -661,6 +488,16 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;bac
 </header>
 
 <div class="page active" id="page-home">
+  <div class="pwa-banner" id="pwaBanner">
+    <div class="pb-icon">📲</div>
+    <div class="pb-body">
+      <div class="pb-title">Instalar o app</div>
+      <div class="pb-desc">Adicione à tela inicial para acesso rápido</div>
+    </div>
+    <button class="pb-action" onclick="instalarApp()" type="button">Instalar</button>
+    <button class="pb-close" onclick="fecharBannerPWA()" type="button">×</button>
+  </div>
+
   <div id="dicaDoDiaContainer"></div>
 
   <div class="evo-hero">
@@ -761,6 +598,10 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;bac
     <div id="settingsProfileCard"></div>
   </div>
   <div class="card">
+    <div class="card-title"><span class="ttl">📲 Aplicativo</span></div>
+    <div id="settingsPWACard"></div>
+  </div>
+  <div class="card">
     <div class="card-title"><span class="ttl">💡 Dicas</span></div>
     <div id="settingsDicasCard"></div>
   </div>
@@ -793,21 +634,13 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;bac
   </div>
   <div class="reset-section">
     <button class="btn btn-danger btn-sm" style="width:100%" onclick="resetAllData()">🗑️ Apagar todos os dados</button>
-    <div style="text-align:center;font-size:10px;color:var(--dimmer);font-weight:700;margin-top:12px">Creatina Control v4.6</div>
+    <div style="text-align:center;font-size:10px;color:var(--dimmer);font-weight:700;margin-top:12px">Creatina Control v4.7</div>
   </div>
 </div>
 
-<div class="modal-overlay" id="profileModal">
-  <div class="modal-sheet"><div class="modal-handle"></div><div id="profileModalBody"></div></div>
-</div>
-
-<div class="modal-overlay" id="genericModal">
-  <div class="modal-sheet"><div class="modal-handle"></div><div id="genericModalBody"></div></div>
-</div>
-
-<div class="modal-overlay" id="dicaModal">
-  <div class="dica-modal-sheet" id="dicaModalBody"></div>
-</div>
+<div class="modal-overlay" id="profileModal"><div class="modal-sheet"><div class="modal-handle"></div><div id="profileModalBody"></div></div></div>
+<div class="modal-overlay" id="genericModal"><div class="modal-sheet"><div class="modal-handle"></div><div id="genericModalBody"></div></div></div>
+<div class="modal-overlay" id="dicaModal"><div class="dica-modal-sheet" id="dicaModalBody"></div></div>
 
 <div class="tip-notification" id="tipNotif" onclick="abrirDicaAtual()">
   <div class="tn-icon">💡</div>
@@ -824,9 +657,9 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;bac
 
 <script>
 /* ============================================================
-   CONFIG / CONSTANTES
+   CONSTANTES
 ============================================================ */
-const APP_VERSION = 'v4.6';
+const APP_VERSION = 'v4.7';
 const APP_VERSION_DATE = '01/10/2026';
 const FIREBASE_CONFIG = {
   apiKey: "AIzaSyB-ECB_AlIejGtL3rO1og5cVv3IW0H_CHQ",
@@ -844,539 +677,676 @@ const FB_SYNC_KEY = 'creatina_fb_sync';
 const ONBOARDING_KEY = 'creatina_onboarding_done';
 const NOTIF_KEY = 'creatina_notif_v4';
 const DICAS_KEY = 'creatina_dicas_v4';
+const PWA_KEY = 'creatina_pwa_v4';
 const MAX_AUTO_BACKUPS = 5;
 
 /* ============================================================
-   ⭐ 365 DICAS SOBRE CREATINA
-   Formato: [emoji, título, texto, categoria]
+   365 DICAS — compactas (emoji, título, texto, categoria)
 ============================================================ */
 const DICAS = [
-/* ===== BENEFÍCIOS (1-45) ===== */
-["💪","Força muscular","Estudos mostram que a creatina aumenta a força em até 15% em exercícios de alta intensidade, como agachamento e supino.","Benefícios"],
-["⚡","Potência explosiva","A creatina melhora a potência em sprints, saltos, arremessos e movimentos explosivos, sendo ideal para esportes intermitentes.","Benefícios"],
-["💧","Retenção intramuscular","A água retida pela creatina fica DENTRO do músculo, não embaixo da pele — por isso não causa inchaço aparente.","Benefícios"],
-["🧠","Cognição e memória","Estudos recentes mostram que a creatina tem efeitos positivos na memória de curto prazo, especialmente em situações de privação de sono.","Benefícios"],
-["🦴","Saúde óssea","Combinada com treino de força, a creatina ajuda a manter a densidade óssea em idosos, reduzindo risco de fraturas.","Benefícios"],
-["🔥","Recuperação muscular","A creatina acelera a recuperação entre séries e entre treinos, permitindo maior volume de treino ao longo da semana.","Benefícios"],
-["🏋️","Mais repetições","Você consegue fazer mais repetições com a mesma carga quando está com os estoques de creatina saturados.","Benefícios"],
-["📈","Hipertrofia","Combinada com treino de força e dieta adequada, a creatina aumenta a massa magra de forma consistente.","Benefícios"],
-["🩸","Redução de dano","Reduz marcadores de dano muscular (como CK e LDH) após exercícios intensos, acelerando a recuperação.","Benefícios"],
-["🧬","Saúde celular","A creatina participa do sistema fosfocreatina, essencial para a reciclagem rápida de ATP nas células.","Benefícios"],
-["🫀","Saúde cardíaca","Estudos apontam benefícios cardiovasculares, incluindo melhora da função endotelial e redução de triglicerídeos.","Benefícios"],
-["🦵","Prevenção de sarcopenia","Em idosos, ajuda a preservar massa muscular e força, reduzindo quedas e fraturas.","Benefícios"],
-["🧠","Neuroproteção","Pesquisas sugerem efeito neuroprotetor em lesões cerebrais leves e doenças neurodegenerativas.","Benefícios"],
-["😴","Contra fadiga","A creatina reduz a sensação de fadiga mental em tarefas cognitivas prolongadas.","Benefícios"],
-["💤","Qualidade do sono","Alguns estudos mostram melhora subjetiva na qualidade do sono em praticantes de treino de força.","Benefícios"],
-["🧊","Termorregulação","A creatina ajuda na regulação da temperatura corporal durante exercício no calor.","Benefícios"],
-["🩹","Cicatrização","Participa da regeneração celular, auxiliando indiretamente na recuperação de tecidos.","Benefícios"],
-["🦷","Saúde bucal","Alguns estudos mostram efeito protetor sobre a densidade mineral óssea maxilar.","Benefícios"],
-["🧪","Metabolismo glicose","Pode melhorar a captação de glicose em pessoas com resistência insulínica leve.","Benefícios"],
-["🏃","Performance aeróbia","Embora seja mais eficaz em esforços curtos, também ajuda em esportes aeróbios com tiros e sprints.","Benefícios"],
-["🥇","Vantagem esportiva","É um dos poucos suplementos com efeito ergogênico comprovado por centenas de estudos científicos.","Benefícios"],
-["📊","Consistência","Seus benefícios aparecem em 3-4 semanas com uso constante, não em poucos dias.","Benefícios"],
-["🎯","Foco","Melhora a atenção sustentada durante treinos longos e desgastantes.","Benefícios"],
-["🕐","Rápida absorção","A creatina monohidratada é absorvida em cerca de 1 hora após ingestão em jejum.","Benefícios"],
-["🩺","Uso clínico","É usada também em contextos clínicos para doenças neuromusculares e metabólicas.","Benefícios"],
-["🚴","Recuperação ativa","Melhora a capacidade de recuperação entre esforços repetidos com curtos intervalos.","Benefícios"],
-["💥","Ganho de potência","Aumenta a potência média em 5-15% em exercícios de curta duração e alta intensidade.","Benefícios"],
-["🎽","Resistência muscular","Você mantém mais repetições na última série quando os estoques estão saturados.","Benefícios"],
-["🧘","Redução do estresse oxidativo","Alguns estudos mostram efeito antioxidante indireto em tecidos musculares.","Benefícios"],
-["🌡️","Termogênese","Pode ter efeito leve na termogênese adaptativa em praticantes de treino de força.","Benefícios"],
-["🛡️","Imunidade","Não é um imunoestimulante direto, mas melhora a recuperação e indiretamente ajuda na saúde geral.","Benefícios"],
-["🧠","Depressão leve","Estudos exploratórios indicam possível efeito adjuvante em quadros depressivos leves.","Benefícios"],
-["💊","Não hormonal","É um suplemento natural que não altera eixos hormonais como testosterona ou GH.","Benefícios"],
-["⏱️","Efeito rápido","A saturação muscular ocorre em 3-4 semanas com dose padrão ou em 5-7 dias com loading.","Benefícios"],
-["🌊","Antioxidante celular","Ajuda a proteger células musculares contra danos oxidativos induzidos pelo exercício.","Benefícios"],
-["🦶","Estabilidade","Melhora o controle motor fino em tarefas de precisão, como equilíbrio unipodal.","Benefícios"],
-["🎮","Reflexos","Estudos mostram melhora em tempo de reação em testes computadorizados.","Benefícios"],
-["🚀","Performance geral","Melhora de 5-15% em performance física é o achado mais consistente da literatura.","Benefícios"],
-["🥗","Sem calorias","A creatina não tem valor calórico, então não interfere em dietas de emagrecimento.","Benefícios"],
-["🍽️","Não é estimulante","Não contém cafeína ou outros estimulantes — não causa taquicardia ou insônia.","Benefícios"],
-["💧","Menos cãibras","Com hidratação adequada, ajuda a reduzir a incidência de cãibras musculares.","Benefícios"],
-["🦵","Prevenção de lesão","Reduz a fadiga muscular, o que diminui o risco de lesões em treinos longos.","Benefícios"],
-["🎯","Atletas amadores","Tão eficaz em amadores quanto em atletas de elite, com resultados consistentes.","Benefícios"],
-["🌎","Ampla pesquisa","Mais de 1.000 estudos revisados por pares comprovam sua eficácia e segurança.","Benefícios"],
-
-/* ===== ALIMENTOS (46-95) ===== */
-["🥩","Carne vermelha","Carnes vermelhas são a maior fonte natural de creatina: cerca de 5g por quilo de carne bovina.","Alimentos"],
-["🐟","Peixe","Salmão, atum e arenque contêm cerca de 3-5g de creatina por quilo.","Alimentos"],
-["🐔","Carne de frango","Frango tem cerca de 3,4g de creatina por quilo de peito.","Alimentos"],
-["🐖","Carne suína","Porco tem aproximadamente 5g de creatina por quilo de carne.","Alimentos"],
-["🐟","Atum","Um filé de atum (150g) fornece cerca de 0,7g de creatina natural.","Alimentos"],
-["🍖","Bife de vaca","Um bife de 200g contém entre 0,9g e 1g de creatina natural.","Alimentos"],
-["🦌","Carne de caça","Carnes de caça (veado, javali) geralmente têm ainda mais creatina que gado comum.","Alimentos"],
-["🐮","Carne de cordeiro","Cordeiro tem aproximadamente 4-5g por quilo, similar à carne bovina.","Alimentos"],
-["🍗","Frango escuro","Carnes escuras de frango têm mais creatina que o peito (carnes brancas).","Alimentos"],
-["🐟","Sardinha","Sardinha é uma excelente fonte: cerca de 4-5g de creatina por quilo.","Alimentos"],
-["🐠","Tilápia","Peixes de água doce têm menos creatina que peixes de água salgada.","Alimentos"],
-["🥛","Leite","Leite de vaca contém cerca de 2g de creatina por litro — útil, mas modesto.","Alimentos"],
-["🧀","Queijos","Queijos curados, como parmesão, retêm alguma creatina do leite original.","Alimentos"],
-["🥚","Ovos","Ovos têm creatina em quantidade muito baixa, principalmente na gema.","Alimentos"],
-["🥬","Vegetais","Vegetais NÃO contêm creatina natural — a síntese é endógena em animais.","Alimentos"],
-["🌰","Castanhas","Castanhas não contêm creatina, mas fornecem gorduras boas e arginina.","Alimentos"],
-["🍚","Arroz","Nenhum carboidrato contém creatina — a fonte é sempre animal.","Alimentos"],
-["🥦","Brócolis","Vegetais como brócolis não têm creatina, mas ajudam na saúde geral.","Alimentos"],
-["🫘","Feijão","Leguminosas não fornecem creatina, mas têm proteínas vegetais.","Alimentos"],
-["🍓","Frutas","Frutas não contêm creatina, mas seus antioxidantes ajudam na recuperação.","Alimentos"],
-["🍲","Caldos de carne","Caldos concentrados de carne podem reter pequenas quantidades de creatina.","Alimentos"],
-["🐟","Bacalhau","Peixes salgados como bacalhau mantêm cerca de 3g de creatina por quilo.","Alimentos"],
-["🦐","Camarão","Frutos do mar têm creatina em quantidade moderada, cerca de 2g por quilo.","Alimentos"],
-["🦪","Ostras","Ostras contêm creatina, mas em concentração menor que peixes.","Alimentos"],
-["🐙","Polvo","Carnes de moluscos têm creatina, variando entre 1-3g por quilo.","Alimentos"],
-["🥓","Bacon","Bacon contém creatina, mas o processamento reduz parte do conteúdo original.","Alimentos"],
-["🌭","Embutidos","Embutidos têm menos creatina que carnes frescas por causa do processamento.","Alimentos"],
-["🍖","Costela","Costela bovina mantém praticamente todo o conteúdo de creatina da carne.","Alimentos"],
-["🍗","Frango orgânico","Frango criado solto tende a ter teor de creatina levemente maior.","Alimentos"],
-["🐟","Tilápia selvagem","Peixes selvagens tendem a ter mais creatina que os de cativeiro.","Alimentos"],
-["🥩","Carne de búfalo","Carne de búfalo é rica em creatina, com cerca de 5g por quilo.","Alimentos"],
-["🍗","Peru","Peito de peru tem cerca de 3g de creatina por quilo de carne.","Alimentos"],
-["🐟","Anchova","Anchovas são pequenas, mas concentram muita creatina por quilo.","Alimentos"],
-["🍲","Sopas de osso","Caldos feitos com ossos e carne retêm parte da creatina da carne.","Alimentos"],
-["🔥","Cozimento","O cozimento prolongado destrói parte da creatina nos alimentos.","Alimentos"],
-["❄️","Congelamento","Congelar carnes preserva a creatina, mas não a aumenta.","Alimentos"],
-["🍳","Grelhar","Grelhar rapidamente preserva mais creatina que ferver por muito tempo.","Alimentos"],
-["🥘","Estrogonofe","Mantém a creatina da carne, mas o creme de leite não adiciona creatina.","Alimentos"],
-["🌮","Carnes moídas","Carnes moídas têm o mesmo teor de creatina da carne inteira.","Alimentos"],
-["🍢","Churrasco","Churrasco preserva bem a creatina porque o cozimento é rápido e em alta temperatura.","Alimentos"],
-["🥫","Carne enlatada","Enlatados perdem parte da creatina durante o processamento industrial.","Alimentos"],
-["🍱","Sushi de salmão","Salmão cru preserva 100% da creatina natural do peixe.","Alimentos"],
-["🐟","Ceviche","Peixe cru marinado mantém praticamente toda a creatina do peixe fresco.","Alimentos"],
-["🥩","Carne seca","Carne seca (charque) mantém parte da creatina, mas o sal reduz absorção.","Alimentos"],
-["🧂","Sal","O sal não interfere na creatina, mas cuidado com o excesso de sódio.","Alimentos"],
-["🍗","Asa de frango","Asas têm creatina similar ao restante da ave, cerca de 3g/kg.","Alimentos"],
-["🥩","Picanha","Picanha mantém cerca de 5g de creatina por quilo, como outras carnes bovinas.","Alimentos"],
-["🐟","Salmão selvagem","Salmão selvagem tem mais creatina que o de cativeiro.","Alimentos"],
-["🦈","Tubarão","Carnes de tubarão têm creatina, mas não são comuns na alimentação.","Alimentos"],
-["🐊","Jacaré","Carnes exóticas como jacaré têm teor de creatina similar ao frango.","Alimentos"],
-["🍲","Cozido","Cozidos longos perdem creatina para a água do cozimento.","Alimentos"],
-["🔬","Biodisponibilidade","A creatina de alimentos tem absorção similar à suplementada, mas em doses muito menores.","Alimentos"],
-
-/* ===== DOSAGEM CORRETA (96-140) ===== */
-["⚖️","Dose por peso","Recomendação geral: 0,03g de creatina por kg de peso por dia para manutenção.","Dosagem"],
-["📏","Dose padrão","A dose diária de manutenção mais usada é 3-5g, independentemente do peso.","Dosagem"],
-["🎯","Saturação","Para saturar rápido: 20g por dia divididos em 4 doses por 5-7 dias.","Dosagem"],
-["📅","Manutenção após saturação","Depois da saturação, mantenha 3-5g por dia para preservar os estoques.","Dosagem"],
-["🧮","Peso abaixo de 70kg","Abaixo de 70kg, 3g por dia é geralmente suficiente para manutenção.","Dosagem"],
-["🧮","Peso 70-90kg","Entre 70 e 90kg, 5g por dia é a dose de manutenção recomendada.","Dosagem"],
-["🧮","Peso acima de 90kg","Acima de 90kg, doses de 7g por dia são sugeridas por alguns profissionais.","Dosagem"],
-["⏰","Dividir doses","Doses acima de 5g podem ser divididas em 2 tomadas para melhor absorção.","Dosagem"],
-["🥄","Colher dosadora","Uma colher de chá cheia de creatina monohidratada equivale a cerca de 3g.","Dosagem"],
-["🥄","Colher de sopa","Uma colher de sopa cheia contém aproximadamente 10-12g de creatina.","Dosagem"],
-["⚡","Fase de loading","A fase de saturação (loading) é opcional — sem ela, você satura em 3-4 semanas.","Dosagem"],
-["🏃","Sem loading","Se preferir, tome 5g por dia direto. Em 3-4 semanas você terá os mesmos estoques.","Dosagem"],
-["📊","Pesquisa científica","A ISSN recomenda 5g por dia para adultos como dose de manutenção ideal.","Dosagem"],
-["🎓","Consenso","O consenso científico atual: dose de manutenção entre 0,03 e 0,05g/kg.","Dosagem"],
-["🔬","Meia-vida","A creatina tem meia-vida de 3-4 horas no sangue, mas estoques musculares duram dias.","Dosagem"],
-["🥤","Diluição","Dissolva a dose em pelo menos 200-300ml de água, suco ou bebida de sua preferência.","Dosagem"],
-["🌡️","Temperatura","Evite dissolver em líquidos muito quentes: a creatina pode degradar em creatinina.","Dosagem"],
-["🥶","Água fria","Água em temperatura ambiente ou fria dissolve melhor sem degradar a creatina.","Dosagem"],
-["😋","Sabor neutro","A creatina monohidratada tem sabor praticamente neutro — pode ser adicionada a qualquer bebida.","Dosagem"],
-["🍹","Com suco","Tomar com suco de uva ou suco natural ajuda na absorção pela insulina.","Dosagem"],
-["⏱️","Dose única","Uma dose única de 5g por dia é tão eficaz quanto múltiplas doses pequenas.","Dosagem"],
-["🎯","Timing não crítico","O horário exato não importa tanto quanto a consistência diária.","Dosagem"],
-["🍽️","Com refeição","Tomar com uma refeição pode melhorar a absorção e reduzir desconforto gástrico.","Dosagem"],
-["🌅","Pós-treino","Tomar após o treino é ligeiramente vantajoso pela maior captação muscular.","Dosagem"],
-["☀️","Manhã","Tomar pela manhã ajuda a manter o hábito diário e evita esquecimento.","Dosagem"],
-["🌙","Antes de dormir","Alguns preferem tomar à noite por ser um horário de recuperação muscular.","Dosagem"],
-["🔄","Qualquer horário","O mais importante é escolher um horário que você não esqueça e manter sempre.","Dosagem"],
-["📆","Todos os dias","Tome também nos dias de descanso — os estoques precisam ser mantidos.","Dosagem"],
-["🛌","Dias sem treino","Não pule a creatina nos dias sem treino. Ela mantém o estoque muscular.","Dosagem"],
-["✈️","Viagem","Leve sachês ou pequenos potes para não interromper a suplementação.","Dosagem"],
-["🧊","Dose fracionada","Se sentir desconforto, divida a dose: 2,5g pela manhã e 2,5g à noite.","Dosagem"],
-["🥄","Dose heaped","Use sempre colher nivelada para evitar doses acima do necessário.","Dosagem"],
-["🎯","Individualize","Ajuste a dose conforme seu peso e resposta individual ao suplemento.","Dosagem"],
-["📈","Monitoramento","Se seu peso variar muito (5+ kg), recalcule a dose recomendada.","Dosagem"],
-["🩺","Consulta","Em caso de doença renal pré-existente, consulte médico antes de usar.","Dosagem"],
-["🥤","Com água","Tomar com água é o mais tradicional e igualmente eficaz.","Dosagem"],
-["💊","Cápsulas","Cápsulas têm a mesma eficácia que o pó, mas são mais caras e menos versáteis.","Dosagem"],
-["🍬","Gomas","Gomas de creatina são práticas mas podem ter dose menor por unidade.","Dosagem"],
-["📦","Comprimidos","Comprimidos raramente atingem 5g por dose — leia o rótulo com atenção.","Dosagem"],
-["💧","Com isotônico","Isotônicos com creatina são práticos para usar durante o treino.","Dosagem"],
-["🔋","Sem ciclo","Não é necessário fazer ciclos ou pausas na creatina. Use continuamente.","Dosagem"],
-["♾️","Uso contínuo","O uso contínuo é seguro e recomendado — não há benefício em pausar.","Dosagem"],
-["⏸️","Pausa não indicada","Pausar só faz os estoques caírem e você perder o efeito por semanas.","Dosagem"],
-["🎓","Aprendizado","Ajuste a dose conforme seu corpo responde — cada pessoa é única.","Dosagem"],
-["📊","Estudos longos","Estudos de até 5 anos mostram uso contínuo seguro em pessoas saudáveis.","Dosagem"],
-
-/* ===== EXCESSO / OVERDOSE (141-170) ===== */
-["⚠️","Dose muito alta","Doses acima de 10g de uma vez podem causar desconforto gástrico e diarreia.","Excesso"],
-["🚽","Diarreia","Diarreia é o principal sinal de excesso de creatina em uma única dose.","Excesso"],
-["🤢","Náusea","Náusea após tomar creatina indica dose alta demais ou estômago sensível.","Excesso"],
-["💩","Desconforto abdominal","Cólicas e gases podem ocorrer com doses altas sem fracionamento.","Excesso"],
-["💧","Desidratação","Dose alta sem água suficiente pode causar desidratação paradoxal.","Excesso"],
-["🚰","Sede excessiva","Aumento de sede pode indicar necessidade de mais água com a creatina.","Excesso"],
-["⚠️","Sem benefício extra","Doses acima de 5g não aumentam o benefício — apenas saturam o músculo.","Excesso"],
-["💸","Desperdício","Doses altas só aumentam o custo e a excreção pela urina.","Excesso"],
-["🫘","Sobrecarga renal","Em pessoas com doença renal prévia, doses altas sobrecarregam os rins.","Excesso"],
-["💊","Não é tóxica","A creatina NÃO é tóxica em pessoas saudáveis, mas o excesso é desnecessário.","Excesso"],
-["🩸","Creatinina sérica","Doses altas podem elevar a creatinina sérica em exames, sem dano renal real.","Excesso"],
-["📊","Falso positivo","Exames de função renal podem dar falso positivo para insuficiência por causa disso.","Excesso"],
-["🩺","Comunique ao médico","Avise seu médico que usa creatina antes de exames de sangue.","Excesso"],
-["⏸️","Suspender antes de exame","Suspenda 3-5 dias antes de exames de função renal, se possível.","Excesso"],
-["💦","Hidrate","Se tomou dose alta, beba bastante água nas horas seguintes.","Excesso"],
-["😰","Ansiedade","Doses altas podem causar sensação de ansiedade em pessoas sensíveis.","Excesso"],
-["🤯","Dor de cabeça","Raramente doses altas causam dor de cabeça por desidratação.","Excesso"],
-["🧠","Confusão mental","Muito raro, mas excesso extremo pode causar confusão por desequilíbrio hídrico.","Excesso"],
-["🌡️","Febre","Não é esperado febre com creatina, mas diarreia pode causar desidratação.","Excesso"],
-["😵","Tontura","Tontura pode ocorrer se você não beber água suficiente com a dose.","Excesso"],
-["🥵","Sudorese","Aumento de suor não é efeito comum, mas pode indicar termorregulação alterada.","Excesso"],
-["💤","Insônia","Creatina não é estimulante, mas o excesso pode causar desconforto noturno.","Excesso"],
-["🫀","Palpitações","Muito raro; normalmente relacionado a outras causas, não à creatina.","Excesso"],
-["🚫","Não misture com álcool","Evite tomar creatina junto com bebidas alcoólicas — piora a desidratação.","Excesso"],
-["☕","Cafeína","Altas doses de cafeína + creatina podem aumentar o risco de desidratação.","Excesso"],
-["🧂","Excesso de sódio","Não combine creatina com alimentos muito salgados em excesso.","Excesso"],
-["🥤","Bebidas gaseificadas","Refrigerantes podem piorar desconforto gástrico se combinados.","Excesso"],
-["🍺","Álcool","O álcool prejudica a recuperação e pode anular benefícios da creatina.","Excesso"],
-["🚨","Procure médico","Se tiver sintomas persistentes, pare o uso e procure um médico.","Excesso"],
-["📉","Reduza a dose","Se tiver sintomas, reduza para 3g por dia e observe.","Excesso"],
-["🔄","Recomece devagar","Se parou por desconforto, volte com 2-3g por dia divididos.","Excesso"],
-["💊","Sem dose dupla","Nunca tome o dobro no dia seguinte por ter esquecido — apenas retome normal.","Excesso"],
-
-/* ===== FALTA / SUBDOSAGEM (171-195) ===== */
-["📉","Falta de creatina","Sem creatina suficiente, você perde os estoques musculares em 4-6 semanas.","Falta"],
-["🚫","Sem efeito","Doses abaixo de 2g por dia são insuficientes para manter estoques em muitos adultos.","Falta"],
-["😴","Fadiga precoce","Sem creatina, você sente fadiga mais cedo nos treinos de alta intensidade.","Falta"],
-["🏋️","Menos força","Falta de creatina reduz a força máxima em cerca de 10% em relação ao estado saturado.","Falta"],
-["🔋","Recuperação lenta","Entre séries e entre treinos, você recupera mais devagar sem creatina.","Falta"],
-["📉","Peso cai","Ao parar a creatina, você pode perder 1-2kg de água intramuscular.","Falta"],
-["🧠","Foco reduzido","Sem creatina, tarefas cognitivas longas podem parecer mais cansativas.","Falta"],
-["🦵","Performance piora","Sprints e explosões ficam visivelmente mais lentos quando os estoques caem.","Falta"],
-["🩸","Menos volume","Você faz menos repetições com a mesma carga quando está com estoques baixos.","Falta"],
-["⚠️","Não é perigoso","Ficar sem creatina não faz mal à saúde — apenas perde performance.","Falta"],
-["🥩","Dieta ajuda","Sem suplementar, você ainda obtém 1-2g por dia de carne na alimentação.","Falta"],
-["🥗","Vegetarianos","Vegetarianos têm estoques naturalmente mais baixos — se beneficiam ainda mais.","Falta"],
-["⏰","Saturação leva tempo","Sem suplementar, seus estoques só caem após 4-6 semanas sem consumo.","Falta"],
-["🏆","Perda de pico","Você perde cerca de 50% do estoque muscular em 4 semanas sem creatina.","Falta"],
-["💧","Menos hidratação","Músculos com menos creatina retêm menos água — você parece mais 'seco'.","Falta"],
-["📊","Difícil notar","A diferença entre estado saturado e não saturado é de 10-20% em performance.","Falta"],
-["🔄","Recuperação","Após voltar a suplementar, você recupera estoques em 3-4 semanas (ou 5-7 dias com loading).","Falta"],
-["🥱","Apatia","Alguns usuários relatam menor disposição quando param por muito tempo.","Falta"],
-["🩺","Não confunda","Sentir fadiga pode ser falta de creatina, mas também sono, dieta ou overtraining.","Falta"],
-["📅","Consistência","A falta de constância é o principal motivo de quem não sente efeito da creatina.","Falta"],
-["🎯","Dose mínima","A dose mínima eficaz é cerca de 3g por dia para a maioria dos adultos.","Falta"],
-["⚠️","Mulheres","Mulheres tendem a ter estoques naturalmente mais baixos que homens.","Falta"],
-["👴","Idosos","Idosos têm estoques menores — a suplementação faz ainda mais diferença.","Falta"],
-["💊","Não dobra","Não adianta dobrar a dose por ter esquecido um dia — só cause desconforto.","Falta"],
-["🎓","Volte ao normal","Após esquecer um dia, apenas retome a dose normal no dia seguinte.","Falta"],
-
-/* ===== HIDRATAÇÃO (196-225) ===== */
-["💧","Água é essencial","A creatina aumenta a necessidade de água: beba pelo menos 30-40ml por kg por dia.","Hidratação"],
-["🚰","Meta diária","Um adulto de 75kg deve beber pelo menos 2,5 a 3 litros de água por dia com creatina.","Hidratação"],
-["🥤","Com a dose","Tome cada dose de creatina com pelo menos 200-300ml de água.","Hidratação"],
-["🌊","Água ao acordar","Comece o dia com um copo grande de água antes da creatina.","Hidratação"],
-["🚱","Sede é sinal","Se sentir sede, você já está levemente desidratado — beba antes.","Hidratação"],
-["💦","Cor da urina","Urina amarelo claro = hidratação adequada; escura = beba mais água.","Hidratação"],
-["🏋️","Treino pesado","Durante treinos intensos, beba 500-700ml de água por hora.","Hidratação"],
-["☀️","Dias quentes","Em dias quentes, aumente a ingestão em 500ml a 1L.","Hidratação"],
-["☕","Cafeína","Café e energéticos são diuréticos leves — compense com mais água.","Hidratação"],
-["🍺","Álcool","O álcool desidrata: se beber, reforce a hidratação no dia seguinte.","Hidratação"],
-["🥤","Bebidas isotônicas","Isotônicos ajudam na hidratação durante treinos longos.","Hidratação"],
-["🧂","Eletrólitos","Com muita água pura, considere repor eletrólitos (sódio, potássio).","Hidratação"],
-["💊","Não é diurético","A creatina NÃO é diurética — ela retém água DENTRO do músculo.","Hidratação"],
-["🚨","Desidratação","Sem água suficiente, creatina pode causar dor de cabeça e mal-estar.","Hidratação"],
-["💧","Antes do treino","Beba 500ml de água 1-2h antes de treinar.","Hidratação"],
-["🥵","Durante o treino","Beba pequenos goles ao longo do treino, mesmo sem sede.","Hidratação"],
-["🌙","Antes de dormir","Um copo de água antes de dormir ajuda na recuperação noturna.","Hidratação"],
-["☀️","Manhã","Beba 1 copo grande de água ao acordar para reidratar após o sono.","Hidratação"],
-["🍵","Chás","Chás sem cafeína contam como hidratação — ajudam na meta diária.","Hidratação"],
-["🥥","Água de coco","Água de coco é ótima para reposição de eletrólitos pós-treino.","Hidratação"],
-["🍋","Limão na água","Adicionar limão ajuda algumas pessoas a beber mais água ao longo do dia.","Hidratação"],
-["📱","App de água","Use o próprio app para monitorar sua ingestão diária de água.","Hidratação"],
-["🚰","Garrafa visível","Deixe uma garrafa visível na mesa — isso aumenta o consumo inconsciente.","Hidratação"],
-["🎯","Metas","Divida sua meta diária em 4-5 momentos ao longo do dia.","Hidratação"],
-["💧","Mais que o normal","Com creatina, beba 20-30% a mais de água que o habitual.","Hidratação"],
-["⚠️","Sobrecarga hídrica","Beber água DEMAIS também faz mal — não passe de 4-5L/dia sem orientação.","Hidratação"],
-["🥵","Treino no calor","Em treinos no calor, pode perder 1-2L de suor por hora — reponha.","Hidratação"],
-["🧊","Água gelada","Água gelada é absorvida mais rapidamente durante o treino.","Hidratação"],
-["🩺","Rins","Com hidratação adequada, a creatina não faz mal aos rins em pessoas saudáveis.","Hidratação"],
-["💧","Sede noturna","Se acordar com sede, beba água — não ignore o sinal do corpo.","Hidratação"],
-
-/* ===== TIMING / HORÁRIO (226-255) ===== */
-["⏰","Timing não crítico","O horário da dose tem menos impacto que a constância diária.","Timing"],
-["🌅","Pós-treino","Tomar logo após o treino pode ter leve vantagem para absorção.","Timing"],
-["🍽️","Com refeição","Tomar junto com uma refeição melhora absorção e reduz desconforto gástrico.","Timing"],
-["☀️","Manhã","Tomar pela manhã ajuda a manter o hábito e evita esquecimento à noite.","Timing"],
-["🌙","Antes de dormir","Tomar à noite é popular por coincidir com a recuperação muscular noturna.","Timing"],
-["🍹","Com suco","Sucos com carboidratos elevam a insulina, que ajuda a captação de creatina.","Timing"],
-["☕","Longe do café","Evite tomar creatina com café se você é sensível à cafeína.","Timing"],
-["🔄","Sempre no mesmo horário","Escolha um horário fixo e mantenha — cria hábito e melhora adesão.","Timing"],
-["🏋️","Pré-treino","Não é necessário tomar antes do treino, mas também não faz mal.","Timing"],
-["⏱️","Absorção","A creatina começa a aparecer no sangue cerca de 1h após ingestão.","Timing"],
-["📅","Dias sem treino","Tome nos dias de descanso também — não pule.","Timing"],
-["🌡️","Com água","Água é o veículo mais comum — sem contraindicação.","Timing"],
-["🥛","Com leite","Tomar com leite é válido — a proteína ajuda na absorção.","Timing"],
-["🍚","Com carboidratos","Carboidratos aumentam a captação de creatina pelo músculo via insulina.","Timing"],
-["🥤","Com whey","Combinar creatina com whey é uma estratégia clássica e eficaz.","Timing"],
-["🍌","Com banana","Banana + creatina + água é um combo pré ou pós-treino prático.","Timing"],
-["🥩","Com refeição proteica","Uma refeição com carne aumenta a creatina total absorvida.","Timing"],
-["🚰","Antes de dormir","Se tomar antes de dormir, beba água suficiente para não desidratar.","Timing"],
-["💤","Impacto no sono","Creatina em si não interfere no sono, mas muita água pode causar idas ao banheiro.","Timing"],
-["🌞","Dose única diária","Uma dose única de 5g por dia é tão eficaz quanto dividir.","Timing"],
-["📊","Pesquisas","Estudos mostram que o timing não altera significativamente os resultados.","Timing"],
-["🧠","Nunca é tarde","Se lembrou só à noite, tome — não pule o dia.","Timing"],
-["⏸️","Dose esquecida","Se esqueceu, tome quando lembrar. Não dobre a próxima dose.","Timing"],
-["🌅","Ao acordar","Tomar em jejum é eficaz — absorção inclusive mais rápida.","Timing"],
-["🍽️","Antes do café","Alguns preferem antes do café para não misturar sabores.","Timing"],
-["🥣","Com cereal","Adicionar creatina no cereal do café da manhã é uma opção prática.","Timing"],
-["🍵","Com chá","Chás sem cafeína funcionam como veículo — sem contraindicação.","Timing"],
-["🥤","Com smoothie","Smoothies de frutas são excelentes veículos para a creatina.","Timing"],
-["🎯","Importante: consistência","O timing ideal é o que você consegue manter todos os dias.","Timing"],
-["💊","Individualize","Descubra o horário que melhor se encaixa na sua rotina e mantenha.","Timing"],
-
-/* ===== MITOS (256-285) ===== */
-["🚫","Não faz mal aos rins","Em pessoas saudáveis, creatina NÃO prejudica os rins. Isso é mito.","Mitos"],
-["💧","Não é anabolizante","Creatina NÃO é hormônio nem anabolizante — é um composto natural do corpo.","Mitos"],
-["🧊","Não causa retenção subcutânea","A água retida pela creatina fica DENTRO do músculo, não embaixo da pele.","Mitos"],
-["💊","Não precisa de ciclo","Não é necessário fazer pausas ou ciclar creatina.","Mitos"],
-["🩺","Não causa câncer","Não há nenhuma evidência de que a creatina cause câncer.","Mitos"],
-["👨","Não causa queda de cabelo","Não há evidência científica ligando creatina à queda de cabelo.","Mitos"],
-["🚹","Não afeta testosterona","A creatina não altera os níveis de testosterona ou outros hormônios.","Mitos"],
-["🔥","Não engorda","Creatina não tem calorias — não engorda.","Mitos"],
-["🧂","Não é sal","Não é 'apenas sal' — é um composto nitrogenado essencial.","Mitos"],
-["💧","Não desidrata","Com hidratação adequada, creatina não desidrata. Ela hidrata o músculo.","Mitos"],
-["🦴","Não enfraquece os ossos","Muito pelo contrário: ajuda a manter a densidade óssea.","Mitos"],
-["🧠","Não causa confusão","Doses normais não afetam a função cerebral de forma negativa.","Mitos"],
-["🚽","Não sobrecarrega os rins","Creatina não faz os rins 'trabalharem mais' em pessoas saudáveis.","Mitos"],
-["💊","Não é pré-treino","Creatina não dá energia imediata como um pré-treino com cafeína.","Mitos"],
-["⏸️","Não precisa pausar","Pausas só fazem os estoques caírem — sem benefício.","Mitos"],
-["👩","Não é só para homens","Mulheres se beneficiam igualmente da creatina.","Mitos"],
-["👴","Não é só para jovens","Idosos têm benefícios ainda maiores pela prevenção de sarcopenia.","Mitos"],
-["🍔","Não substitui dieta","Creatina ajuda, mas não substitui uma alimentação adequada.","Mitos"],
-["🏋️","Não é só para atletas","Sedentários e praticantes de atividade leve também se beneficiam.","Mitos"],
-["💊","Não é placebo","Centenas de estudos comprovam efeitos reais com grupo placebo controlado.","Mitos"],
-["💸","Não precisa ser caro","Creatina monohidratada pura é barata e tão eficaz quanto versões caras.","Mitos"],
-["🧪","Não é hormônio","É um composto natural produzido pelo próprio corpo (fígado e rins).","Mitos"],
-["🚫","Não causa câncer de próstata","Nenhum estudo liga creatina a câncer de próstata ou qualquer tipo.","Mitos"],
-["🫘","Não sobrecarrega o fígado","Não há evidência de dano hepático em pessoas saudáveis.","Mitos"],
-["💩","Não é laxante","Creatina não é laxante — o desconforto vem só com doses altas.","Mitos"],
-["🎯","Não é placebo caro","Uma das substâncias mais estudadas e eficazes do mundo esportivo.","Mitos"],
-["🥗","Não tem contraindicação para vegetarianos","Vegetarianos se beneficiam ainda mais, pois têm estoques menores.","Mitos"],
-["💊","Não causa dependência","Não há dependência — você pode parar quando quiser.","Mitos"],
-["🩸","Não engrossa o sangue","Não altera significativamente a viscosidade sanguínea.","Mitos"],
-["🧠","Não causa demência","Nenhuma evidência científica de dano cognitivo — o oposto é estudado.","Mitos"],
-
-/* ===== GRUPOS ESPECIAIS (286-320) ===== */
-["👩","Mulheres","Mulheres respondem igualmente bem à creatina; não é exclusivo para homens.","Grupos"],
-["👩‍🦳","Pós-menopausa","Mulheres na pós-menopausa se beneficiam da creatina para preservar massa óssea e muscular.","Grupos"],
-["👴","Idosos","Idosos têm benefícios significativos contra sarcopenia e perda de força.","Grupos"],
-["👶","Adolescentes","Adolescentes podem usar com orientação profissional, mas priorizando alimentação.","Grupos"],
-["🧒","Crianças","Não recomendado para crianças antes da puberdade sem indicação médica.","Grupos"],
-["🤰","Grávidas","Grávidas devem consultar médico antes — alguns estudos indicam segurança em doses baixas.","Grupos"],
-["🤱","Amamentação","Amamentando: consulte médico antes de suplementar.","Grupos"],
-["🩺","Doença renal","Com doença renal prévia, só use com autorização médica.","Grupos"],
-["💊","Diabéticos","Diabéticos podem se beneficiar; monitore glicemia com profissional.","Grupos"],
-["🫀","Cardiopatas","Cardiopatas devem consultar médico; estudos indicam segurança em doses normais.","Grupos"],
-["🥗","Vegetarianos","Vegetarianos têm estoques menores e se beneficiam ainda mais da suplementação.","Grupos"],
-["🌱","Veganos","Veganos são o grupo com maior benefício teórico — têm zero creatina na dieta.","Grupos"],
-["🏃","Corredores","Corredores de longa distância se beneficiam em tiros e sprints.","Grupos"],
-["🚴","Ciclistas","Ciclistas ganham em arrancadas e sprints, mas não tanto em provas longas.","Grupos"],
-["⚽","Jogadores de futebol","Futebol tem esforços intermitentes — a creatina é altamente benéfica.","Grupos"],
-["🏀","Basquete","Basquete exige explosão e sprints constantes — benefício grande.","Grupos"],
-["🏊","Nadadores","Nadadores se beneficiam em provas curtas e médias.","Grupos"],
-["🥊","Lutadores","Lutadores têm ganhos de força e potência com creatina.","Grupos"],
-["🏋️","Powerlifters","Atletas de força têm um dos maiores benefícios da creatina.","Grupos"],
-["🏈","Jogadores de futebol americano","Esporte explosivo se beneficia muito da creatina.","Grupos"],
-["🎾","Tenistas","Tenistas ganham em arrancadas e potência de saque.","Grupos"],
-["🥋","Artes marciais","Esportes de combate se beneficiam muito da força e potência.","Grupos"],
-["🚴‍♀️","Atletas femininas","Atletas mulheres têm a mesma resposta ergogênica dos homens.","Grupos"],
-["🧘","Sedentários","Sedentários também ganham força com creatina + treino leve.","Grupos"],
-["💼","Trabalhadores","Quem faz trabalho físico pesado pode ter ganhos de resistência.","Grupos"],
-["🎓","Estudantes","Estudantes com pouco sono podem ter benefícios cognitivos com creatina.","Grupos"],
-["🧓","Idosos frágeis","Idosos frágeis ganham força e reduzem quedas com creatina.","Grupos"],
-["🦴","Osteoporose","A creatina ajuda na preservação da densidade mineral óssea.","Grupos"],
-["🩸","Anêmicos","Não trata anemia, mas ajuda na recuperação muscular.","Grupos"],
-["💊","Usuários de medicação","Verifique interações com seu médico antes de usar.","Grupos"],
-["🏥","Pós-cirúrgico","Pode ajudar na recuperação muscular após cirurgias — consulte médico.","Grupos"],
-["♿","Reabilitação","Pode ser útil em reabilitação física — sempre com orientação médica.","Grupos"],
-["🧠","Idosos cognitivo","Idosos podem ter benefícios cognitivos com creatina.","Grupos"],
-["🏫","Adolescentes atletas","Adolescentes atletas podem usar sob supervisão de nutricionista.","Grupos"],
-["🎯","Personalize","Cada grupo tem particularidades — converse com profissional de saúde.","Grupos"],
-
-/* ===== COMBINAÇÕES (321-350) ===== */
-["🥤","Whey protein","Creatina + whey é uma combinação clássica e eficaz para hipertrofia.","Combinações"],
-["☕","Cafeína","Cafeína + creatina funciona, mas modere a cafeína se for sensível.","Combinações"],
-["🍬","Beta-alanina","Combinar com beta-alanina amplia performance em exercícios de 1-4 min.","Combinações"],
-["🧪","Citrulina malato","Creatina + citrulina é ótima para pump e recuperação.","Combinações"],
-["💊","Multivitamínico","Sem interação negativa — pode combinar tranquilamente.","Combinações"],
-["🦴","Vitamina D","Vitamina D + creatina ajuda em força e saúde óssea.","Combinações"],
-["🧂","Eletrólitos","Eletrólitos + creatina no treino ajuda na hidratação.","Combinações"],
-["🥛","Proteína","Combinar com qualquer proteína aumenta a absorção.","Combinações"],
-["🍌","Carboidratos","Carbo + creatina potencializa a captação muscular.","Combinações"],
-["🥗","Ômega-3","Ômega-3 + creatina tem ação anti-inflamatória e de recuperação.","Combinações"],
-["💊","Glutamina","Pode combinar, mas glutamina isolada tem efeito modesto.","Combinações"],
-["🍵","Chá verde","Sem interação negativa — funciona bem junto.","Combinações"],
-["🧪","BCAA","Pode combinar, mas BCAA tem efeito limitado se você come proteína suficiente.","Combinações"],
-["☕","Pré-treino","Cuidado com excesso de cafeína em alguns pré-treinos.","Combinações"],
-["🥤","Isotônico","Isotônicos são veículos práticos para a creatina.","Combinações"],
-["💊","ZMA","Sem interação conhecida negativa.","Combinações"],
-["🦴","Cálcio","Sem prejuízo — tome em horários separados se quiser.","Combinações"],
-["🧪","Ashwagandha","Pode combinar para recuperação e redução de estresse.","Combinações"],
-["💊","Cafeína em cápsula","Combine com moderação para evitar taquicardia.","Combinações"],
-["🍹","Suco de uva","Junto com creatina, é uma das melhores combinações para absorção.","Combinações"],
-["🍯","Mel","Uma colher de mel com creatina é uma estratégia clássica.","Combinações"],
-["🍊","Vitamina C","Antioxidante que ajuda na recuperação — combina bem.","Combinações"],
-["🧪","Taurina","Sem interação negativa — combinação comum em energéticos.","Combinações"],
-["💊","Carnitina","Pode combinar, mas efeitos de cada uma são independentes.","Combinações"],
-["🥤","Colágeno","Não interfere — pode tomar no mesmo dia em horários separados.","Combinações"],
-["🦴","Magnésio","Sem interação negativa — ajuda no relaxamento muscular.","Combinações"],
-["🍵","Cafeína do chá","Funciona como veículo, mas modere a quantidade.","Combinações"],
-["🥩","Proteína de carne","Tome creatina junto com refeição proteica para melhor absorção.","Combinações"],
-["🍚","Arroz e feijão","Prato clássico brasileiro + creatina = absorção ótima.","Combinações"],
-["🎯","Estratégia","Não existe combinação 'mágica' — foque na consistência.","Combinações"],
-
-/* ===== CIÊNCIA E MECANISMOS (351-370) ===== */
-["🔬","Mecanismo","A creatina recicla ATP rapidamente, fornecendo energia explosiva.","Ciência"],
-["⚡","ATP","ATP é a moeda energética das células; creatina ajuda a regenerá-la.","Ciência"],
-["💧","Fosfocreatina","A creatina é armazenada no músculo como fosfocreatina.","Ciência"],
-["📊","Saturação","O músculo tem um limite de creatina que consegue armazenar (~150-160 mmol/kg).","Ciência"],
-["🧪","Síntese endógena","O corpo produz cerca de 1g de creatina por dia no fígado e rins.","Ciência"],
-["🥩","Dieta","A dieta fornece cerca de 1-2g de creatina por dia em quem come carne.","Ciência"],
-["🩸","Transporte","A creatina é transportada para o músculo via transportador CRT1.","Ciência"],
-["🧠","Cérebro","O cérebro também usa creatina, mas tem transportador próprio.","Ciência"],
-["💊","Biodisponibilidade","A creatina monohidratada tem biodisponibilidade de ~99%.","Ciência"],
-["🔬","Solubilidade","A creatina é pouco solúvel em água — por isso dissolve lentamente.","Ciência"],
-["⚗️","Degradação","Em solução ácida ou quente, a creatina se degrada em creatinina.","Ciência"],
-["🌡️","Estabilidade","A creatina é estável em pó seco, mas perde potência em solução por dias.","Ciência"],
-["📈","Estudos","Mais de 1.000 estudos revisados por pares comprovam eficácia e segurança.","Ciência"],
-["🎓","ISSN","A Sociedade Internacional de Nutrição Esportiva apoia o uso de creatina.","Ciência"],
-["🩺","Consenso","Consenso científico: creatina é segura e eficaz em pessoas saudáveis.","Ciência"],
-["💊","Formas","A monohidratada é a forma mais estudada — outras formas não são superiores.","Ciência"],
-["🧪","HCl","Creatina HCl é mais solúvel, mas não mais eficaz que monohidratada.","Ciência"],
-["🎯","Kre-Alkalyn","É apenas creatina com tampão — mesmo efeito, custo maior.","Ciência"],
-["🌿","Kre-Alkalyn","Sem vantagem científica comprovada sobre a monohidratada comum.","Ciência"],
-["💎","Formas premium","Versões 'premium' costumam ser marketing, não ciência.","Ciência"],
-
-/* ===== SEGURANÇA / EFEITOS (371-395) ===== */
-["✅","Segura","Mais de 20 anos de pesquisa mostram segurança em pessoas saudáveis.","Segurança"],
-["👨‍⚕️","Consulte médico","Antes de começar, converse com seu médico — especialmente se tem condições prévias.","Segurança"],
-["🩺","Exames","Se fizer exames de sangue, avise que usa creatina.","Segurança"],
-["📊","Função renal","Creatinina sérica pode subir em exames sem dano renal real.","Segurança"],
-["🩸","Função hepática","Não há evidência de dano hepático em pessoas saudáveis.","Segurança"],
-["🚽","Desconforto gástrico","Pode ocorrer com doses altas — divida em doses menores.","Segurança"],
-["💧","Hidratação","Sempre beba bastante água — previne a maioria dos desconfortos.","Segurança"],
-["🩹","Sem efeitos graves","Não há relatos de efeitos adversos graves em pessoas saudáveis.","Segurança"],
-["💊","Sem contraindicação comum","Não tem contraindicação absoluta em pessoas saudáveis.","Segurança"],
-["⏸️","Pare se sentir","Se tiver algum sintoma desconfortável, pare o uso e procure médico.","Segurança"],
-["🧪","Interações","Poucas interações medicamentosas conhecidas — avise seu médico.","Segurança"],
-["💉","Sem hormônios","Não contém hormônios — é apenas um composto nitrogenado.","Segurança"],
-["🧂","Sem estimulantes","Não contém cafeína ou outros estimulantes.","Segurança"],
-["💊","Sem doping","Não é proibida pela WADA — pode ser usada por atletas.","Segurança"],
-["🥇","Permitida no esporte","É aprovada por todas as federações esportivas internacionais.","Segurança"],
-["🩺","Recomendação clínica","É usada em contextos clínicos por médicos, com segurança.","Segurança"],
-["💧","Água em excesso","Também faz mal — beba a quantidade recomendada, não em excesso.","Segurança"],
-["☕","Cafeína","Modere o uso combinado com cafeína para evitar insônia.","Segurança"],
-["🍺","Álcool","Evite combinar com álcool — prejudica recuperação e hidratação.","Segurança"],
-["🚭","Fumo","Não interfere diretamente, mas afeta a recuperação geral.","Segurança"],
-["💊","Antibióticos","Não há interação conhecida relevante.","Segurança"],
-["🩺","Pressão alta","Não aumenta a pressão em pessoas saudáveis.","Segurança"],
-["🫀","Coração","Não sobrecarrega o coração em pessoas saudáveis.","Segurança"],
-["🧠","Cognição","Não prejudica a cognição — pelo contrário.","Segurança"],
-["🩸","Coagulação","Não afeta significativamente a coagulação.","Segurança"],
-
-/* ===== ARMAZENAMENTO / QUALIDADE (396-415) ===== */
-["📦","Local seco","Guarde a creatina em local seco e fresco, longe da umidade.","Armazenamento"],
-["☀️","Longe do sol","Evite exposição direta à luz solar — pode degradar o produto.","Armazenamento"],
-["🌡️","Temperatura","Mantenha em temperatura ambiente, entre 15°C e 25°C.","Armazenamento"],
-["🔒","Pote fechado","Mantenha o pote sempre bem fechado após o uso.","Armazenamento"],
-["🥄","Colher seca","Use colher seca — umidade no pote estraga a creatina.","Armazenamento"],
-["📅","Validade","Respeite a validade do fabricante. Geralmente 2-3 anos fechado.","Armazenamento"],
-["🧪","Puro","Prefira creatina monohidratada pura, sem aditivos desnecessários.","Armazenamento"],
-["🏷️","Selos","Busque selos de qualidade como Informed Sport ou NSF.","Armazenamento"],
-["💊","Fabricante","Prefira marcas reconhecidas com histórico no mercado.","Armazenamento"],
-["🧂","Sabor","Creatina com sabor é opção, mas confira a dose real por porção.","Armazenamento"],
-["🔬","Laudo","Marcas sérias disponibilizam laudos de pureza.","Armazenamento"],
-["📏","Peso","Compare o preço por grama de creatina, não pelo preço do pote.","Armazenamento"],
-["💧","Umidade","Se o pó endurecer, pode ter absorvido umidade — descarte se mudar cor/cheiro.","Armazenamento"],
-["🎨","Cor","A creatina pura é branca. Cores indicam aditivos ou degradação.","Armazenamento"],
-["👃","Cheiro","Creatina pura não tem cheiro forte — se tiver, desconfie.","Armazenamento"],
-["📦","Embalagem","Prefira potes opacos e bem vedados.","Armazenamento"],
-["🚚","Transporte","Evite transportar em locais quentes (porta-malas no sol).","Armazenamento"],
-["✈️","Viagem","Leve em sachês ou potes pequenos para viagens.","Armazenamento"],
-["🧪","Testes","Algumas marcas têm certificado de análise por lote.","Armazenamento"],
-["💰","Custo-benefício","Monohidratada pura costuma ser a melhor relação custo-eficácia.","Armazenamento"],
-
-/* ===== CURIOSIDADES (416-365) ===== */
-["🔬","Descoberta","A creatina foi descoberta em 1832 pelo químico francês Michel Chevreul.","Curiosidades"],
-["🏅","Olimpíadas","Atletas olímpicos usam creatina desde os anos 1990.","Curiosidades"],
-["📚","Pesquisas","Mais de 1.000 estudos publicados sobre creatina desde 1920.","Curiosidades"],
-["🍖","Dieta natural","Um onívoro obtém cerca de 1-2g de creatina por dia da alimentação.","Curiosidades"],
-["🌱","Vegetarianos","Vegetarianos têm 20-30% menos creatina muscular que onívoros.","Curiosidades"],
-["🧠","Cérebro","O cérebro também depende de creatina para função cognitiva.","Curiosidades"],
-["⚡","ATP","Seu corpo recicla cerca de 50kg de ATP por dia — a creatina ajuda nisso.","Curiosidades"],
-["🐟","Peixes","Peixes de água salgada têm mais creatina que os de água doce.","Curiosidades"],
-["🍖","Animais selvagens","Animais selvagens têm mais creatina que animais de cativeiro.","Curiosidades"],
-["🥩","Carne crua","Carne crua mantém 100% da creatina; cozida perde 30-60%.","Curiosidades"],
-["🌍","Consumo global","A creatina é um dos suplementos mais consumidos do mundo.","Curiosidades"],
-["🎯","Uso militar","Forças armadas estudam creatina para performance de soldados.","Curiosidades"],
-["🚀","NASA","Agências espaciais estudam creatina para prevenir perda muscular em astronautas.","Curiosidades"],
-["🧬","Genética","A resposta à creatina tem componente genético — alguns respondem mais.","Curiosidades"],
-["💊","Placebo","O efeito placebo existe, mas o efeito real da creatina é mensurável.","Curiosidades"],
-["🔬","Publicações","A creatina é uma das substâncias mais estudadas na ciência esportiva.","Curiosidades"],
-["🧪","Formas","Existem mais de 10 formas de creatina no mercado — apenas a monohidratada é bem estudada.","Curiosidades"],
-["🌡️","Estabilidade","A creatina em pó seco dura anos sem perder potência significativa.","Curiosidades"],
-["💰","Economia","O custo diário de creatina é de cerca de R$0,50 a R$1,50.","Curiosidades"],
-["🩺","Medicina","Médicos usam creatina em tratamentos de doenças neuromusculares.","Curiosidades"],
-["🧠","Estudantes","Universidades estudam creatina para performance acadêmica.","Curiosidades"],
-["🎮","eSports","Atletas de eSports começaram a usar creatina para foco e reflexos.","Curiosidades"],
-["🐕","Cães","A creatina também é estudada em animais de competição.","Curiosidades"],
-["🐎","Cavalos","Cavalos de corrida podem se beneficiar de creatina.","Curiosidades"],
-["🧊","Frio","A creatina ajuda na tolerância ao frio em ambientes extremos.","Curiosidades"],
-["🔥","Calor","Também há estudos sobre creatina e desempenho no calor.","Curiosidades"],
-["🏔️","Altitude","Estudos avaliam creatina em exercícios em altitude elevada.","Curiosidades"],
-["🌊","Mergulho","Pode ter papel na performance em esportes subaquáticos.","Curiosidades"],
-["🚴","Ultra-endurance","Em provas ultra-longas o benefício é menor, mas ainda existe.","Curiosidades"],
-["🎓","Educação","A creatina é ensinada em cursos de nutrição e educação física.","Curiosidades"],
-["📱","Tecnologia","Hoje existem apps como este para controlar sua suplementação.","Curiosidades"],
-["🌟","Reconhecimento","É considerada o suplemento #1 por custo-benefício em performance.","Curiosidades"],
-["🔮","Futuro","Pesquisas continuam explorando novas aplicações clínicas da creatina.","Curiosidades"],
-["🎯","Simplicidade","Apesar da complexidade científica, o uso é simples: 3-5g por dia.","Curiosidades"],
-["💡","Dica final","Consistência + hidratação + treino = resultados visíveis com creatina.","Curiosidades"]
+["💪","Força muscular","Estudos mostram que a creatina aumenta a força em até 15% em exercícios de alta intensidade.","Benefícios"],
+["⚡","Potência explosiva","Melhora potência em sprints, saltos e arremessos. Ideal para esportes intermitentes.","Benefícios"],
+["💧","Retenção intramuscular","A água retida pela creatina fica DENTRO do músculo, não embaixo da pele.","Benefícios"],
+["🧠","Cognição e memória","Efeitos positivos na memória de curto prazo, especialmente com privação de sono.","Benefícios"],
+["🦴","Saúde óssea","Combinada com treino de força, ajuda a manter a densidade óssea.","Benefícios"],
+["🔥","Recuperação muscular","Acelera a recuperação entre séries e entre treinos, permitindo maior volume.","Benefícios"],
+["🏋️","Mais repetições","Você consegue fazer mais repetições com a mesma carga quando saturado.","Benefícios"],
+["📈","Hipertrofia","Combinada com treino e dieta, aumenta massa magra de forma consistente.","Benefícios"],
+["🩸","Redução de dano","Reduz marcadores de dano muscular após exercícios intensos.","Benefícios"],
+["🧬","Saúde celular","Participa do sistema fosfocreatina, essencial para reciclar ATP rapidamente.","Benefícios"],
+["🫀","Saúde cardíaca","Benefícios cardiovasculares, incluindo melhora da função endotelial.","Benefícios"],
+["🦵","Prevenção de sarcopenia","Em idosos, preserva massa muscular e força, reduzindo quedas.","Benefícios"],
+["🧠","Neuroproteção","Pesquisas sugerem efeito neuroprotetor em lesões cerebrais leves.","Benefícios"],
+["😴","Contra fadiga","Reduz a sensação de fadiga mental em tarefas cognitivas prolongadas.","Benefícios"],
+["💤","Qualidade do sono","Alguns estudos mostram melhora subjetiva na qualidade do sono.","Benefícios"],
+["🧊","Termorregulação","Ajuda na regulação da temperatura durante exercício no calor.","Benefícios"],
+["🩹","Cicatrização","Participa da regeneração celular, auxiliando recuperação de tecidos.","Benefícios"],
+["🦷","Saúde bucal","Possível efeito protetor sobre a densidade mineral óssea maxilar.","Benefícios"],
+["🧪","Metabolismo glicose","Pode melhorar a captação de glicose em resistência insulínica leve.","Benefícios"],
+["🏃","Performance aeróbia","Também ajuda em esportes aeróbios com tiros e sprints.","Benefícios"],
+["🥇","Vantagem esportiva","Um dos poucos suplementos com efeito ergogênico comprovado.","Benefícios"],
+["📊","Consistência","Benefícios aparecem em 3-4 semanas com uso constante.","Benefícios"],
+["🎯","Foco","Melhora a atenção sustentada durante treinos longos.","Benefícios"],
+["🕐","Rápida absorção","Absorvida em cerca de 1 hora após ingestão em jejum.","Benefícios"],
+["🩺","Uso clínico","Usada em doenças neuromusculares e metabólicas.","Benefícios"],
+["🚴","Recuperação ativa","Melhora a recuperação entre esforços repetidos.","Benefícios"],
+["💥","Ganho de potência","Aumenta potência média em 5-15% em exercícios de curta duração.","Benefícios"],
+["🎽","Resistência muscular","Você mantém mais repetições na última série quando saturado.","Benefícios"],
+["🧘","Redução do estresse oxidativo","Efeito antioxidante indireto em tecidos musculares.","Benefícios"],
+["🌡️","Termogênese","Efeito leve na termogênese adaptativa em treino de força.","Benefícios"],
+["🛡️","Imunidade","Melhora a recuperação e indiretamente a saúde geral.","Benefícios"],
+["🧠","Depressão leve","Possível efeito adjuvante em quadros depressivos leves.","Benefícios"],
+["💊","Não hormonal","Não altera eixos hormonais como testosterona ou GH.","Benefícios"],
+["⏱️","Efeito rápido","Saturação em 3-4 semanas ou 5-7 dias com loading.","Benefícios"],
+["🌊","Antioxidante celular","Protege células musculares contra danos oxidativos.","Benefícios"],
+["🦶","Estabilidade","Melhora controle motor fino em tarefas de precisão.","Benefícios"],
+["🎮","Reflexos","Melhora tempo de reação em testes computadorizados.","Benefícios"],
+["🚀","Performance geral","Melhora de 5-15% é o achado mais consistente da literatura.","Benefícios"],
+["🥗","Sem calorias","Não tem valor calórico, então não interfere em dietas.","Benefícios"],
+["🍽️","Não é estimulante","Não contém cafeína, não causa taquicardia ou insônia.","Benefícios"],
+["💧","Menos cãibras","Com hidratação adequada, reduz cãibras musculares.","Benefícios"],
+["🦵","Prevenção de lesão","Reduz fadiga muscular, diminuindo risco de lesões.","Benefícios"],
+["🎯","Atletas amadores","Tão eficaz em amadores quanto em atletas de elite.","Benefícios"],
+["🌎","Ampla pesquisa","Mais de 1.000 estudos revisados por pares.","Benefícios"],
+["🥩","Carne vermelha","Maior fonte natural: cerca de 5g por quilo de carne bovina.","Alimentos"],
+["🐟","Peixe","Salmão, atum e arenque contêm 3-5g por quilo.","Alimentos"],
+["🐔","Frango","Frango tem cerca de 3,4g de creatina por quilo.","Alimentos"],
+["🐖","Carne suína","Porco tem aproximadamente 5g por quilo.","Alimentos"],
+["🐟","Atum","Um filé de 150g fornece cerca de 0,7g de creatina natural.","Alimentos"],
+["🍖","Bife de vaca","Um bife de 200g contém 0,9-1g de creatina natural.","Alimentos"],
+["🦌","Carne de caça","Carnes de caça têm ainda mais creatina que gado comum.","Alimentos"],
+["🐮","Carne de cordeiro","Cordeiro tem 4-5g por quilo, similar à carne bovina.","Alimentos"],
+["🍗","Frango escuro","Carnes escuras têm mais creatina que carnes brancas.","Alimentos"],
+["🐟","Sardinha","Excelente fonte: cerca de 4-5g por quilo.","Alimentos"],
+["🐠","Tilápia","Peixes de água doce têm menos creatina que os de água salgada.","Alimentos"],
+["🥛","Leite","Leite contém cerca de 2g de creatina por litro.","Alimentos"],
+["🧀","Queijos","Queijos curados retêm alguma creatina do leite original.","Alimentos"],
+["🥚","Ovos","Ovos têm creatina em quantidade muito baixa.","Alimentos"],
+["🥬","Vegetais","Vegetais NÃO contêm creatina natural.","Alimentos"],
+["🌰","Castanhas","Castanhas não contêm creatina, mas fornecem gorduras boas.","Alimentos"],
+["🍚","Arroz","Nenhum carboidrato contém creatina.","Alimentos"],
+["🥦","Brócolis","Vegetais não têm creatina, mas ajudam na saúde geral.","Alimentos"],
+["🫘","Feijão","Leguminosas não fornecem creatina.","Alimentos"],
+["🍓","Frutas","Frutas não contêm creatina, mas ajudam na recuperação.","Alimentos"],
+["🍲","Caldos de carne","Caldos concentrados retêm pequenas quantidades de creatina.","Alimentos"],
+["🐟","Bacalhau","Peixes salgados mantêm cerca de 3g por quilo.","Alimentos"],
+["🦐","Camarão","Frutos do mar têm cerca de 2g por quilo.","Alimentos"],
+["🦪","Ostras","Contêm creatina, em concentração menor que peixes.","Alimentos"],
+["🐙","Polvo","Moluscos variam entre 1-3g por quilo.","Alimentos"],
+["🥓","Bacon","Contém creatina, mas o processamento reduz parte.","Alimentos"],
+["🌭","Embutidos","Têm menos creatina que carnes frescas.","Alimentos"],
+["🍖","Costela","Mantém praticamente todo o conteúdo de creatina.","Alimentos"],
+["🍗","Frango orgânico","Frango criado solto tem teor levemente maior.","Alimentos"],
+["🐟","Tilápia selvagem","Peixes selvagens têm mais creatina que cativeiro.","Alimentos"],
+["🥩","Carne de búfalo","Rica em creatina, cerca de 5g por quilo.","Alimentos"],
+["🍗","Peru","Peito de peru tem cerca de 3g por quilo.","Alimentos"],
+["🐟","Anchova","Pequenas, mas concentram muita creatina por quilo.","Alimentos"],
+["🍲","Sopas de osso","Caldos retêm parte da creatina da carne.","Alimentos"],
+["🔥","Cozimento","O cozimento prolongado destrói parte da creatina.","Alimentos"],
+["❄️","Congelamento","Congelar preserva, mas não aumenta a creatina.","Alimentos"],
+["🍳","Grelhar","Grelhar rapidamente preserva mais creatina que ferver.","Alimentos"],
+["🥘","Estrogonofe","Mantém a creatina da carne.","Alimentos"],
+["🌮","Carnes moídas","Têm o mesmo teor de creatina da carne inteira.","Alimentos"],
+["🍢","Churrasco","Preserva bem por cozimento rápido em alta temperatura.","Alimentos"],
+["🥫","Carne enlatada","Enlatados perdem parte durante processamento.","Alimentos"],
+["🍱","Sushi de salmão","Salmão cru preserva 100% da creatina.","Alimentos"],
+["🐟","Ceviche","Peixe cru mantém praticamente toda a creatina.","Alimentos"],
+["🥩","Carne seca","Mantém parte, mas o sal reduz absorção.","Alimentos"],
+["🧂","Sal","Não interfere, mas cuidado com excesso de sódio.","Alimentos"],
+["🍗","Asa de frango","Similar ao restante da ave, cerca de 3g/kg.","Alimentos"],
+["🥩","Picanha","Mantém cerca de 5g por quilo.","Alimentos"],
+["🐟","Salmão selvagem","Tem mais creatina que o de cativeiro.","Alimentos"],
+["🦈","Tubarão","Tem creatina, mas não são comuns na alimentação.","Alimentos"],
+["🐊","Jacaré","Carnes exóticas têm teor similar ao frango.","Alimentos"],
+["🍲","Cozido","Perde creatina para a água do cozimento.","Alimentos"],
+["🔬","Biodisponibilidade","Absorção similar à suplementada, mas em doses menores.","Alimentos"],
+["⚖️","Dose por peso","Recomendação: 0,03g por kg de peso por dia para manutenção.","Dosagem"],
+["📏","Dose padrão","A dose diária de manutenção mais usada é 3-5g.","Dosagem"],
+["🎯","Saturação","Para saturar rápido: 20g/dia em 4 doses por 5-7 dias.","Dosagem"],
+["📅","Manutenção após saturação","Depois, mantenha 3-5g por dia para preservar estoques.","Dosagem"],
+["🧮","Abaixo de 70kg","3g por dia é geralmente suficiente para manutenção.","Dosagem"],
+["🧮","70-90kg","5g por dia é a dose de manutenção recomendada.","Dosagem"],
+["🧮","Acima de 90kg","Doses de 7g por dia são sugeridas por alguns profissionais.","Dosagem"],
+["⏰","Dividir doses","Doses acima de 5g podem ser divididas em 2 tomadas.","Dosagem"],
+["🥄","Colher dosadora","Uma colher de chá cheia equivale a cerca de 3g.","Dosagem"],
+["🥄","Colher de sopa","Contém aproximadamente 10-12g de creatina.","Dosagem"],
+["⚡","Fase de loading","A saturação é opcional — sem ela, satura em 3-4 semanas.","Dosagem"],
+["🏃","Sem loading","Se preferir, tome 5g/dia direto. Em 3-4 semanas mesma saturação.","Dosagem"],
+["📊","Pesquisa científica","A ISSN recomenda 5g por dia para adultos.","Dosagem"],
+["🎓","Consenso","Dose de manutenção entre 0,03 e 0,05g/kg.","Dosagem"],
+["🔬","Meia-vida","Meia-vida de 3-4 horas no sangue, mas estoques duram dias.","Dosagem"],
+["🥤","Diluição","Dissolva em pelo menos 200-300ml de água ou suco.","Dosagem"],
+["🌡️","Temperatura","Evite líquidos muito quentes: degrada em creatinina.","Dosagem"],
+["🥶","Água fria","Água ambiente ou fria dissolve melhor sem degradar.","Dosagem"],
+["😋","Sabor neutro","A monohidratada é praticamente sem sabor.","Dosagem"],
+["🍹","Com suco","Suco de uva ajuda na absorção pela insulina.","Dosagem"],
+["⏱️","Dose única","5g por dia é tão eficaz quanto múltiplas doses pequenas.","Dosagem"],
+["🎯","Timing não crítico","O horário importa menos que a consistência diária.","Dosagem"],
+["🍽️","Com refeição","Melhora a absorção e reduz desconforto gástrico.","Dosagem"],
+["🌅","Pós-treino","Leve vantagem pela maior captação muscular.","Dosagem"],
+["☀️","Manhã","Ajuda a manter o hábito e evita esquecimento.","Dosagem"],
+["🌙","Antes de dormir","Popular por coincidir com a recuperação noturna.","Dosagem"],
+["🔄","Qualquer horário","Escolha um horário que você não esqueça.","Dosagem"],
+["📆","Todos os dias","Tome também nos dias de descanso.","Dosagem"],
+["🛌","Dias sem treino","Não pule nesses dias — mantém o estoque muscular.","Dosagem"],
+["✈️","Viagem","Leve sachês ou potes pequenos.","Dosagem"],
+["🧊","Dose fracionada","Se desconforto, divida em 2,5g manhã e 2,5g noite.","Dosagem"],
+["🥄","Dose nivelada","Use sempre colher nivelada.","Dosagem"],
+["🎯","Individualize","Ajuste conforme seu peso e resposta individual.","Dosagem"],
+["📈","Monitoramento","Se o peso variar muito, recalcule a dose.","Dosagem"],
+["🩺","Consulta","Doença renal: consulte médico antes.","Dosagem"],
+["🥤","Com água","O mais tradicional e igualmente eficaz.","Dosagem"],
+["💊","Cápsulas","Mesma eficácia que o pó, mas mais caras.","Dosagem"],
+["🍬","Gomas","Práticas, mas podem ter dose menor por unidade.","Dosagem"],
+["📦","Comprimidos","Raramente atingem 5g por dose.","Dosagem"],
+["💧","Com isotônico","Prático para usar durante o treino.","Dosagem"],
+["🔋","Sem ciclo","Não é necessário ciclar ou pausar.","Dosagem"],
+["♾️","Uso contínuo","Contínuo é seguro e recomendado.","Dosagem"],
+["⏸️","Pausa não indicada","Pausar só faz os estoques caírem.","Dosagem"],
+["🎓","Aprendizado","Ajuste conforme seu corpo responde.","Dosagem"],
+["📊","Estudos longos","Até 5 anos mostram uso contínuo seguro.","Dosagem"],
+["⚠️","Dose muito alta","Acima de 10g de uma vez causa desconforto gástrico.","Excesso"],
+["🚽","Diarreia","Principal sinal de excesso em dose única.","Excesso"],
+["🤢","Náusea","Indica dose alta demais ou estômago sensível.","Excesso"],
+["💩","Desconforto abdominal","Cólicas e gases com doses altas sem fracionamento.","Excesso"],
+["💧","Desidratação","Dose alta sem água causa desidratação paradoxal.","Excesso"],
+["🚰","Sede excessiva","Indica necessidade de mais água.","Excesso"],
+["⚠️","Sem benefício extra","Acima de 5g não aumenta benefício.","Excesso"],
+["💸","Desperdício","Só aumenta custo e excreção pela urina.","Excesso"],
+["🫘","Sobrecarga renal","Em doença renal prévia, sobrecarrega os rins.","Excesso"],
+["💊","Não é tóxica","NÃO é tóxica em pessoas saudáveis, mas excesso é desnecessário.","Excesso"],
+["🩸","Creatinina sérica","Doses altas podem elevar em exames, sem dano renal real.","Excesso"],
+["📊","Falso positivo","Exames podem dar falso positivo por isso.","Excesso"],
+["🩺","Comunique ao médico","Avise que usa creatina antes de exames.","Excesso"],
+["⏸️","Suspender antes","Suspenda 3-5 dias antes de exames renais.","Excesso"],
+["💦","Hidrate","Se tomou dose alta, beba água nas horas seguintes.","Excesso"],
+["😰","Ansiedade","Doses altas podem causar em pessoas sensíveis.","Excesso"],
+["🤯","Dor de cabeça","Raro, por desidratação.","Excesso"],
+["🧠","Confusão mental","Raríssimo, por desequilíbrio hídrico.","Excesso"],
+["🌡️","Febre","Não é esperada, mas diarreia pode causar desidratação.","Excesso"],
+["😵","Tontura","Se não beber água suficiente com a dose.","Excesso"],
+["🥵","Sudorese","Não é comum, pode indicar termorregulação alterada.","Excesso"],
+["💤","Insônia","Não é estimulante, mas excesso pode causar desconforto.","Excesso"],
+["🫀","Palpitações","Muito raro, geralmente outra causa.","Excesso"],
+["🚫","Álcool","Evite tomar junto com álcool.","Excesso"],
+["☕","Cafeína","Altas doses + creatina aumentam desidratação.","Excesso"],
+["🧂","Sódio","Não combine com muito sal.","Excesso"],
+["🥤","Refrigerantes","Podem piorar desconforto gástrico.","Excesso"],
+["🍺","Álcool (2)","Prejudica recuperação e pode anular benefícios.","Excesso"],
+["🚨","Procure médico","Sintomas persistentes: pare o uso e consulte.","Excesso"],
+["📉","Reduza a dose","Se sintomas, reduza para 3g/dia.","Excesso"],
+["🔄","Recomece devagar","Se parou por desconforto, volte com 2-3g/dia.","Excesso"],
+["💊","Sem dose dupla","Nunca dobre no dia seguinte.","Excesso"],
+["📉","Falta de creatina","Sem creatina suficiente, perde estoques em 4-6 semanas.","Falta"],
+["🚫","Sem efeito","Abaixo de 2g/dia é insuficiente para manter estoques.","Falta"],
+["😴","Fadiga precoce","Fadiga mais cedo nos treinos de alta intensidade.","Falta"],
+["🏋️","Menos força","Força máxima cai cerca de 10% em relação ao saturado.","Falta"],
+["🔋","Recuperação lenta","Recupera mais devagar entre séries e treinos.","Falta"],
+["📉","Peso cai","Ao parar, perde 1-2kg de água intramuscular.","Falta"],
+["🧠","Foco reduzido","Tarefas cognitivas longas parecem mais cansativas.","Falta"],
+["🦵","Performance piora","Sprints e explosões ficam mais lentos.","Falta"],
+["🩸","Menos volume","Menos repetições com a mesma carga.","Falta"],
+["⚠️","Não é perigoso","Ficar sem creatina não faz mal, apenas perde performance.","Falta"],
+["🥩","Dieta ajuda","Ainda obtém 1-2g/dia de carne na alimentação.","Falta"],
+["🥗","Vegetarianos","Têm estoques naturalmente mais baixos.","Falta"],
+["⏰","Saturação leva tempo","Estoques caem após 4-6 semanas sem consumo.","Falta"],
+["🏆","Perda de pico","Perde 50% do estoque em 4 semanas sem creatina.","Falta"],
+["💧","Menos hidratação","Músculos retêm menos água, você parece mais seco.","Falta"],
+["📊","Difícil notar","Diferença de 10-20% em performance.","Falta"],
+["🔄","Recuperação","3-4 semanas para recuperar estoques.","Falta"],
+["🥱","Apatia","Alguns relatam menor disposição quando param.","Falta"],
+["🩺","Não confunda","Fadiga pode ser sono, dieta ou overtraining.","Falta"],
+["📅","Consistência","Principal motivo de quem não sente efeito.","Falta"],
+["🎯","Dose mínima","Cerca de 3g/dia para a maioria dos adultos.","Falta"],
+["⚠️","Mulheres","Têm estoques naturalmente mais baixos que homens.","Falta"],
+["👴","Idosos","Estoques menores — suplementação faz ainda mais diferença.","Falta"],
+["💊","Não dobra","Não adianta dobrar por esquecer um dia.","Falta"],
+["🎓","Volte ao normal","Após esquecer, retome a dose normal no dia seguinte.","Falta"],
+["💧","Água é essencial","Com creatina, beba 30-40ml por kg por dia.","Hidratação"],
+["🚰","Meta diária","75kg → pelo menos 2,5 a 3 litros por dia.","Hidratação"],
+["🥤","Com a dose","Cada dose com pelo menos 200-300ml de água.","Hidratação"],
+["🌊","Água ao acordar","Comece o dia com um copo grande antes da creatina.","Hidratação"],
+["🚱","Sede é sinal","Se sentir sede, já está levemente desidratado.","Hidratação"],
+["💦","Cor da urina","Amarelo claro = adequado; escuro = beba mais.","Hidratação"],
+["🏋️","Treino pesado","Beba 500-700ml de água por hora durante treinos.","Hidratação"],
+["☀️","Dias quentes","Aumente em 500ml a 1L.","Hidratação"],
+["☕","Cafeína","Compense com mais água.","Hidratação"],
+["🍺","Álcool","Desidrata: reforce no dia seguinte.","Hidratação"],
+["🥤","Isotônicos","Ajudam durante treinos longos.","Hidratação"],
+["🧂","Eletrólitos","Com muita água pura, reponha sódio e potássio.","Hidratação"],
+["💊","Não é diurético","Retém água DENTRO do músculo.","Hidratação"],
+["🚨","Desidratação","Sem água, creatina pode causar dor de cabeça.","Hidratação"],
+["💧","Antes do treino","500ml de água 1-2h antes.","Hidratação"],
+["🥵","Durante o treino","Pequenos goles mesmo sem sede.","Hidratação"],
+["🌙","Antes de dormir","Um copo ajuda na recuperação noturna.","Hidratação"],
+["☀️","Manhã","1 copo grande ao acordar.","Hidratação"],
+["🍵","Chás","Sem cafeína contam como hidratação.","Hidratação"],
+["🥥","Água de coco","Ótima para repor eletrólitos.","Hidratação"],
+["🍋","Limão na água","Ajuda algumas pessoas a beber mais.","Hidratação"],
+["📱","App de água","Use o próprio app para monitorar.","Hidratação"],
+["🚰","Garrafa visível","Deixe na mesa — aumenta consumo inconsciente.","Hidratação"],
+["🎯","Metas","Divida em 4-5 momentos ao longo do dia.","Hidratação"],
+["💧","Mais que o normal","Com creatina, beba 20-30% a mais.","Hidratação"],
+["⚠️","Sobrecarga hídrica","Não passe de 4-5L/dia sem orientação.","Hidratação"],
+["🥵","Treino no calor","Pode perder 1-2L de suor por hora.","Hidratação"],
+["🧊","Água gelada","Absorvida mais rapidamente durante o treino.","Hidratação"],
+["🩺","Rins","Com hidratação, creatina não faz mal aos rins saudáveis.","Hidratação"],
+["💧","Sede noturna","Se acordar com sede, beba.","Hidratação"],
+["⏰","Timing não crítico","Horário importa menos que a constância.","Timing"],
+["🌅","Pós-treino","Leve vantagem para absorção.","Timing"],
+["🍽️","Com refeição","Melhora absorção e reduz desconforto.","Timing"],
+["☀️","Manhã","Ajuda a manter o hábito.","Timing"],
+["🌙","Antes de dormir","Coincide com a recuperação noturna.","Timing"],
+["🍹","Com suco","Carboidratos elevam insulina, ajudam captação.","Timing"],
+["☕","Longe do café","Se for sensível à cafeína.","Timing"],
+["🔄","Mesmo horário","Cria hábito e melhora adesão.","Timing"],
+["🏋️","Pré-treino","Não é necessário, mas também não faz mal.","Timing"],
+["⏱️","Absorção","Aparece no sangue cerca de 1h após.","Timing"],
+["📅","Dias sem treino","Tome também, não pule.","Timing"],
+["🌡️","Com água","Veículo mais comum.","Timing"],
+["🥛","Com leite","Válido — proteína ajuda na absorção.","Timing"],
+["🍚","Com carboidratos","Aumentam captação via insulina.","Timing"],
+["🥤","Com whey","Combo clássico e eficaz.","Timing"],
+["🍌","Com banana","Pré ou pós-treino prático.","Timing"],
+["🥩","Com proteína","Aumenta a creatina total absorvida.","Timing"],
+["🚰","Antes de dormir","Beba água suficiente para não desidratar.","Timing"],
+["💤","Impacto no sono","Creatina não interfere, mas água em excesso sim.","Timing"],
+["🌞","Dose única","Tão eficaz quanto dividir.","Timing"],
+["📊","Pesquisas","Timing não altera resultados significativamente.","Timing"],
+["🧠","Nunca é tarde","Se lembrou à noite, tome.","Timing"],
+["⏸️","Dose esquecida","Tome quando lembrar, sem dobrar.","Timing"],
+["🌅","Ao acordar","Em jejum é eficaz.","Timing"],
+["🍽️","Antes do café","Alguns preferem para não misturar sabores.","Timing"],
+["🥣","Com cereal","Adicionar no cereal do café é prático.","Timing"],
+["🍵","Com chá","Chás sem cafeína funcionam.","Timing"],
+["🥤","Com smoothie","Smoothies são excelentes veículos.","Timing"],
+["🎯","Consistência","O timing ideal é o que você consegue manter.","Timing"],
+["💊","Individualize","Descubra o horário que encaixa na sua rotina.","Timing"],
+["🚫","Não faz mal aos rins","Em pessoas saudáveis, NÃO prejudica. Mito.","Mitos"],
+["💧","Não é anabolizante","É composto natural, não hormônio.","Mitos"],
+["🧊","Não causa retenção subcutânea","Água fica DENTRO do músculo.","Mitos"],
+["💊","Não precisa de ciclo","Não é necessário pausar.","Mitos"],
+["🩺","Não causa câncer","Nenhuma evidência.","Mitos"],
+["👨","Não causa queda de cabelo","Sem evidência científica.","Mitos"],
+["🚹","Não afeta testosterona","Não altera hormônios.","Mitos"],
+["🔥","Não engorda","Não tem calorias.","Mitos"],
+["🧂","Não é sal","É composto nitrogenado.","Mitos"],
+["💧","Não desidrata","Com hidratação, hidrata o músculo.","Mitos"],
+["🦴","Não enfraquece os ossos","Ajuda a manter densidade.","Mitos"],
+["🧠","Não causa confusão","Doses normais são seguras.","Mitos"],
+["🚽","Não sobrecarrega os rins","Em pessoas saudáveis.","Mitos"],
+["💊","Não é pré-treino","Não dá energia imediata.","Mitos"],
+["⏸️","Não precisa pausar","Pausar só reduz estoques.","Mitos"],
+["👩","Não é só para homens","Mulheres se beneficiam igualmente.","Mitos"],
+["👴","Não é só para jovens","Idosos têm benefícios ainda maiores.","Mitos"],
+["🍔","Não substitui dieta","Ajuda mas não substitui alimentação.","Mitos"],
+["🏋️","Não é só para atletas","Sedentários também se beneficiam.","Mitos"],
+["💊","Não é placebo","Centenas de estudos comprovam.","Mitos"],
+["💸","Não precisa ser caro","Monohidratada pura é barata.","Mitos"],
+["🧪","Não é hormônio","Produzido pelo próprio corpo.","Mitos"],
+["🚫","Não causa câncer de próstata","Nenhum estudo liga.","Mitos"],
+["🫘","Não sobrecarrega o fígado","Sem evidência de dano.","Mitos"],
+["💩","Não é laxante","Desconforto só com doses altas.","Mitos"],
+["🎯","Não é placebo caro","Substância mais estudada.","Mitos"],
+["🥗","Sem contraindicação para vegetarianos","Se beneficiam ainda mais.","Mitos"],
+["💊","Não causa dependência","Pode parar quando quiser.","Mitos"],
+["🩸","Não engrossa o sangue","Não altera viscosidade.","Mitos"],
+["🧠","Não causa demência","Sem evidência — o oposto é estudado.","Mitos"],
+["👩","Mulheres","Respondem igualmente bem. Não é só para homens.","Grupos"],
+["👩‍🦳","Pós-menopausa","Preserva massa óssea e muscular.","Grupos"],
+["👴","Idosos","Benefícios significativos contra sarcopenia.","Grupos"],
+["👶","Adolescentes","Podem usar com orientação profissional.","Grupos"],
+["🧒","Crianças","Não recomendado antes da puberdade sem indicação.","Grupos"],
+["🤰","Grávidas","Consulte médico antes.","Grupos"],
+["🤱","Amamentação","Consulte médico antes.","Grupos"],
+["🩺","Doença renal","Só com autorização médica.","Grupos"],
+["💊","Diabéticos","Monitore glicemia com profissional.","Grupos"],
+["🫀","Cardiopatas","Consulte médico; estudos indicam segurança.","Grupos"],
+["🥗","Vegetarianos","Estoques menores, benefício maior.","Grupos"],
+["🌱","Veganos","Maior benefício teórico.","Grupos"],
+["🏃","Corredores","Ganham em tiros e sprints.","Grupos"],
+["🚴","Ciclistas","Ganham em arrancadas.","Grupos"],
+["⚽","Futebol","Altamente benéfica por esforços intermitentes.","Grupos"],
+["🏀","Basquete","Exige explosão constante.","Grupos"],
+["🏊","Nadadores","Benefício em provas curtas e médias.","Grupos"],
+["🥊","Lutadores","Ganhos de força e potência.","Grupos"],
+["🏋️","Powerlifters","Um dos maiores benefícios.","Grupos"],
+["🏈","Futebol americano","Esporte explosivo se beneficia muito.","Grupos"],
+["🎾","Tenistas","Arrancadas e potência de saque.","Grupos"],
+["🥋","Artes marciais","Força e potência.","Grupos"],
+["🚴‍♀️","Atletas femininas","Mesma resposta dos homens.","Grupos"],
+["🧘","Sedentários","Ganham força com treino leve.","Grupos"],
+["💼","Trabalhadores","Trabalho físico pesado ganha resistência.","Grupos"],
+["🎓","Estudantes","Benefícios cognitivos com pouco sono.","Grupos"],
+["🧓","Idosos frágeis","Reduzem quedas.","Grupos"],
+["🦴","Osteoporose","Ajuda na densidade óssea.","Grupos"],
+["🩸","Anêmicos","Não trata anemia, mas ajuda recuperação.","Grupos"],
+["💊","Medicação","Verifique interações.","Grupos"],
+["🏥","Pós-cirúrgico","Ajuda na recuperação muscular.","Grupos"],
+["♿","Reabilitação","Útil em reabilitação física.","Grupos"],
+["🧠","Idosos cognitivo","Benefícios cognitivos possíveis.","Grupos"],
+["🏫","Adolescentes atletas","Sob supervisão profissional.","Grupos"],
+["🎯","Personalize","Converse com profissional de saúde.","Grupos"],
+["🥤","Whey protein","Combo clássico e eficaz para hipertrofia.","Combinações"],
+["☕","Cafeína","Funciona, mas modere se for sensível.","Combinações"],
+["🍬","Beta-alanina","Amplia performance em 1-4 min.","Combinações"],
+["🧪","Citrulina malato","Ótima para pump e recuperação.","Combinações"],
+["💊","Multivitamínico","Sem interação negativa.","Combinações"],
+["🦴","Vitamina D","Ajuda em força e saúde óssea.","Combinações"],
+["🧂","Eletrólitos","Ajuda na hidratação.","Combinações"],
+["🥛","Proteína","Aumenta absorção.","Combinações"],
+["🍌","Carboidratos","Potencializa captação muscular.","Combinações"],
+["🥗","Ômega-3","Ação anti-inflamatória.","Combinações"],
+["💊","Glutamina","Efeito modesto.","Combinações"],
+["🍵","Chá verde","Funciona bem junto.","Combinações"],
+["🧪","BCAA","Efeito limitado se come proteína suficiente.","Combinações"],
+["☕","Pré-treino","Cuidado com excesso de cafeína.","Combinações"],
+["🥤","Isotônico","Veículo prático.","Combinações"],
+["💊","ZMA","Sem interação negativa.","Combinações"],
+["🦴","Cálcio","Tome em horários separados.","Combinações"],
+["🧪","Ashwagandha","Combina para recuperação.","Combinações"],
+["💊","Cafeína cápsula","Modere para evitar taquicardia.","Combinações"],
+["🍹","Suco de uva","Uma das melhores combinações.","Combinações"],
+["🍯","Mel","Estratégia clássica.","Combinações"],
+["🍊","Vitamina C","Ajuda na recuperação.","Combinações"],
+["🧪","Taurina","Combinação comum em energéticos.","Combinações"],
+["💊","Carnitina","Efeitos independentes.","Combinações"],
+["🥤","Colágeno","Horários separados.","Combinações"],
+["🦴","Magnésio","Ajuda no relaxamento muscular.","Combinações"],
+["🍵","Cafeína do chá","Modere a quantidade.","Combinações"],
+["🥩","Proteína de carne","Melhor absorção.","Combinações"],
+["🍚","Arroz e feijão","Absorção ótima.","Combinações"],
+["🎯","Estratégia","Foque na consistência.","Combinações"],
+["🔬","Mecanismo","Recicla ATP rapidamente.","Ciência"],
+["⚡","ATP","Moeda energética das células.","Ciência"],
+["💧","Fosfocreatina","Forma armazenada no músculo.","Ciência"],
+["📊","Saturação","Limite de ~150-160 mmol/kg.","Ciência"],
+["🧪","Síntese endógena","O corpo produz ~1g por dia.","Ciência"],
+["🥩","Dieta","1-2g por dia para onívoros.","Ciência"],
+["🩸","Transporte","Via transportador CRT1.","Ciência"],
+["🧠","Cérebro","Tem transportador próprio.","Ciência"],
+["💊","Biodisponibilidade","~99% na monohidratada.","Ciência"],
+["🔬","Solubilidade","Pouco solúvel em água.","Ciência"],
+["⚗️","Degradação","Em solução ácida/quente, vira creatinina.","Ciência"],
+["🌡️","Estabilidade","Pó seco dura anos.","Ciência"],
+["📈","Estudos","Mais de 1.000 revisados.","Ciência"],
+["🎓","ISSN","Sociedade apoia o uso.","Ciência"],
+["🩺","Consenso","Segura e eficaz em pessoas saudáveis.","Ciência"],
+["💊","Formas","Monohidratada é a mais estudada.","Ciência"],
+["🧪","HCl","Mais solúvel, não mais eficaz.","Ciência"],
+["🎯","Kre-Alkalyn","Mesmo efeito, custo maior.","Ciência"],
+["🌿","Marketing","Formas 'premium' não são melhores.","Ciência"],
+["💎","Ciência","Monohidratada vence.","Ciência"],
+["✅","Segura","20+ anos de pesquisa mostram segurança.","Segurança"],
+["👨‍⚕️","Consulte médico","Antes de começar.","Segurança"],
+["🩺","Exames","Avise que usa creatina.","Segurança"],
+["📊","Função renal","Creatinina sérica pode subir sem dano real.","Segurança"],
+["🩸","Função hepática","Sem evidência de dano.","Segurança"],
+["🚽","Desconforto gástrico","Divida em doses menores.","Segurança"],
+["💧","Hidratação","Prevê a maioria dos desconfortos.","Segurança"],
+["🩹","Sem efeitos graves","Em pessoas saudáveis.","Segurança"],
+["💊","Sem contraindicação absoluta","Em pessoas saudáveis.","Segurança"],
+["⏸️","Pare se sentir","E procure médico.","Segurança"],
+["🧪","Interações","Poucas conhecidas.","Segurança"],
+["💉","Sem hormônios","Composto nitrogenado.","Segurança"],
+["🧂","Sem estimulantes","Não é cafeína.","Segurança"],
+["💊","Sem doping","Permitida pela WADA.","Segurança"],
+["🥇","Permitida","Aprovada por federações.","Segurança"],
+["🩺","Recomendação","Usada clinicamente.","Segurança"],
+["💧","Água","Não em excesso.","Segurança"],
+["☕","Cafeína","Modere.","Segurança"],
+["🍺","Álcool","Evite combinar.","Segurança"],
+["🚭","Fumo","Afeta recuperação geral.","Segurança"],
+["💊","Antibióticos","Sem interação relevante.","Segurança"],
+["🩺","Pressão alta","Não aumenta em pessoas saudáveis.","Segurança"],
+["🫀","Coração","Não sobrecarrega em saudáveis.","Segurança"],
+["🧠","Cognição","Não prejudica.","Segurança"],
+["🩸","Coagulação","Não afeta significativamente.","Segurança"],
+["📦","Local seco","Longe da umidade.","Armazenamento"],
+["☀️","Longe do sol","Pode degradar.","Armazenamento"],
+["🌡️","Temperatura","15-25°C.","Armazenamento"],
+["🔒","Pote fechado","Sempre fechado após uso.","Armazenamento"],
+["🥄","Colher seca","Umidade estraga.","Armazenamento"],
+["📅","Validade","Geralmente 2-3 anos fechado.","Armazenamento"],
+["🧪","Puro","Sem aditivos desnecessários.","Armazenamento"],
+["🏷️","Selos","Informed Sport ou NSF.","Armazenamento"],
+["💊","Fabricante","Marcas reconhecidas.","Armazenamento"],
+["🧂","Sabor","Confira dose real por porção.","Armazenamento"],
+["🔬","Laudo","Marcas sérias disponibilizam.","Armazenamento"],
+["📏","Peso","Compare preço por grama.","Armazenamento"],
+["💧","Umidade","Se endurecer, descarte se mudar cor/cheiro.","Armazenamento"],
+["🎨","Cor","Pura é branca. Cores = aditivos.","Armazenamento"],
+["👃","Cheiro","Pura não tem cheiro forte.","Armazenamento"],
+["📦","Embalagem","Potes opacos e bem vedados.","Armazenamento"],
+["🚚","Transporte","Evite locais quentes.","Armazenamento"],
+["✈️","Viagem","Sachês ou potes pequenos.","Armazenamento"],
+["🧪","Testes","Certificado por lote.","Armazenamento"],
+["💰","Custo-benefício","Monohidratada pura vence.","Armazenamento"],
+["🔬","Descoberta","Descoberta em 1832 por Chevreul.","Curiosidades"],
+["🏅","Olimpíadas","Usada desde os anos 1990.","Curiosidades"],
+["📚","Pesquisas","1.000+ estudos desde 1920.","Curiosidades"],
+["🍖","Dieta natural","Onívoros obtêm 1-2g/dia.","Curiosidades"],
+["🌱","Vegetarianos","20-30% menos creatina muscular.","Curiosidades"],
+["🧠","Cérebro","Também depende de creatina.","Curiosidades"],
+["⚡","ATP","Corpo recicla ~50kg ATP/dia.","Curiosidades"],
+["🐟","Peixes","Água salgada tem mais.","Curiosidades"],
+["🍖","Animais selvagens","Têm mais que cativeiro.","Curiosidades"],
+["🥩","Carne crua","Mantém 100%; cozida perde 30-60%.","Curiosidades"],
+["🌍","Consumo global","Um dos suplementos mais consumidos.","Curiosidades"],
+["🎯","Uso militar","Estudada para soldados.","Curiosidades"],
+["🚀","NASA","Estudada para astronautas.","Curiosidades"],
+["🧬","Genética","Resposta tem componente genético.","Curiosidades"],
+["💊","Placebo","Efeito real é mensurável.","Curiosidades"],
+["🔬","Publicações","Uma das substâncias mais estudadas.","Curiosidades"],
+["🧪","Formas","10+ formas no mercado.","Curiosidades"],
+["🌡️","Estabilidade","Pó seco dura anos.","Curiosidades"],
+["💰","Economia","R$0,50 a R$1,50 por dia.","Curiosidades"],
+["🩺","Medicina","Usada em doenças neuromusculares.","Curiosidades"],
+["🧠","Estudantes","Estudada para performance acadêmica.","Curiosidades"],
+["🎮","eSports","Usada por atletas de eSports.","Curiosidades"],
+["🐕","Cães","Estudada em animais de competição.","Curiosidades"],
+["🐎","Cavalos","Cavalos de corrida podem se beneficiar.","Curiosidades"],
+["🧊","Frio","Tolerância ao frio em ambientes extremos.","Curiosidades"],
+["🔥","Calor","Desempenho no calor.","Curiosidades"],
+["🏔️","Altitude","Exercícios em altitude elevada.","Curiosidades"],
+["🌊","Mergulho","Esportes subaquáticos.","Curiosidades"],
+["🚴","Ultra-endurance","Benefício menor mas existe.","Curiosidades"],
+["🎓","Educação","Ensinada em cursos de nutrição.","Curiosidades"],
+["📱","Tecnologia","Apps como este controlam sua suplementação.","Curiosidades"],
+["🌟","Reconhecimento","Suplemento #1 por custo-benefício.","Curiosidades"],
+["🔮","Futuro","Pesquisas continuam explorando aplicações.","Curiosidades"],
+["🎯","Simplicidade","Uso simples: 3-5g por dia.","Curiosidades"],
+["💡","Dica final","Consistência + hidratação + treino = resultados.","Curiosidades"]
 ];
 
-/* Categorias com ícones */
-const CAT_ICONS = {
-  'Benefícios':'💪','Alimentos':'🥩','Dosagem':'⚖️','Excesso':'⚠️','Falta':'📉',
-  'Hidratação':'💧','Timing':'⏰','Mitos':'🚫','Grupos':'👥','Combinações':'🧪',
-  'Ciência':'🔬','Segurança':'🛡️','Armazenamento':'📦','Curiosidades':'🌟'
-};
+const CAT_ICONS = {'Benefícios':'💪','Alimentos':'🥩','Dosagem':'⚖️','Excesso':'⚠️','Falta':'📉','Hidratação':'💧','Timing':'⏰','Mitos':'🚫','Grupos':'👥','Combinações':'🧪','Ciência':'🔬','Segurança':'🛡️','Armazenamento':'📦','Curiosidades':'🌟'};
 
 /* ============================================================
-   ESTADO DE DICAS
+   PWA — INSTALAÇÃO, MANIFEST E SERVICE WORKER
 ============================================================ */
-let dicaState = {
-  lidas: [],
-  favoritas: [],
-  ultimaData: null,
-  ocultarNotifHoje: false,
-  ultimaNotifData: null
-};
-function loadDicaState(){
-  try{ const r = localStorage.getItem(DICAS_KEY); if(r) dicaState = {...dicaState, ...JSON.parse(r)}; }catch(e){}
+const PWA_ICON_SVG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<defs>
+<linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0%" stop-color="#00e5b8"/>
+<stop offset="100%" stop-color="#00a888"/>
+</linearGradient>
+<linearGradient id="shine" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0%" stop-color="#ffffff" stop-opacity="0.35"/>
+<stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+</linearGradient>
+</defs>
+<rect width="512" height="512" rx="112" fill="url(#g)"/>
+<rect width="512" height="220" rx="112" fill="url(#shine)"/>
+<rect x="130" y="234" width="252" height="44" rx="12" fill="#06121f"/>
+<rect x="52" y="176" width="70" height="160" rx="20" fill="#06121f"/>
+<rect x="110" y="146" width="44" height="220" rx="14" fill="#06121f"/>
+<rect x="390" y="176" width="70" height="160" rx="20" fill="#06121f"/>
+<rect x="358" y="146" width="44" height="220" rx="14" fill="#06121f"/>
+<rect x="58" y="184" width="58" height="20" rx="8" fill="#ffffff" opacity="0.18"/>
+<rect x="396" y="184" width="58" height="20" rx="8" fill="#ffffff" opacity="0.18"/>
+</svg>`;
+
+const PWA_ICON_DATA_URL = 'data:image/svg+xml;base64,' + btoa(unescape(encodeURIComponent(PWA_ICON_SVG)));
+
+let pwaInstallPrompt = null;
+let pwaBannerFechado = false;
+
+function loadPwaState(){ try{ const r = localStorage.getItem(PWA_KEY); if(r) { const d = JSON.parse(r); pwaBannerFechado = !!d.bannerFechado; } }catch(e){} }
+function savePwaState(){ try{ localStorage.setItem(PWA_KEY, JSON.stringify({ bannerFechado: pwaBannerFechado })); }catch(e){} }
+
+function estaInstalado(){
+  return (window.matchMedia && window.matchMedia('(display-mode: standalone)').matches)
+      || window.navigator.standalone === true
+      || document.referrer.startsWith('android-app://');
 }
+
+function injetarManifest(){
+  try{
+    const manifest = {
+      name: 'Creatina Control',
+      short_name: 'Creatina',
+      description: 'Controle de suplementação de creatina com dose por peso, hidratação, evolução e 365 dicas.',
+      start_url: location.pathname + location.search,
+      scope: './',
+      display: 'standalone',
+      orientation: 'portrait',
+      background_color: '#070f1f',
+      theme_color: '#00e5b8',
+      lang: 'pt-BR',
+      dir: 'ltr',
+      categories: ['health', 'fitness', 'lifestyle'],
+      icons: [
+        { src: PWA_ICON_DATA_URL, sizes: '192x192', type: 'image/svg+xml', purpose: 'any' },
+        { src: PWA_ICON_DATA_URL, sizes: '512x512', type: 'image/svg+xml', purpose: 'any' },
+        { src: PWA_ICON_DATA_URL, sizes: '512x512', type: 'image/svg+xml', purpose: 'maskable' }
+      ]
+    };
+    const blob = new Blob([JSON.stringify(manifest)], { type: 'application/manifest+json' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('link');
+    link.rel = 'manifest';
+    link.href = url;
+    document.head.appendChild(link);
+    // Icon
+    const fav = document.createElement('link');
+    fav.rel = 'icon';
+    fav.type = 'image/svg+xml';
+    fav.href = PWA_ICON_DATA_URL;
+    document.head.appendChild(fav);
+    const apple = document.createElement('link');
+    apple.rel = 'apple-touch-icon';
+    apple.href = PWA_ICON_DATA_URL;
+    document.head.appendChild(apple);
+    console.log('✅ Manifest injetado dinamicamente');
+  }catch(e){ console.warn('Manifest:', e); }
+}
+
+function registrarServiceWorker(){
+  if (!('serviceWorker' in navigator)) { console.warn('SW não suportado'); return; }
+  if (location.protocol !== 'https:' && location.hostname !== 'localhost' && location.hostname !== '127.0.0.1'){
+    console.warn('SW precisa de HTTPS');
+    return;
+  }
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./sw.js')
+      .then((reg) => {
+        console.log('✅ Service Worker registrado:', reg.scope);
+        reg.addEventListener('updatefound', () => console.log('🔄 Nova versão disponível'));
+      })
+      .catch((err) => {
+        console.warn('⚠️ Service Worker não registrado:', err.message);
+        console.warn('💡 Crie um arquivo sw.js na mesma pasta do index.html para ativar o modo offline.');
+      });
+  });
+}
+
+function mostrarBannerPWA(){
+  if (pwaBannerFechado) return;
+  if (estaInstalado()) return;
+  if (!pwaInstallPrompt) return;
+  const b = document.getElementById('pwaBanner');
+  if (b) b.classList.add('show');
+}
+function fecharBannerPWA(){
+  pwaBannerFechado = true;
+  savePwaState();
+  const b = document.getElementById('pwaBanner');
+  if (b) b.classList.remove('show');
+}
+
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  pwaInstallPrompt = e;
+  console.log('✅ PWA pronto para instalar');
+  setTimeout(mostrarBannerPWA, 1500);
+  atualizarBadgeMenu();
+});
+window.addEventListener('appinstalled', () => {
+  console.log('🎉 PWA instalado!');
+  pwaInstallPrompt = null;
+  fecharBannerPWA();
+  if (typeof showToast === 'function') showToast('🎉 App instalado!');
+});
+
+async function instalarApp(){
+  if (estaInstalado()){
+    if (typeof showToast === 'function') showToast('✅ App já instalado');
+    return;
+  }
+  if (pwaInstallPrompt){
+    try{
+      pwaInstallPrompt.prompt();
+      const r = await pwaInstallPrompt.userChoice;
+      pwaInstallPrompt = null;
+      if (r.outcome === 'accepted'){
+        if (typeof showToast === 'function') showToast('🎉 Instalando...');
+      } else {
+        if (typeof showToast === 'function') showToast('Instalação cancelada');
+      }
+      fecharBannerPWA();
+    }catch(e){
+      console.warn(e);
+    }
+    return;
+  }
+  // Fallback: instruções manuais
+  const ua = navigator.userAgent;
+  const isiOS = /iPad|iPhone|iPod/.test(ua);
+  const isAndroid = /Android/.test(ua);
+  const isBrave = navigator.brave && typeof navigator.brave.isBrave === 'function';
+  let msg = '';
+  if (isiOS){
+    msg = 'No <b>Safari</b>: toque em <b>Compartilhar</b> (📤) → <b>Adicionar à Tela de Início</b>.';
+  } else if (isBrave){
+    msg = 'No <b>Brave</b>: toque em <b>⋮</b> (menu do navegador) → <b>Instalar aplicativo</b> ou <b>Adicionar à tela inicial</b>.';
+  } else if (isAndroid){
+    msg = 'No menu do navegador (<b>⋮</b>): <b>Instalar aplicativo</b> ou <b>Adicionar à tela inicial</b>.';
+  } else {
+    msg = 'No menu do navegador: escolha <b>Instalar aplicativo</b>.';
+  }
+  if (typeof openGenericModal === 'function'){
+    openGenericModal(`
+      <div class="modal-title">📲 Como instalar</div>
+      <div class="blk-cloud info" style="margin-bottom:12px">
+        <h4>💡 Instruções</h4>
+        <p>${msg}</p>
+      </div>
+      <div class="blk-cloud warn">
+        <h4>⚠️ Se a opção não aparecer</h4>
+        <p>Use o app por 1-2 minutos primeiro. Navegadores exigem tempo mínimo de uso antes de liberar a instalação.</p>
+      </div>
+      <div class="blk-cloud success">
+        <h4>✅ Dica</h4>
+        <p>Se o botão do navegador não funcionar, tente pelo <b>Chrome</b> ou <b>Safari</b> — têm suporte PWA mais estável.</p>
+      </div>
+      <button class="btn btn-soft" onclick="closeGenericModal()">Fechar</button>
+    `);
+  }
+}
+function atualizarBotaoInstalar(){
+  const el = document.getElementById('pwaInstallBtn');
+  if (!el) return;
+  el.style.display = (estaInstalado() || !pwaInstallPrompt) ? 'none' : 'flex';
+}
+
+/* ============================================================
+   ESTADOS
+============================================================ */
+let dicaState = { lidas: [], favoritas: [], ultimaData: null, ocultarNotifHoje: false, ultimaNotifData: null };
+function loadDicaState(){ try{ const r = localStorage.getItem(DICAS_KEY); if(r) dicaState = {...dicaState, ...JSON.parse(r)}; }catch(e){} }
 function saveDicaState(){ try{ localStorage.setItem(DICAS_KEY, JSON.stringify(dicaState)); }catch(e){} }
 
-/* ============================================================
-   ESTADO PRINCIPAL
-============================================================ */
-const defaultState = {
-  profile: { name:'', sexo:null, weight:null, initialWeight:null, dose:5, waterTarget:2500, email:null, createdAt:null },
-  records: {}, waterToday: 0, lastResetDate: null, weightHistory: []
-};
+const defaultState = { profile: { name:'', sexo:null, weight:null, initialWeight:null, dose:5, waterTarget:2500, email:null, createdAt:null }, records: {}, waterToday: 0, lastResetDate: null, weightHistory: [] };
 let state = loadState();
 
 let notifConfig = { enabled:false, time:'08:00', followUp:'20:00', useFollowUp:false, lastFired:null, lastFollowUp:null, permission:'default' };
-function loadNotifConfig(){
-  try{ const r = localStorage.getItem(NOTIF_KEY); if(r) notifConfig = {...notifConfig, ...JSON.parse(r)}; }catch(e){}
-  if('Notification' in window) notifConfig.permission = Notification.permission;
-}
+function loadNotifConfig(){ try{ const r = localStorage.getItem(NOTIF_KEY); if(r) notifConfig = {...notifConfig, ...JSON.parse(r)}; }catch(e){} if('Notification' in window) notifConfig.permission = Notification.permission; }
 function saveNotifConfig(){ try{ localStorage.setItem(NOTIF_KEY, JSON.stringify(notifConfig)); }catch(e){} }
 
 let fbAuth = { uid:null, idToken:null, email:null, refreshToken:null, expiresAt:0, isAnonymous:true };
 let fbSync = { ultimoUpload:null, ultimoDownload:null, autoSync:true };
 let autoSyncTimer = null, notifCheckTimer = null, tipCheckTimer = null;
-let userProfileLoaded = false;
-let dicaAtualIdx = 0;
-let dicaFiltroLista = 'todas';
+let userProfileLoaded = false, dicaAtualIdx = 0, dicaFiltroLista = 'todas';
 
 function loadState(){
   try{
@@ -1393,7 +1363,7 @@ function saveState(){
       clearTimeout(autoSyncTimer);
       autoSyncTimer = setTimeout(()=> { enviarParaNuvem(true); }, 20000);
     }
-  }catch(e){ console.warn('Erro:', e); }
+  }catch(e){}
 }
 function loadFbAuth(){ try{ const r = localStorage.getItem(FB_AUTH_KEY); if(r) fbAuth = {...fbAuth, ...JSON.parse(r)}; }catch(e){} }
 function saveFbAuth(){ try{ if(fbAuth.uid) localStorage.setItem(FB_AUTH_KEY, JSON.stringify(fbAuth)); else localStorage.removeItem(FB_AUTH_KEY); }catch(e){} }
@@ -1416,280 +1386,6 @@ function tempoRelativo(iso){
 function formatarTamanho(b){ if(b<1024)return b+'B'; if(b<1048576)return (b/1024).toFixed(1)+'KB'; return (b/1048576).toFixed(2)+'MB'; }
 function esc(s){ return String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;'); }
 function primeiraLetra(n){ return n && n.trim() ? n.trim().charAt(0).toUpperCase() : '?'; }
-
-/* ============================================================
-   DICAS — FUNÇÕES PRINCIPAIS
-============================================================ */
-function getDicaDoDia(){
-  const inicio = new Date(2026, 0, 1);
-  const hoje = new Date();
-  hoje.setHours(0,0,0,0);
-  const diff = Math.floor((hoje - inicio) / 86400000);
-  const idx = ((diff % DICAS.length) + DICAS.length) % DICAS.length;
-  return idx;
-}
-function getDicaPorIdx(idx){ return DICAS[((idx % DICAS.length) + DICAS.length) % DICAS.length]; }
-function dicaFoiLida(idx){ return dicaState.lidas.indexOf(idx) !== -1; }
-function dicaEhFavorita(idx){ return dicaState.favoritas.indexOf(idx) !== -1; }
-function marcarDicaLida(idx){
-  if(!dicaFoiLida(idx)){ dicaState.lidas.push(idx); saveDicaState(); }
-}
-function toggleFavoritaDica(idx){
-  const i = dicaState.favoritas.indexOf(idx);
-  if(i === -1) dicaState.favoritas.push(idx);
-  else dicaState.favoritas.splice(i, 1);
-  saveDicaState();
-  showToast(i === -1 ? '⭐ Adicionada aos favoritos' : 'Removida dos favoritos');
-}
-function compartilharDica(idx){
-  const d = getDicaPorIdx(idx);
-  if(!d) return;
-  const texto = `💡 Dica ${idx+1}/365 sobre creatina\n\n${d[0]} ${d[1]}\n\n${d[2]}\n\n_Enviado pelo Creatina Control_`;
-  if(navigator.share){ navigator.share({title:'Dica de creatina', text:texto}).catch(()=>{}); }
-  else if(navigator.clipboard){ navigator.clipboard.writeText(texto).then(()=> showToast('📋 Copiado!')).catch(()=>{}); }
-  else showToast('Compartilhamento indisponível');
-}
-function renderDicaDoDia(){
-  const el = document.getElementById('dicaDoDiaContainer');
-  if(!el) return;
-  const idx = getDicaDoDia();
-  const d = DICAS[idx];
-  const lida = dicaFoiLida(idx);
-  const fav = dicaEhFavorita(idx);
-  el.innerHTML = `
-    <div class="dica-card anim" onclick="abrirDicaAtual()">
-      <div class="dc-header">
-        <div class="dc-badge">💡 Dica do dia</div>
-        <div class="dc-count">${idx+1}/${DICAS.length}</div>
-      </div>
-      <div class="dc-body">
-        <div class="dc-emoji">${d[0]}</div>
-        <div class="dc-content">
-          <div class="dc-title">${esc(d[1])}</div>
-          <div class="dc-text">${esc(d[2])}</div>
-        </div>
-      </div>
-      <div class="dc-footer">
-        <div class="dc-hint">${lida ? '✓ Lida · ' : ''}${esc(d[3])} · Toque para abrir</div>
-        <div class="dc-actions" onclick="event.stopPropagation()">
-          <button class="dc-mini-btn" onclick="event.stopPropagation();toggleFavoritaDica(${idx});renderDicaDoDia()" type="button" title="Favoritar">${fav ? '⭐' : '☆'}</button>
-        </div>
-      </div>
-    </div>
-  `;
-}
-function renderTipNotif(){
-  const notif = document.getElementById('tipNotif');
-  if(!notif) return;
-  // Só mostra se não ocultou hoje
-  const hoje = todayKey();
-  if(dicaState.ultimaNotifData === hoje && dicaState.ocultarNotifHoje){
-    notif.classList.remove('show');
-    return;
-  }
-  const idx = getDicaDoDia();
-  const d = DICAS[idx];
-  document.getElementById('tipNotifTitle').textContent = d[1];
-  document.getElementById('tipNotifText').textContent = d[2];
-  // Só mostra a notificação se for a primeira vez hoje
-  if(dicaState.ultimaNotifData !== hoje){
-    setTimeout(()=> notif.classList.add('show'), 1500);
-    dicaState.ultimaNotifData = hoje;
-    dicaState.ocultarNotifHoje = false;
-    saveDicaState();
-    // Auto-fecha em 12 segundos
-    setTimeout(()=> notif.classList.remove('show'), 12000);
-  }
-}
-function fecharTipNotif(){
-  document.getElementById('tipNotif').classList.remove('show');
-  dicaState.ocultarNotifHoje = true;
-  dicaState.ultimaNotifData = todayKey();
-  saveDicaState();
-}
-function abrirDicaAtual(){
-  abrirDicaModal(getDicaDoDia());
-}
-function abrirDicaModal(idx){
-  dicaAtualIdx = idx;
-  renderDicaModal();
-  document.getElementById('dicaModal').classList.add('show');
-  document.body.style.overflow = 'hidden';
-}
-function closeDicaModal(){
-  document.getElementById('dicaModal').classList.remove('show');
-  document.body.style.overflow = '';
-}
-document.getElementById('dicaModal').addEventListener('click', function(e){ if(e.target === this) closeDicaModal(); });
-function renderDicaModal(){
-  const idx = dicaAtualIdx;
-  const d = DICAS[idx];
-  const lida = dicaFoiLida(idx);
-  const fav = dicaEhFavorita(idx);
-  const catIcon = CAT_ICONS[d[3]] || '💡';
-  const el = document.getElementById('dicaModalBody');
-  el.innerHTML = `
-    <div class="modal-handle"></div>
-    <div class="dica-hero">
-      <div class="dh-icon">${d[0]}</div>
-      <div class="dh-counter">💡 Dica ${idx+1} de ${DICAS.length}${lida ? ' · ✓ Lida' : ''}</div>
-      <div class="dh-cat">${catIcon} ${esc(d[3])}</div>
-    </div>
-    <div class="dica-content">
-      <div class="dt-title">${esc(d[1])}</div>
-      <div class="dt-text">${esc(d[2])}</div>
-    </div>
-    <div class="dica-nav">
-      <button class="dica-nav-btn" onclick="navDica(-1)" ${idx === 0 ? 'disabled' : ''} type="button" aria-label="Anterior">
-        <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
-      </button>
-      <button class="dica-nav-btn ${fav?'fav-on':''}" onclick="toggleFavoritaDica(${idx});renderDicaModal()" type="button" aria-label="Favoritar">
-        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-      </button>
-      <button class="dica-nav-btn" onclick="navDica(1)" ${idx === DICAS.length-1 ? 'disabled' : ''} type="button" aria-label="Próxima">
-        <svg viewBox="0 0 24 24"><path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"/></svg>
-      </button>
-    </div>
-    <div class="dica-actions">
-      <button class="dica-action ${fav?'fav-on':''}" onclick="toggleFavoritaDica(${idx});renderDicaModal()" type="button">
-        <div class="da-icon">${fav ? '⭐' : '☆'}</div>
-        <div>${fav ? 'Favorita' : 'Favoritar'}</div>
-      </button>
-      <button class="dica-action" onclick="compartilharDica(${idx})" type="button">
-        <div class="da-icon">📤</div>
-        <div>Compartilhar</div>
-      </button>
-      <button class="dica-action" onclick="closeDicaModal();abrirTodasDicas()" type="button">
-        <div class="da-icon">📚</div>
-        <div>Ver todas</div>
-      </button>
-    </div>
-    <div class="dica-progress">
-      <div class="dp-icon">📊</div>
-      <div class="dp-info">
-        <div class="dp-info-l">Seu progresso</div>
-        <div class="dp-bar"><div class="dp-bar-fill" style="width:${(dicaState.lidas.length/DICAS.length)*100}%"></div></div>
-      </div>
-      <div class="dp-count">${dicaState.lidas.length}/${DICAS.length}</div>
-    </div>
-    <button class="btn btn-ghost" onclick="closeDicaModal()">Fechar</button>
-  `;
-  // Marca como lida
-  setTimeout(()=> { marcarDicaLida(idx); renderDicaDoDia(); }, 200);
-}
-function navDica(dir){
-  const novo = dicaAtualIdx + dir;
-  if(novo < 0 || novo >= DICAS.length) return;
-  dicaAtualIdx = novo;
-  renderDicaModal();
-}
-function abrirTodasDicas(){
-  dicaFiltroLista = 'todas';
-  renderTodasDicas();
-  document.getElementById('dicaModal').classList.add('show');
-  document.body.style.overflow = 'hidden';
-}
-function setDicaFiltro(f){
-  dicaFiltroLista = f;
-  renderTodasDicas();
-}
-function renderTodasDicas(){
-  const el = document.getElementById('dicaModalBody');
-  let lista = DICAS.map((d, i)=>({d, i}));
-  if(dicaFiltroLista === 'favoritas') lista = lista.filter(x => dicaEhFavorita(x.i));
-  else if(dicaFiltroLista === 'nao-lidas') lista = lista.filter(x => !dicaFoiLida(x.i));
-  else if(dicaFiltroLista === 'lidas') lista = lista.filter(x => dicaFoiLida(x.i));
-  el.innerHTML = `
-    <div class="modal-handle"></div>
-    <div class="modal-title">📚 Todas as dicas</div>
-    <div class="dica-filtro-tabs">
-      <button class="${dicaFiltroLista==='todas'?'active':''}" onclick="setDicaFiltro('todas')" type="button">Todas (${DICAS.length})</button>
-      <button class="${dicaFiltroLista==='favoritas'?'active':''}" onclick="setDicaFiltro('favoritas')" type="button">⭐ Favoritas (${dicaState.favoritas.length})</button>
-      <button class="${dicaFiltroLista==='nao-lidas'?'active':''}" onclick="setDicaFiltro('nao-lidas')" type="button">Novas</button>
-      <button class="${dicaFiltroLista==='lidas'?'active':''}" onclick="setDicaFiltro('lidas')" type="button">Lidas</button>
-    </div>
-    ${lista.length === 0 ? `
-      <div class="empty-state"><div class="ei">📭</div><div class="et">Nenhuma dica aqui ainda.<br>${dicaFiltroLista==='favoritas'?'Favorite dicas com ⭐':'Continue usando o app!'}</div></div>
-    ` : `
-      <div class="dicas-lista">${lista.map(x => {
-        const lida = dicaFoiLida(x.i);
-        const fav = dicaEhFavorita(x.i);
-        const catIcon = CAT_ICONS[x.d[3]] || '💡';
-        return `<div class="dica-list-item ${lida?'lida':''} ${fav?'fav':''}" onclick="closeDicaModal();setTimeout(()=>abrirDicaModal(${x.i}),150)">
-          <div class="dli-num">${lida ? '✓' : x.i+1}</div>
-          <div class="dli-body">
-            <div class="dli-title">${x.d[0]} ${esc(x.d[1])}</div>
-            <div class="dli-cat">${catIcon} ${esc(x.d[3])}</div>
-          </div>
-          <div class="dli-status">${fav ? '⭐' : ''}</div>
-        </div>`;
-      }).join('')}</div>
-    `}
-    <button class="btn btn-ghost" style="margin-top:14px" onclick="closeDicaModal()">Fechar</button>
-  `;
-}
-function renderSettingsDicas(){
-  const el = document.getElementById('settingsDicasCard');
-  if(!el) return;
-  const lidas = dicaState.lidas.length;
-  const fav = dicaState.favoritas.length;
-  const pct = Math.round((lidas / DICAS.length) * 100);
-  const idxHoje = getDicaDoDia();
-  const dHoje = DICAS[idxHoje];
-  el.innerHTML = `
-    <div class="dica-card" onclick="abrirDicaAtual()" style="margin-bottom:12px">
-      <div class="dc-header">
-        <div class="dc-badge">💡 Dica do dia</div>
-        <div class="dc-count">${idxHoje+1}/${DICAS.length}</div>
-      </div>
-      <div class="dc-body">
-        <div class="dc-emoji">${dHoje[0]}</div>
-        <div class="dc-content">
-          <div class="dc-title">${esc(dHoje[1])}</div>
-          <div class="dc-text">${esc(dHoje[2])}</div>
-        </div>
-      </div>
-    </div>
-    <div class="dica-progress">
-      <div class="dp-icon">📊</div>
-      <div class="dp-info">
-        <div class="dp-info-l">Progresso: ${pct}%</div>
-        <div class="dp-bar"><div class="dp-bar-fill" style="width:${pct}%"></div></div>
-      </div>
-      <div class="dp-count">${lidas}/${DICAS.length}</div>
-    </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
-      <button class="btn btn-purple btn-sm" style="width:100%" onclick="abrirTodasDicas()" type="button">📚 Todas as dicas</button>
-      <button class="btn btn-soft btn-sm" style="width:100%" onclick="mostrarDicaAleatoria()" type="button">🎲 Aleatória</button>
-    </div>
-    ${fav > 0 ? `<button class="btn btn-ghost btn-sm" style="width:100%;margin-top:8px" onclick="dicaFiltroLista='favoritas';abrirTodasDicas()" type="button">⭐ Ver favoritas (${fav})</button>` : ''}
-  `;
-}
-function mostrarDicaAleatoria(){
-  const idx = Math.floor(Math.random() * DICAS.length);
-  closeDicaModal();
-  setTimeout(()=> abrirDicaModal(idx), 150);
-  showToast('🎲 Dica aleatória!');
-}
-function resetDicas(){
-  openGenericModal(`
-    <div class="modal-title">🔄 Resetar dicas</div>
-    <div style="padding:12px 0;text-align:center">
-      <div style="font-size:38px;margin-bottom:10px">⚠️</div>
-      <div style="font-size:12.5px;line-height:1.55;color:var(--dim)">Isso apaga seu progresso (lidas e favoritas). Continuar?</div>
-    </div>
-    <button class="btn btn-soft" onclick="closeGenericModal()">Cancelar</button>
-    <button class="btn btn-danger" style="margin-top:8px" onclick="confirmarResetDicas()">Resetar</button>
-  `);
-}
-function confirmarResetDicas(){
-  dicaState.lidas = []; dicaState.favoritas = [];
-  dicaState.ultimaNotifData = null; dicaState.ocultarNotifHoje = false;
-  saveDicaState();
-  renderSettingsDicas(); renderDicaDoDia();
-  closeGenericModal();
-  showToast('🔄 Dicas resetadas');
-}
 
 /* ============================================================
    NOTIFICAÇÕES
@@ -1731,9 +1427,7 @@ function dispararNotificacaoDose(tipo){
     body = `Ainda não registrou hoje. Não perca a sequência${streak > 0 ? ' de ' + streak + ' dia' + (streak > 1 ? 's' : '') : ''}!`;
   } else if(streak > 0){ body = `Tome seus ${dose}g agora${saudacao} para manter a sequência de ${streak} dia${streak > 1 ? 's' : ''}!`; }
   try{
-    const n = new Notification(title, { body, tag:'creatina-dose-'+tipo,
-      icon: 'data:image/svg+xml;utf8,' + encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128"><rect width="128" height="128" rx="28" fill="#00e5b8"/><text x="64" y="86" font-size="72" text-anchor="middle" fill="#06121f">💊</text></svg>`)
-    });
+    const n = new Notification(title, { body, tag:'creatina-dose-'+tipo, icon: PWA_ICON_DATA_URL });
     n.onclick = function(){ window.focus(); this.close(); };
     setTimeout(()=> { try { n.close(); } catch(e){} }, 30000);
     return true;
@@ -1765,15 +1459,11 @@ function _enviarTeste(){
   try{
     const dose = state.profile.dose || 5;
     const nome = state.profile.name ? ', ' + state.profile.name.split(' ')[0] : '';
-    const n = new Notification('💊 Creatina Control', {
-      body: `Teste${nome}! Você receberá este lembrete para tomar seus ${dose}g.`,
-      tag:'creatina-teste',
-      icon: 'data:image/svg+xml;utf8,' + encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128"><rect width="128" height="128" rx="28" fill="#00e5b8"/><text x="64" y="86" font-size="72" text-anchor="middle" fill="#06121f">💊</text></svg>`)
-    });
+    const n = new Notification('💊 Creatina Control', { body: `Teste${nome}! Você receberá este lembrete para tomar seus ${dose}g.`, tag:'creatina-teste', icon: PWA_ICON_DATA_URL });
     n.onclick = function(){ window.focus(); this.close(); };
     setTimeout(()=> { try { n.close(); } catch(e){} }, 15000);
     showToast('🔔 Notificação enviada!');
-  }catch(e){ showToast('❌ Erro: ' + e.message); }
+  }catch(e){ showToast('❌ ' + e.message); }
 }
 function iniciarChecadorNotif(){
   if(notifCheckTimer) clearInterval(notifCheckTimer);
@@ -1782,15 +1472,9 @@ function iniciarChecadorNotif(){
 }
 function iniciarChecadorDicas(){
   if(tipCheckTimer) clearInterval(tipCheckTimer);
-  // Verifica se mudou o dia (nova dica)
   tipCheckTimer = setInterval(()=>{
     const hoje = todayKey();
-    if(dicaState.ultimaNotifData !== hoje){
-      dicaState.ocultarNotifHoje = false;
-      saveDicaState();
-      renderTipNotif();
-      renderDicaDoDia();
-    }
+    if(dicaState.ultimaNotifData !== hoje){ dicaState.ocultarNotifHoje = false; saveDicaState(); renderTipNotif(); renderDicaDoDia(); }
   }, 60000);
 }
 
@@ -1882,7 +1566,6 @@ async function fsGet(c, id){
   if(!res.ok) throw new Error('Erro ' + res.status);
   return firestoreParaObjeto(await res.json());
 }
-
 function atualizarBadgeCloud(){ const dot = document.getElementById('cloudDot'); if(!dot) return; dot.classList.remove('on','sync','err'); if(!fbAuth.uid){ dot.style.display = 'none'; return; } dot.classList.add('on'); }
 async function enviarParaNuvem(silencioso){
   if(!fbAuth.uid){ if(!silencioso) showToast('Conecte-se à nuvem'); return false; }
@@ -1901,7 +1584,6 @@ async function enviarParaNuvem(silencioso){
     if(dot){ dot.classList.remove('sync','err'); dot.classList.add('on'); }
     return true;
   }catch(e){
-    console.error('Erro:', e);
     if(!silencioso) showToast('❌ ' + e.message);
     if(dot){ dot.classList.remove('sync','on'); dot.classList.add('err'); setTimeout(()=>{ if(fbAuth.uid){ dot.classList.remove('err'); dot.classList.add('on'); } }, 4000); }
     return false;
@@ -1929,7 +1611,6 @@ async function baixarDaNuvem(silencioso){
     if(dot){ dot.classList.remove('sync','err'); dot.classList.add('on'); }
     return true;
   }catch(e){
-    console.error('Erro:', e);
     if(!silencioso) showToast('❌ ' + e.message);
     if(dot){ dot.classList.remove('sync','on'); dot.classList.add('err'); setTimeout(()=>{ if(fbAuth.uid){ dot.classList.remove('err'); dot.classList.add('on'); } }, 4000); }
     return false;
@@ -1953,15 +1634,13 @@ async function sincronizarInteligente(){
     else { const ok = await confirmarAcao('Sync', 'A NUVEM é mais recente. Baixar?'); if(ok) await baixarDaNuvem(false); }
   }catch(e){ showToast('❌ ' + e.message); }
 }
-
 function getBackups(){ try{ const r = localStorage.getItem(BACKUP_KEY); if(!r) return []; const a = JSON.parse(r); return Array.isArray(a)?a:[]; }catch(e){ return []; } }
 function setBackups(a){ try{ localStorage.setItem(BACKUP_KEY, JSON.stringify(a)); }catch(e){} }
 function fazerBackupAutomatico(motivo){
   const bk = getBackups();
   const dados = { profile: state.profile, records: state.records, waterToday: state.waterToday, lastResetDate: state.lastResetDate, weightHistory: state.weightHistory, notif: notifConfig, dicas: { lidas: dicaState.lidas, favoritas: dicaState.favoritas } };
   const b = { id: 'b' + Date.now().toString(36) + Math.random().toString(36).slice(2,5), data: new Date().toISOString(), motivo: motivo||'Automático', tamanho: JSON.stringify(dados).length, totalDoses: Object.keys(state.records).filter(k=>state.records[k].confirmed).length, dados };
-  bk.unshift(b); while(bk.length > MAX_AUTO_BACKUPS) bk.pop(); setBackups(bk);
-  return b;
+  bk.unshift(b); while(bk.length > MAX_AUTO_BACKUPS) bk.pop(); setBackups(bk); return b;
 }
 
 /* ============================================================
@@ -2142,7 +1821,7 @@ function miniAvatarSVG(sexo, active){
 }
 
 /* ============================================================
-   EVOLUÇÃO / HOME
+   EVOLUÇÃO
 ============================================================ */
 function getAdherence30(){ const days = getLastNDays(30); const done = days.filter(k => state.records[k] && state.records[k].confirmed).length; return Math.round((done/30)*100); }
 function getWeightChange(){ const p = state.profile; if(!p.weight || !p.initialWeight) return 0; return p.weight - p.initialWeight; }
@@ -2175,6 +1854,181 @@ function getNextLevelProgress(){
   const cur = getLevel(), prev = cur - 1;
   return Math.round(Math.min(100, Math.max(0, (score - prev) * 100)));
 }
+
+/* ============================================================
+   DICAS — FUNÇÕES
+============================================================ */
+function getDicaDoDia(){
+  const inicio = new Date(2026, 0, 1);
+  const hoje = new Date(); hoje.setHours(0,0,0,0);
+  const diff = Math.floor((hoje - inicio) / 86400000);
+  return ((diff % DICAS.length) + DICAS.length) % DICAS.length;
+}
+function getDicaPorIdx(idx){ return DICAS[((idx % DICAS.length) + DICAS.length) % DICAS.length]; }
+function dicaFoiLida(idx){ return dicaState.lidas.indexOf(idx) !== -1; }
+function dicaEhFavorita(idx){ return dicaState.favoritas.indexOf(idx) !== -1; }
+function marcarDicaLida(idx){ if(!dicaFoiLida(idx)){ dicaState.lidas.push(idx); saveDicaState(); } }
+function toggleFavoritaDica(idx){
+  const i = dicaState.favoritas.indexOf(idx);
+  if(i === -1) dicaState.favoritas.push(idx); else dicaState.favoritas.splice(i, 1);
+  saveDicaState();
+  showToast(i === -1 ? '⭐ Adicionada' : 'Removida');
+}
+function compartilharDica(idx){
+  const d = getDicaPorIdx(idx); if(!d) return;
+  const texto = `💡 Dica ${idx+1}/${DICAS.length} sobre creatina\n\n${d[0]} ${d[1]}\n\n${d[2]}\n\n_Enviado pelo Creatina Control_`;
+  if(navigator.share){ navigator.share({title:'Dica de creatina', text:texto}).catch(()=>{}); }
+  else if(navigator.clipboard){ navigator.clipboard.writeText(texto).then(()=> showToast('📋 Copiado!')).catch(()=>{}); }
+  else showToast('Compartilhamento indisponível');
+}
+function renderDicaDoDia(){
+  const el = document.getElementById('dicaDoDiaContainer'); if(!el) return;
+  const idx = getDicaDoDia(); const d = DICAS[idx];
+  const lida = dicaFoiLida(idx); const fav = dicaEhFavorita(idx);
+  el.innerHTML = `
+    <div class="dica-card anim" onclick="abrirDicaAtual()">
+      <div class="dc-header"><div class="dc-badge">💡 Dica do dia</div><div class="dc-count">${idx+1}/${DICAS.length}</div></div>
+      <div class="dc-body">
+        <div class="dc-emoji">${d[0]}</div>
+        <div class="dc-content"><div class="dc-title">${esc(d[1])}</div><div class="dc-text">${esc(d[2])}</div></div>
+      </div>
+      <div class="dc-footer">
+        <div class="dc-hint">${lida ? '✓ Lida · ' : ''}${esc(d[3])} · Toque para abrir</div>
+        <div class="dc-actions" onclick="event.stopPropagation()">
+          <button class="dc-mini-btn" onclick="event.stopPropagation();toggleFavoritaDica(${idx});renderDicaDoDia()" type="button">${fav ? '⭐' : '☆'}</button>
+        </div>
+      </div>
+    </div>`;
+}
+function renderTipNotif(){
+  const notif = document.getElementById('tipNotif'); if(!notif) return;
+  const hoje = todayKey();
+  if(dicaState.ultimaNotifData === hoje && dicaState.ocultarNotifHoje){ notif.classList.remove('show'); return; }
+  const idx = getDicaDoDia(); const d = DICAS[idx];
+  document.getElementById('tipNotifTitle').textContent = d[1];
+  document.getElementById('tipNotifText').textContent = d[2];
+  if(dicaState.ultimaNotifData !== hoje){
+    setTimeout(()=> notif.classList.add('show'), 1500);
+    dicaState.ultimaNotifData = hoje; dicaState.ocultarNotifHoje = false; saveDicaState();
+    setTimeout(()=> notif.classList.remove('show'), 12000);
+  }
+}
+function fecharTipNotif(){
+  document.getElementById('tipNotif').classList.remove('show');
+  dicaState.ocultarNotifHoje = true; dicaState.ultimaNotifData = todayKey();
+  saveDicaState();
+}
+function abrirDicaAtual(){ abrirDicaModal(getDicaDoDia()); }
+function abrirDicaModal(idx){
+  dicaAtualIdx = idx; renderDicaModal();
+  document.getElementById('dicaModal').classList.add('show');
+  document.body.style.overflow = 'hidden';
+}
+function closeDicaModal(){
+  document.getElementById('dicaModal').classList.remove('show');
+  document.body.style.overflow = '';
+}
+document.getElementById('dicaModal').addEventListener('click', function(e){ if(e.target === this) closeDicaModal(); });
+function renderDicaModal(){
+  const idx = dicaAtualIdx; const d = DICAS[idx];
+  const lida = dicaFoiLida(idx); const fav = dicaEhFavorita(idx);
+  const catIcon = CAT_ICONS[d[3]] || '💡';
+  const el = document.getElementById('dicaModalBody');
+  el.innerHTML = `
+    <div class="modal-handle"></div>
+    <div class="dica-hero">
+      <div class="dh-icon">${d[0]}</div>
+      <div class="dh-counter">💡 Dica ${idx+1} de ${DICAS.length}${lida ? ' · ✓ Lida' : ''}</div>
+      <div class="dh-cat">${catIcon} ${esc(d[3])}</div>
+    </div>
+    <div class="dica-content"><div class="dt-title">${esc(d[1])}</div><div class="dt-text">${esc(d[2])}</div></div>
+    <div class="dica-nav">
+      <button class="dica-nav-btn" onclick="navDica(-1)" ${idx === 0 ? 'disabled' : ''} type="button"><svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg></button>
+      <button class="dica-nav-btn ${fav?'fav-on':''}" onclick="toggleFavoritaDica(${idx});renderDicaModal()" type="button"><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg></button>
+      <button class="dica-nav-btn" onclick="navDica(1)" ${idx === DICAS.length-1 ? 'disabled' : ''} type="button"><svg viewBox="0 0 24 24"><path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"/></svg></button>
+    </div>
+    <div class="dica-actions">
+      <button class="dica-action ${fav?'fav-on':''}" onclick="toggleFavoritaDica(${idx});renderDicaModal()" type="button"><div class="da-icon">${fav ? '⭐' : '☆'}</div><div>${fav ? 'Favorita' : 'Favoritar'}</div></button>
+      <button class="dica-action" onclick="compartilharDica(${idx})" type="button"><div class="da-icon">📤</div><div>Compartilhar</div></button>
+      <button class="dica-action" onclick="closeDicaModal();abrirTodasDicas()" type="button"><div class="da-icon">📚</div><div>Ver todas</div></button>
+    </div>
+    <div class="dica-progress">
+      <div class="dp-icon">📊</div>
+      <div class="dp-info"><div class="dp-info-l">Seu progresso</div><div class="dp-bar"><div class="dp-bar-fill" style="width:${(dicaState.lidas.length/DICAS.length)*100}%"></div></div></div>
+      <div class="dp-count">${dicaState.lidas.length}/${DICAS.length}</div>
+    </div>
+    <button class="btn btn-ghost" onclick="closeDicaModal()">Fechar</button>`;
+  setTimeout(()=> { marcarDicaLida(idx); renderDicaDoDia(); }, 200);
+}
+function navDica(dir){
+  const novo = dicaAtualIdx + dir;
+  if(novo < 0 || novo >= DICAS.length) return;
+  dicaAtualIdx = novo; renderDicaModal();
+}
+function abrirTodasDicas(){
+  dicaFiltroLista = 'todas'; renderTodasDicas();
+  document.getElementById('dicaModal').classList.add('show');
+  document.body.style.overflow = 'hidden';
+}
+function setDicaFiltro(f){ dicaFiltroLista = f; renderTodasDicas(); }
+function renderTodasDicas(){
+  const el = document.getElementById('dicaModalBody');
+  let lista = DICAS.map((d, i)=>({d, i}));
+  if(dicaFiltroLista === 'favoritas') lista = lista.filter(x => dicaEhFavorita(x.i));
+  else if(dicaFiltroLista === 'nao-lidas') lista = lista.filter(x => !dicaFoiLida(x.i));
+  else if(dicaFiltroLista === 'lidas') lista = lista.filter(x => dicaFoiLida(x.i));
+  el.innerHTML = `
+    <div class="modal-handle"></div>
+    <div class="modal-title">📚 Todas as dicas</div>
+    <div class="dica-filtro-tabs">
+      <button class="${dicaFiltroLista==='todas'?'active':''}" onclick="setDicaFiltro('todas')" type="button">Todas (${DICAS.length})</button>
+      <button class="${dicaFiltroLista==='favoritas'?'active':''}" onclick="setDicaFiltro('favoritas')" type="button">⭐ (${dicaState.favoritas.length})</button>
+      <button class="${dicaFiltroLista==='nao-lidas'?'active':''}" onclick="setDicaFiltro('nao-lidas')" type="button">Novas</button>
+      <button class="${dicaFiltroLista==='lidas'?'active':''}" onclick="setDicaFiltro('lidas')" type="button">Lidas</button>
+    </div>
+    ${lista.length === 0 ? `<div class="empty-state"><div class="ei">📭</div><div class="et">Nenhuma dica aqui ainda.</div></div>` : `
+      <div class="dicas-lista">${lista.map(x => {
+        const lida = dicaFoiLida(x.i), fav = dicaEhFavorita(x.i);
+        const catIcon = CAT_ICONS[x.d[3]] || '💡';
+        return `<div class="dica-list-item ${lida?'lida':''} ${fav?'fav':''}" onclick="closeDicaModal();setTimeout(()=>abrirDicaModal(${x.i}),150)">
+          <div class="dli-num">${lida ? '✓' : x.i+1}</div>
+          <div class="dli-body"><div class="dli-title">${x.d[0]} ${esc(x.d[1])}</div><div class="dli-cat">${catIcon} ${esc(x.d[3])}</div></div>
+          <div class="dli-status">${fav ? '⭐' : ''}</div>
+        </div>`;
+      }).join('')}</div>`}
+    <button class="btn btn-ghost" style="margin-top:14px" onclick="closeDicaModal()">Fechar</button>`;
+}
+function renderSettingsDicas(){
+  const el = document.getElementById('settingsDicasCard'); if(!el) return;
+  const lidas = dicaState.lidas.length, fav = dicaState.favoritas.length;
+  const pct = Math.round((lidas / DICAS.length) * 100);
+  const idxHoje = getDicaDoDia(); const dHoje = DICAS[idxHoje];
+  el.innerHTML = `
+    <div class="dica-card" onclick="abrirDicaAtual()" style="margin-bottom:12px">
+      <div class="dc-header"><div class="dc-badge">💡 Dica do dia</div><div class="dc-count">${idxHoje+1}/${DICAS.length}</div></div>
+      <div class="dc-body"><div class="dc-emoji">${dHoje[0]}</div><div class="dc-content"><div class="dc-title">${esc(dHoje[1])}</div><div class="dc-text">${esc(dHoje[2])}</div></div></div>
+    </div>
+    <div class="dica-progress">
+      <div class="dp-icon">📊</div>
+      <div class="dp-info"><div class="dp-info-l">Progresso: ${pct}%</div><div class="dp-bar"><div class="dp-bar-fill" style="width:${pct}%"></div></div></div>
+      <div class="dp-count">${lidas}/${DICAS.length}</div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+      <button class="btn btn-purple btn-sm" style="width:100%" onclick="abrirTodasDicas()" type="button">📚 Todas as dicas</button>
+      <button class="btn btn-soft btn-sm" style="width:100%" onclick="mostrarDicaAleatoria()" type="button">🎲 Aleatória</button>
+    </div>
+    ${fav > 0 ? `<button class="btn btn-ghost btn-sm" style="width:100%;margin-top:8px" onclick="dicaFiltroLista='favoritas';abrirTodasDicas()" type="button">⭐ Ver favoritas (${fav})</button>` : ''}`;
+}
+function mostrarDicaAleatoria(){
+  const idx = Math.floor(Math.random() * DICAS.length);
+  closeDicaModal();
+  setTimeout(()=> abrirDicaModal(idx), 150);
+  showToast('🎲 Dica aleatória!');
+}
+
+/* ============================================================
+   RENDER PRINCIPAL
+============================================================ */
 function renderHome(){
   const p = state.profile;
   const bs = calculateBodyState();
@@ -2393,9 +2247,9 @@ function renderSettings(){
         </div>
       </div>
       <button class="btn btn-primary" style="margin-bottom:8px" onclick="openProfileModal()">✏️ Editar perfil</button>
-      ${isL ? `<button class="btn btn-ghost" onclick="abrirModalConta()">👤 Gerenciar conta</button>` : `<button class="btn btn-ghost" onclick="converterParaConta()">☁️ Criar conta</button>`}
-    `;
+      ${isL ? `<button class="btn btn-ghost" onclick="abrirModalConta()">👤 Gerenciar conta</button>` : `<button class="btn btn-ghost" onclick="converterParaConta()">☁️ Criar conta</button>`}`;
   }
+  renderSettingsPWA();
   renderSettingsDicas();
   renderSettingsNotif();
   document.getElementById('inputDose').value = p.dose || 5;
@@ -2414,16 +2268,55 @@ function renderSettings(){
           <button class="btn btn-success btn-sm" style="width:100%" onclick="enviarParaNuvem(false)">⬆️ Enviar</button>
           <button class="btn btn-primary btn-sm" style="width:100%" onclick="baixarDaNuvem(false)">⬇️ Baixar</button>
         </div>
-        <button class="btn btn-ghost btn-sm" style="width:100%;margin-top:8px" onclick="abrirModalSync()">⚙️ Gerenciar nuvem</button>
-      `;
+        <button class="btn btn-ghost btn-sm" style="width:100%;margin-top:8px" onclick="abrirModalSync()">⚙️ Gerenciar nuvem</button>`;
     } else {
       cc.innerHTML = `
         <div class="sync-status-card off" onclick="abrirModalSync()"><div class="ss-ic">☁️</div><div style="flex:1"><div class="ss-titulo">Nuvem desativada</div><div class="ss-info">Ative para backup automático</div></div></div>
         <button class="btn btn-primary btn-sm" style="width:100%" onclick="abrirModalSync()">☁️ Ativar nuvem</button>
-        <button class="btn btn-ghost btn-sm" style="width:100%;margin-top:8px" onclick="abrirModalBackup()">💾 Backup local</button>
-      `;
+        <button class="btn btn-ghost btn-sm" style="width:100%;margin-top:8px" onclick="abrirModalBackup()">💾 Backup local</button>`;
     }
   }
+}
+function renderSettingsPWA(){
+  const el = document.getElementById('settingsPWACard'); if(!el) return;
+  const instalado = estaInstalado();
+  const swSuportado = 'serviceWorker' in navigator;
+  const pronto = !!pwaInstallPrompt;
+  const perm = notifPermissao();
+  el.innerHTML = `
+    <div class="about-item">
+      <div class="ai-ic" style="background:linear-gradient(135deg,${instalado ? '#37e07a,#25a85e' : '#4cb8ff,#2c7bc7'});color:${instalado ? '#05210f' : '#fff'}">${instalado ? '✓' : '📲'}</div>
+      <div class="ai-body">
+        <div class="ai-titulo">${instalado ? 'App instalado' : 'Não instalado'}</div>
+        <div class="ai-desc">${instalado ? 'Rodando em modo aplicativo' : (pronto ? 'Pronto para instalar' : 'Use por 1-2 minutos e toque no menu do navegador')}</div>
+      </div>
+    </div>
+    <div class="about-item">
+      <div class="ai-ic" style="background:linear-gradient(135deg,#b28bff,#7e56d4);color:#fff">⚙️</div>
+      <div class="ai-body">
+        <div class="ai-titulo">Service Worker</div>
+        <div class="ai-desc">${swSuportado ? 'Suportado — cria sw.js na pasta para modo offline' : 'Não suportado'}</div>
+      </div>
+    </div>
+    <div class="about-item">
+      <div class="ai-ic" style="background:linear-gradient(135deg,#ffc857,#e6a32c);color:#3a2800">🔔</div>
+      <div class="ai-body">
+        <div class="ai-titulo">Notificações</div>
+        <div class="ai-desc">${perm === 'granted' ? 'Permitidas' : perm === 'denied' ? 'Bloqueadas' : 'Não solicitadas'}</div>
+      </div>
+    </div>
+    ${!instalado ? `
+      <button class="btn btn-primary" style="margin-top:8px" onclick="instalarApp()">📲 Instalar app agora</button>
+    ` : `
+      <div class="blk-cloud success" style="margin-top:8px">
+        <h4>🎉 Tudo pronto!</h4>
+        <p>O app está instalado e funcionando como aplicativo nativo.</p>
+      </div>
+    `}
+    <div class="blk-cloud info" style="margin-top:8px">
+      <h4>💡 Dica</h4>
+      <p>Para funcionar offline e permitir instalação em 100% dos navegadores, crie um arquivo <b>sw.js</b> na mesma pasta do HTML.</p>
+    </div>`;
 }
 function renderSettingsNotif(){
   const el = document.getElementById('settingsNotifCard'); if(!el) return;
@@ -2446,29 +2339,26 @@ function renderSettingsNotif(){
     ${notifConfig.enabled ? `
       <button class="backup-opt" onclick="abrirModalNotif()" type="button"><div class="bo-ic" style="background:linear-gradient(135deg,#b28bff,#7e56d4);color:#fff">⏰</div><div class="bo-body"><div class="bo-titulo">Horário: ${notifConfig.time}</div><div class="bo-desc">${notifConfig.useFollowUp ? 'Reforço às ' + notifConfig.followUp : 'Toque para ajustar'}</div></div><div class="bo-arrow"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6z"/></svg></div></button>
       <button class="backup-opt" onclick="testarNotificacao()" type="button"><div class="bo-ic" style="background:linear-gradient(135deg,#37e07a,#25a85e);color:#05210f">🧪</div><div class="bo-body"><div class="bo-titulo">Testar notificação</div><div class="bo-desc">Enviar exemplo agora</div></div><div class="bo-arrow"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6z"/></svg></div></button>
-    ` : ''}
-  `;
+    ` : ''}`;
 }
 function toggleNotif(ativo){
   if(ativo){
     if(!notifSuportado()){ showToast('❌ Não suportado'); renderSettingsNotif(); return; }
-    if(notifPermissao() === 'denied'){ showToast('🚫 Permissão bloqueada'); renderSettingsNotif(); return; }
+    if(notifPermissao() === 'denied'){ showToast('🚫 Bloqueada'); renderSettingsNotif(); return; }
     if(notifPermissao() === 'default'){
       pedirPermissaoNotificacao().then(ok => {
-        if(ok){ notifConfig.enabled = true; notifConfig.permission = 'granted'; saveNotifConfig(); iniciarChecadorNotif(); showToast('🔔 Lembretes ativados!'); atualizarBadgeMenu(); renderSettingsNotif(); if(fbAuth.uid && navigator.onLine) enviarParaNuvem(true); setTimeout(checarLembrete, 1000); }
+        if(ok){ notifConfig.enabled = true; notifConfig.permission = 'granted'; saveNotifConfig(); iniciarChecadorNotif(); showToast('🔔 Ativados!'); atualizarBadgeMenu(); renderSettingsNotif(); if(fbAuth.uid && navigator.onLine) enviarParaNuvem(true); setTimeout(checarLembrete, 1000); }
         else { notifConfig.enabled = false; saveNotifConfig(); renderSettingsNotif(); }
       });
     } else {
       notifConfig.enabled = true; saveNotifConfig(); iniciarChecadorNotif();
-      showToast('🔔 Lembretes ativados!'); atualizarBadgeMenu(); renderSettingsNotif();
+      showToast('🔔 Ativados!'); atualizarBadgeMenu(); renderSettingsNotif();
       if(fbAuth.uid && navigator.onLine) enviarParaNuvem(true);
       setTimeout(checarLembrete, 1000);
     }
   } else {
-    notifConfig.enabled = false; saveNotifConfig();
-    atualizarBadgeMenu(); renderSettingsNotif();
-    showToast('🔕 Desativados');
-    if(fbAuth.uid && navigator.onLine) enviarParaNuvem(true);
+    notifConfig.enabled = false; saveNotifConfig(); atualizarBadgeMenu(); renderSettingsNotif();
+    showToast('🔕 Desativados'); if(fbAuth.uid && navigator.onLine) enviarParaNuvem(true);
   }
 }
 function abrirModalNotif(){
@@ -2493,8 +2383,7 @@ function abrirModalNotif(){
       <div class="form-group" id="followUpField" style="${notifConfig.useFollowUp?'':'display:none'}"><label class="form-label">Horário do reforço</label><input type="time" class="form-input" id="notifFollowInput" value="${notifConfig.followUp}"></div>
       <div class="notif-preview"><div class="np-head"><div class="np-icon">💊</div><div class="np-title">Prévia</div></div><div class="np-body">Tome seus ${state.profile.dose || 5}g agora para manter a sequência!</div><div class="np-app">Creatina Control · agora</div></div>
       <button class="btn btn-primary" style="margin-top:12px" onclick="salvarNotifConfig()">💾 Salvar</button>
-      <button class="btn btn-success" style="margin-top:8px" onclick="testarNotificacao()">🧪 Testar agora</button>
-    `;
+      <button class="btn btn-success" style="margin-top:8px" onclick="testarNotificacao()">🧪 Testar agora</button>`;
   }
   html += `<button class="btn btn-ghost" style="margin-top:8px" onclick="closeGenericModal()">Fechar</button>`;
   openGenericModal(html);
@@ -2532,7 +2421,7 @@ function renderOnboarding(){
   else if(ONB.step === 3) el.innerHTML = renderOnbPerfil();
   else if(ONB.step === 4) el.innerHTML = renderOnbLogin();
 }
-function renderObHeader(){ return `<div class="ob-logo">💪</div><div class="ob-title">Bem-vindo ao<br><span>Creatina Control</span></div><div class="ob-sub">Controle sua dose diária, hidratação, evolução e receba 365 dicas sobre creatina.</div>`; }
+function renderObHeader(){ return `<div class="ob-logo">💪</div><div class="ob-title">Bem-vindo ao<br><span>Creatina Control</span></div><div class="ob-sub">Controle dose, hidratação, evolução, 365 dicas e lembretes — tudo sincronizado.</div>`; }
 function renderOnbEscolha(){
   return `${renderObHeader()}
     <div class="ob-options">
@@ -2548,9 +2437,9 @@ function renderOnbCriarConta(){
     ${!modoEdicao ? `<div class="ob-step"><div class="ob-step-dot active">1</div><div class="ob-step-line"></div><div class="ob-step-dot">2</div></div><div class="ob-title" style="font-size:22px">Criar conta</div><div class="ob-sub" style="margin-bottom:18px">Escolha e-mail e senha.</div>` : `<div class="ob-step"><div class="ob-step-dot done">✓</div><div class="ob-step-line"></div><div class="ob-step-dot active">2</div></div><div class="ob-title" style="font-size:22px">Completar perfil</div><div class="ob-sub" style="margin-bottom:18px">Só falta completar seus dados.</div>`}
     <div id="obError" class="ob-error"></div>
     ${!modoEdicao ? `
-      <div class="form-group"><label class="form-label">E-mail</label><input type="email" class="form-input" id="obEmail" placeholder="seu@email.com" value="${esc(d.email)}" autocomplete="email" oninput="ONB.dados.email=this.value"></div>
-      <div class="form-group"><label class="form-label">Senha</label><input type="password" class="form-input" id="obSenha" placeholder="Mín. 6 caracteres" value="${esc(d.senha)}" autocomplete="new-password" oninput="ONB.dados.senha=this.value"></div>
-      <div class="form-group"><label class="form-label">Confirmar senha</label><input type="password" class="form-input" id="obSenha2" placeholder="Repita" autocomplete="new-password"></div>
+      <div class="form-group"><label class="form-label">E-mail</label><input type="email" class="form-input" id="obEmail" placeholder="seu@email.com" value="${esc(d.email)}" oninput="ONB.dados.email=this.value"></div>
+      <div class="form-group"><label class="form-label">Senha</label><input type="password" class="form-input" id="obSenha" placeholder="Mín. 6" value="${esc(d.senha)}" oninput="ONB.dados.senha=this.value"></div>
+      <div class="form-group"><label class="form-label">Confirmar senha</label><input type="password" class="form-input" id="obSenha2" placeholder="Repita"></div>
       <button class="btn btn-primary" onclick="onbCriarConta()" type="button">Continuar →</button>
     ` : `<button class="btn btn-primary" onclick="onbIrStep(3)" type="button">Continuar →</button>`}`;
 }
@@ -2566,7 +2455,7 @@ function renderOnbPerfil(){
       <button type="button" class="gender-opt ${d.sexo==='masculino'?'active':''}" id="gopt-masc" onclick="onbSetSexo('masculino')"><div class="g-avatar">${miniAvatarSVG('masculino', d.sexo==='masculino')}</div><div class="g-label">Masculino</div></button>
       <button type="button" class="gender-opt ${d.sexo==='feminino'?'active':''}" id="gopt-fem" onclick="onbSetSexo('feminino')"><div class="g-avatar">${miniAvatarSVG('feminino', d.sexo==='feminino')}</div><div class="g-label">Feminino</div></button>
     </div><div class="form-hint">Usado para personalizar sua ilustração.</div></div>
-    <div class="form-group"><label class="form-label">Peso (kg) <span class="opt">opcional</span></label><input type="number" class="form-input" id="obPeso" placeholder="Ex: 75" min="30" max="250" step="0.1" value="${esc(d.peso)}" oninput="ONB.dados.peso=this.value;onbAtualizarSugestao()"></div>
+    <div class="form-group"><label class="form-label">Peso (kg) <span class="opt">opcional</span></label><input type="number" class="form-input" id="obPeso" placeholder="75" min="30" max="250" step="0.1" value="${esc(d.peso)}" oninput="ONB.dados.peso=this.value;onbAtualizarSugestao()"></div>
     <div class="form-group"><label class="form-label">Dose diária (g)</label><input type="number" class="form-input" id="obDose" placeholder="5" min="1" max="20" step="0.5" value="${esc(d.dose)}" oninput="ONB.dados.dose=this.value"><div class="form-hint" id="obDoseHint">&lt;70kg → 3g · 70–90kg → 5g · &gt;90kg → 7g</div>
       <div class="dose-presets"><button class="dose-preset" onclick="onbSetDose(3)" type="button">3g</button><button class="dose-preset" onclick="onbSetDose(5)" type="button">5g</button><button class="dose-preset" onclick="onbSetDose(7)" type="button">7g</button></div></div>
     <div class="form-group"><label class="form-label">Meta de água (ml)</label><input type="number" class="form-input" id="obAgua" placeholder="2500" min="1000" max="8000" step="100" value="${esc(d.waterTarget)}" oninput="ONB.dados.waterTarget=this.value"><div class="form-hint" id="obAguaHint">30-40 ml por kg.</div></div>
@@ -2576,8 +2465,8 @@ function renderOnbLogin(){
   return `<button class="ob-back" onclick="onbIrStep(1)" type="button"><svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>Voltar</button>
     <div class="ob-title" style="font-size:22px">Entrar</div><div class="ob-sub" style="margin-bottom:18px">Acesse para carregar seus dados.</div>
     <div id="obError" class="ob-error"></div>
-    <div class="form-group"><label class="form-label">E-mail</label><input type="email" class="form-input" id="obLoginEmail" placeholder="seu@email.com" autocomplete="email"></div>
-    <div class="form-group"><label class="form-label">Senha</label><input type="password" class="form-input" id="obLoginSenha" placeholder="Sua senha" autocomplete="current-password"></div>
+    <div class="form-group"><label class="form-label">E-mail</label><input type="email" class="form-input" id="obLoginEmail" placeholder="seu@email.com"></div>
+    <div class="form-group"><label class="form-label">Senha</label><input type="password" class="form-input" id="obLoginSenha" placeholder="Sua senha"></div>
     <button class="btn btn-primary" onclick="onbEntrar()" type="button">🔓 Entrar</button>
     <div style="text-align:center;margin-top:14px"><button class="ob-back" onclick="onbUsarSemConta()" type="button" style="margin:0 auto">Usar sem conta →</button></div>`;
 }
@@ -2595,9 +2484,9 @@ function onbAtualizarSugestao(){
   if(p && p >= 30){
     const s = calculateDose(p); if(h) h.innerHTML = `💡 Para <strong>${p}kg</strong>: <strong>${s}g</strong>/dia`;
     const a = Math.round(p * 35); if(ha) ha.innerHTML = `💡 Para <strong>${p}kg</strong>: ~<strong>${a} ml</strong>`;
-    const di = document.getElementById('obDose'); if(di && (!ONB.dados.dose || ONB.dados.dose === 5 || ONB.dados.dose === 3 || ONB.dados.dose === 7)){ di.value = s; ONB.dados.dose = s; }
+    const di = document.getElementById('obDose'); if(di && (!ONB.dados.dose || ONB.dados.dose === 5)){ di.value = s; ONB.dados.dose = s; }
     const ai = document.getElementById('obAgua'); if(ai && (!ONB.dados.waterTarget || ONB.dados.waterTarget === 2500)){ ai.value = a; ONB.dados.waterTarget = a; }
-  } else { if(h) h.innerHTML = '&lt;70kg → 3g · 70–90kg → 5g · &gt;90kg → 7g'; if(ha) ha.textContent = '30-40 ml por kg.'; }
+  }
 }
 function onbCriarConta(){
   const e = (document.getElementById('obEmail').value||'').trim();
@@ -2617,7 +2506,7 @@ async function onbFinalizarCadastro(){
   if(!ONB.dados.sexo){ onbErro('Selecione o sexo'); return; }
   onbErro('');
   const btn = document.getElementById('obBtnFinalizar'); const to = btn.textContent;
-  btn.disabled = true; btn.textContent = '⏳ Salvando...';
+  btn.disabled = true; btn.textContent = '⏳...';
   try{
     if(!fbAuth.uid){ await fbCriarConta(ONB.dados.email, ONB.dados.senha); }
     const era = !!state.profile.name;
@@ -2626,13 +2515,13 @@ async function onbFinalizarCadastro(){
     userProfileLoaded = true; saveState();
     if(fbAuth.uid) await enviarParaNuvem(true);
     hideOnboarding(); updateHeader(); renderHome(); renderSettings(); atualizarBadgeCloud();
-    showToast(era ? '💾 Perfil atualizado!' : '🎉 Conta criada!');
+    showToast(era ? '💾 Atualizado!' : '🎉 Conta criada!');
     setTimeout(()=> renderTipNotif(), 1500);
-  }catch(e){ console.error(e); onbErro(e.message); btn.disabled = false; btn.textContent = to; }
+  }catch(e){ onbErro(e.message); btn.disabled = false; btn.textContent = to; }
 }
 async function onbEntrar(){
   const e = (document.getElementById('obLoginEmail').value||'').trim();
-  const s = document.getElementById('obLoginSenha').value||'';
+  const s = (document.getElementById('obLoginSenha').value||'');
   if(!e || !e.includes('@')){ onbErro('E-mail inválido'); return; }
   if(s.length < 6){ onbErro('Senha mín. 6'); return; }
   onbErro('');
@@ -2648,7 +2537,7 @@ async function onbEntrar(){
     hideOnboarding(); updateHeader(); renderHome(); renderSettings(); atualizarBadgeCloud();
     showToast('✅ Bem-vindo!');
     setTimeout(()=> { if(!state.profile.name || !state.profile.name.trim() || !state.profile.sexo) openProfileModal(true); }, 600);
-  }catch(err){ console.error(err); onbErro(err.message); btn.disabled = false; btn.textContent = '🔓 Entrar'; }
+  }catch(err){ onbErro(err.message); btn.disabled = false; btn.textContent = '🔓 Entrar'; }
 }
 function onbUsarSemConta(){
   state.profile = {...state.profile, createdAt: state.profile.createdAt || new Date().toISOString()};
@@ -2657,7 +2546,6 @@ function onbUsarSemConta(){
   showToast('💾 Modo local');
   setTimeout(()=> { if(!state.profile.name || !state.profile.sexo) openProfileModal(true); else renderTipNotif(); }, 500);
 }
-
 function openProfileModal(forcar){
   state.__pmTempSexo = state.profile.sexo || null;
   const p = state.profile; const isL = !!fbAuth.uid;
@@ -2666,20 +2554,19 @@ function openProfileModal(forcar){
   const av = forcar ? `<div class="blk-cloud warn" style="margin-bottom:12px"><h4>⚠️ Complete seu perfil</h4><p>Precisamos do nome e sexo.</p></div>` : '';
   el.innerHTML = `
     <div class="modal-title">👤 Editar perfil</div>${av}
-    <div class="form-group"><label class="form-label">Nome</label><input type="text" class="form-input" id="pmNome" placeholder="Seu nome" value="${esc(p.name)}" maxlength="30"></div>
+    <div class="form-group"><label class="form-label">Nome</label><input type="text" class="form-input" id="pmNome" value="${esc(p.name)}" maxlength="30"></div>
     <div class="form-group"><label class="form-label">Sexo</label><div class="gender-pick">
       <button type="button" class="gender-opt ${state.__pmTempSexo==='masculino'?'active':''}" id="pm-gopt-masc" onclick="pmSetSexo('masculino')"><div class="g-avatar">${miniAvatarSVG('masculino', state.__pmTempSexo==='masculino')}</div><div class="g-label">Masculino</div></button>
       <button type="button" class="gender-opt ${state.__pmTempSexo==='feminino'?'active':''}" id="pm-gopt-fem" onclick="pmSetSexo('feminino')"><div class="g-avatar">${miniAvatarSVG('feminino', state.__pmTempSexo==='feminino')}</div><div class="g-label">Feminino</div></button>
     </div></div>
     <div class="form-group"><label class="form-label">Peso atual (kg)</label><input type="number" class="form-input" id="pmPeso" placeholder="75" min="30" max="250" step="0.1" value="${p.weight != null ? esc(p.weight) : ''}"></div>
-    <div class="form-group"><label class="form-label">Peso inicial (kg)</label><input type="number" class="form-input" id="pmPesoIni" placeholder="75" min="30" max="250" step="0.1" value="${p.initialWeight != null ? esc(p.initialWeight) : ''}"><div class="form-hint">Base para calcular sua evolução.</div></div>
+    <div class="form-group"><label class="form-label">Peso inicial (kg)</label><input type="number" class="form-input" id="pmPesoIni" placeholder="75" min="30" max="250" step="0.1" value="${p.initialWeight != null ? esc(p.initialWeight) : ''}"><div class="form-hint">Base para a evolução.</div></div>
     <div class="form-group"><label class="form-label">Dose diária (g)</label><input type="number" class="form-input" id="pmDose" placeholder="5" min="1" max="20" step="0.5" value="${esc(p.dose)}">
       <div class="dose-presets"><button class="dose-preset ${p.dose===3?'active':''}" onclick="pmSetDose(3)" type="button">3g</button><button class="dose-preset ${p.dose===5?'active':''}" onclick="pmSetDose(5)" type="button">5g</button><button class="dose-preset ${p.dose===7?'active':''}" onclick="pmSetDose(7)" type="button">7g</button></div></div>
     <div class="form-group"><label class="form-label">Meta de água (ml)</label><input type="number" class="form-input" id="pmAgua" placeholder="2500" min="1000" max="8000" step="100" value="${esc(p.waterTarget)}"></div>
-    <div class="form-group"><label class="form-label">E-mail</label><input type="email" class="form-input" value="${email ? esc(email) : 'Sem conta'}" disabled><div class="form-hint">${email ? '🔒 Vinculado à conta' : '🕶️ Modo local'}</div></div>
+    <div class="form-group"><label class="form-label">E-mail</label><input type="email" class="form-input" value="${email ? esc(email) : 'Sem conta'}" disabled><div class="form-hint">${email ? '🔒 Vinculado' : '🕶️ Modo local'}</div></div>
     <button class="btn btn-primary" onclick="saveProfileFromModal()">💾 Salvar</button>
-    ${!forcar ? `<button class="btn btn-ghost" style="margin-top:8px" onclick="closeProfileModal()">Cancelar</button>` : ''}
-  `;
+    ${!forcar ? `<button class="btn btn-ghost" style="margin-top:8px" onclick="closeProfileModal()">Cancelar</button>` : ''}`;
   document.getElementById('profileModal').classList.add('show');
   document.body.style.overflow = 'hidden';
   state.__forcarPerfil = !!forcar;
@@ -2712,10 +2599,6 @@ function saveProfileFromModal(){
   showToast('💾 Atualizado!'); renderHome(); renderSettings();
   if(fbAuth.uid && navigator.onLine) enviarParaNuvem(true);
 }
-
-/* ============================================================
-   MENU
-============================================================ */
 function abrirMenu(){
   const isL = !!fbAuth.uid && !fbAuth.isAnonymous;
   const isA = !!fbAuth.uid && fbAuth.isAnonymous;
@@ -2726,6 +2609,8 @@ function abrirMenu(){
   const nome = state.profile.name || 'Visitante';
   const email = state.profile.email || (isL ? fbAuth.email : null);
   const ini = primeiraLetra(state.profile.name);
+  const instalado = estaInstalado();
+  const pronto = !!pwaInstallPrompt;
   let html = `
     <div class="modal-title">⚙️ Menu</div>
     <div style="display:flex;align-items:center;gap:12px;padding:12px;background:linear-gradient(135deg,rgba(0,229,184,.08),rgba(0,229,184,.02));border:1px solid rgba(0,229,184,.25);border-radius:14px;margin-bottom:12px">
@@ -2735,44 +2620,59 @@ function abrirMenu(){
         <div style="font-size:11px;color:var(--dim);font-weight:600;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${email ? esc(email) : 'Modo local · sem conta'}</div>
       </div>
       <button class="btn btn-soft btn-sm" style="width:auto;padding:8px 11px;font-size:11px" onclick="closeGenericModal();openProfileModal()" type="button">✏️</button>
-    </div>
+    </div>`;
 
+  // Botão instalar (aparece se não instalado)
+  if (!instalado) {
+    html += `<button class="backup-opt" id="pwaInstallBtn" onclick="closeGenericModal();setTimeout(instalarApp,200)" type="button" style="background:linear-gradient(135deg,rgba(0,229,184,.10),rgba(0,229,184,.03));border-color:rgba(0,229,184,.35)">
+      <div class="bo-ic" style="background:linear-gradient(135deg,#00e5b8,#00a888);color:#06121f">📲</div>
+      <div class="bo-body">
+        <div class="bo-titulo" style="color:var(--accent)">Instalar app</div>
+        <div class="bo-desc">${pronto ? 'Toque para instalar agora' : 'Adicionar à tela inicial'}</div>
+      </div>
+      <div class="bo-arrow" style="color:var(--accent)"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6z"/></svg></div>
+    </button>`;
+  } else {
+    html += `<button class="backup-opt" onclick="closeGenericModal()" type="button" style="background:rgba(55,224,122,.08);border-color:rgba(55,224,122,.3)">
+      <div class="bo-ic" style="background:linear-gradient(135deg,#37e07a,#25a85e);color:#05210f">✅</div>
+      <div class="bo-body">
+        <div class="bo-titulo" style="color:var(--success)">App instalado</div>
+        <div class="bo-desc">Rodando em modo aplicativo</div>
+      </div>
+    </button>`;
+  }
+
+  html += `
     <button class="backup-opt" onclick="closeGenericModal();abrirDicaAtual()" type="button" style="background:linear-gradient(135deg,rgba(178,139,255,.10),rgba(178,139,255,.03));border-color:rgba(178,139,255,.35)">
       <div class="bo-ic" style="background:linear-gradient(135deg,#b28bff,#7e56d4);color:#fff">💡</div>
       <div class="bo-body"><div class="bo-titulo" style="color:#c4a5ff">Dica do dia</div><div class="bo-desc">${dicaState.lidas.length}/365 lidas · toque para ver</div></div>
       <div class="bo-arrow" style="color:#c4a5ff"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6z"/></svg></div>
     </button>
-
     <button class="backup-opt" onclick="closeGenericModal();abrirTodasDicas()" type="button">
       <div class="bo-ic" style="background:linear-gradient(135deg,#c4a5ff,#7e56d4);color:#fff">📚</div>
       <div class="bo-body"><div class="bo-titulo">Todas as dicas</div><div class="bo-desc">365 dicas · ${dicaState.favoritas.length} favoritas</div></div>
       <div class="bo-arrow"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6z"/></svg></div>
     </button>
-
     <button class="backup-opt" onclick="closeGenericModal();abrirModalSync()" type="button">
       <div class="bo-ic" style="background:linear-gradient(135deg,${cloudOk ? '#37e07a,#25a85e' : '#ffc857,#e6a32c'});color:${cloudOk ? '#05210f' : '#3a2800'}">☁️</div>
       <div class="bo-body"><div class="bo-titulo">Nuvem</div><div class="bo-desc">${cs}${fbSync.ultimoUpload ? ' · ' + tempoRelativo(fbSync.ultimoUpload) : ''}</div></div>
       <div class="bo-arrow"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6z"/></svg></div>
     </button>
-
     <button class="backup-opt" onclick="closeGenericModal();abrirModalNotif()" type="button">
       <div class="bo-ic" style="background:linear-gradient(135deg,#b28bff,#7e56d4);color:#fff">🔔</div>
       <div class="bo-body"><div class="bo-titulo">Lembretes</div><div class="bo-desc">${ns}</div></div>
       <div class="bo-arrow"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6z"/></svg></div>
     </button>
-
     <button class="backup-opt" onclick="closeGenericModal();abrirModalBackup()" type="button">
       <div class="bo-ic" style="background:linear-gradient(135deg,#4cb8ff,#2c7bc7);color:#fff">💾</div>
       <div class="bo-body"><div class="bo-titulo">Backup</div><div class="bo-desc">${getBackups().length} backups locais</div></div>
       <div class="bo-arrow"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6z"/></svg></div>
     </button>
-
     <button class="backup-opt" onclick="closeGenericModal();abrirModalSobre()" type="button">
       <div class="bo-ic" style="background:linear-gradient(135deg,#8ba0c2,#5d6f8f);color:#fff">ℹ️</div>
       <div class="bo-body"><div class="bo-titulo">Sobre</div><div class="bo-desc">Versão ${APP_VERSION}</div></div>
       <div class="bo-arrow"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6z"/></svg></div>
     </button>
-
     ${!isL ? `<button class="backup-opt" onclick="closeGenericModal();converterParaConta()" type="button" style="background:linear-gradient(135deg,rgba(0,229,184,.10),rgba(0,229,184,.03));border-color:rgba(0,229,184,.35)">
       <div class="bo-ic" style="background:linear-gradient(135deg,#00e5b8,#00a888);color:#06121f">📧</div>
       <div class="bo-body"><div class="bo-titulo" style="color:var(--accent)">Criar conta</div><div class="bo-desc">Sincronize seus dados</div></div>
@@ -2782,14 +2682,11 @@ function abrirMenu(){
       <div class="bo-body"><div class="bo-titulo" style="color:var(--danger)">Sair da conta</div><div class="bo-desc">Dados locais permanecem</div></div>
       <div class="bo-arrow" style="color:var(--danger)"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6z"/></svg></div>
     </button>`}
-
     <button class="btn btn-ghost" style="margin-top:10px" onclick="closeGenericModal()">Fechar</button>`;
   openGenericModal(html);
+  // Atualiza visibilidade do botão de instalar
+  setTimeout(atualizarBotaoInstalar, 50);
 }
-
-/* ============================================================
-   MODAIS UTILITÁRIOS
-============================================================ */
 function abrirModalConta(){
   const isL = !!fbAuth.uid, isA = fbAuth.isAnonymous;
   let html = '<div class="modal-title">👤 Minha Conta</div>';
@@ -2846,7 +2743,7 @@ function abrirModalSync(){
 function fecharSyncESincronizar(){ closeGenericModal(); setTimeout(sincronizarInteligente, 200); }
 function fecharSyncEEnviar(){ closeGenericModal(); setTimeout(()=> enviarParaNuvem(false), 200); }
 function fecharSyncEBaixar(){ closeGenericModal(); setTimeout(()=> baixarDaNuvem(false), 200); }
-function toggleAutoSync(){ fbSync.autoSync = !fbSync.autoSync; saveFbSync(); abrirModalSync(); showToast(fbSync.autoSync ? '✅ Auto-sync ativo' : '⏸️ OFF'); }
+function toggleAutoSync(){ fbSync.autoSync = !fbSync.autoSync; saveFbSync(); abrirModalSync(); showToast(fbSync.autoSync ? '✅ Ativo' : '⏸️ OFF'); }
 function executarLogout(){
   fbSair();
   state.profile.email = null;
@@ -2870,7 +2767,7 @@ function abrirModalBackup(){
   html += `<div style="text-align:center;font-size:10px;color:var(--dimmer);font-weight:700;margin-top:14px">Creatina Control ${APP_VERSION}</div><button class="btn btn-ghost" style="margin-top:10px" onclick="closeGenericModal()">Fechar</button>`;
   openGenericModal(html);
 }
-function salvarAgora(){ saveState(); showToast('Dados salvos! ✅'); }
+function salvarAgora(){ saveState(); showToast('✅ Salvos!'); }
 function exportarBackup(){
   try{
     const dados = { app:'CreatinaControl', versao:APP_VERSION, exportadoEm:new Date().toISOString(), dados:{ profile: state.profile, records: state.records, waterToday: state.waterToday, lastResetDate: state.lastResetDate, weightHistory: state.weightHistory, notif: notifConfig, dicas: { lidas: dicaState.lidas, favoritas: dicaState.favoritas } } };
@@ -2881,7 +2778,7 @@ function exportarBackup(){
     a.download = `creatina-control-${new Date().toISOString().slice(0,10)}.json`;
     document.body.appendChild(a); a.click(); document.body.removeChild(a);
     setTimeout(()=> URL.revokeObjectURL(url), 1000);
-    showToast('Backup exportado! 📥');
+    showToast('📥 Exportado!');
   }catch(e){ showToast('Erro'); }
 }
 function abrirImport(){ document.getElementById('inputImport').click(); }
@@ -2910,7 +2807,7 @@ function confirmarImport(json){
   try{
     const d = JSON.parse(json);
     state = {...defaultState, ...d, profile:{...defaultState.profile, ...(d.profile || {})}};
-    saveState(); closeGenericModal(); showToast('Restaurado! 🎉');
+    saveState(); closeGenericModal(); showToast('🎉 Restaurado!');
     renderHome(); renderSettings(); updateHeader();
   }catch(e){ showToast('Erro'); }
 }
@@ -2929,7 +2826,7 @@ function confirmarRestauracaoBackup(id){
   if(!b){ showToast('Não encontrado'); return; }
   fazerBackupAutomatico('Pré-restauração');
   state = {...defaultState, ...JSON.parse(JSON.stringify(b.dados)), profile:{...defaultState.profile, ...(b.dados.profile || {})}};
-  saveState(); closeGenericModal(); showToast('Restaurado! 🎉');
+  saveState(); closeGenericModal(); showToast('🎉 Restaurado!');
   renderHome(); renderSettings(); updateHeader();
 }
 function excluirBackup(id){
@@ -2940,18 +2837,19 @@ function abrirModalSobre(){
   const isL = !!fbAuth.uid && !fbAuth.isAnonymous;
   const td = Object.keys(state.records).filter(k=>state.records[k].confirmed).length;
   const tu = state.profile.createdAt ? tempoRelativo(state.profile.createdAt) : '—';
+  const instalado = estaInstalado();
   const html = `
-    <div class="about-hero"><div class="ab-logo">💪</div><h2>Creatina Control</h2><div class="ab-ver">Versão ${APP_VERSION}</div><div class="ab-desc">Suplementação, hidratação, evolução, 365 dicas e lembretes — tudo em um app.</div></div>
+    <div class="about-hero"><div class="ab-logo">💪</div><h2>Creatina Control</h2><div class="ab-ver">Versão ${APP_VERSION}</div><div class="ab-desc">Suplementação, hidratação, evolução, 365 dicas, lembretes e PWA — tudo em um app.</div></div>
     <div class="about-item"><div class="ai-ic" style="background:linear-gradient(135deg,#00e5b8,#00a888);color:#06121f">👤</div><div class="ai-body"><div class="ai-titulo">Perfil</div><div class="ai-desc">${esc(state.profile.name || 'Sem nome')} · ${state.profile.sexo === 'feminino' ? '♀️' : state.profile.sexo === 'masculino' ? '♂️' : '—'}</div></div></div>
     <div class="about-item"><div class="ai-ic" style="background:linear-gradient(135deg,#4cb8ff,#2c7bc7);color:#fff">📊</div><div class="ai-body"><div class="ai-titulo">Estatísticas</div><div class="ai-desc">${td} doses · Nível ${getLevel()} · Uso desde ${tu}</div></div></div>
     <div class="about-item"><div class="ai-ic" style="background:linear-gradient(135deg,#b28bff,#7e56d4);color:#fff">💡</div><div class="ai-body"><div class="ai-titulo">Dicas</div><div class="ai-desc">${dicaState.lidas.length} de 365 lidas · ${dicaState.favoritas.length} favoritas</div></div></div>
     <div class="about-item"><div class="ai-ic" style="background:linear-gradient(135deg,#ffc857,#e6a32c);color:#3a2800">🔔</div><div class="ai-body"><div class="ai-titulo">Lembretes</div><div class="ai-desc">${notifConfig.enabled ? 'Ativo às ' + notifConfig.time : 'Desativado'}</div></div></div>
     <div class="about-item"><div class="ai-ic" style="background:linear-gradient(135deg,${isL ? '#37e07a,#25a85e' : '#ffc857,#e6a32c'});color:${isL ? '#05210f' : '#3a2800'}">☁️</div><div class="ai-body"><div class="ai-titulo">Nuvem</div><div class="ai-desc">${isL ? '✅ ' + esc(fbAuth.email || '') : '🕶️ Modo local'}</div></div></div>
-    <div class="blk-cloud purple" style="margin-top:12px"><h4>💡 Dica</h4><p>Abra uma dica nova todos os dias para aprender mais sobre creatina!</p></div>
+    <div class="about-item"><div class="ai-ic" style="background:linear-gradient(135deg,${instalado ? '#37e07a,#25a85e' : '#4cb8ff,#2c7bc7'});color:${instalado ? '#05210f' : '#fff'}">${instalado ? '✓' : '📲'}</div><div class="ai-body"><div class="ai-titulo">PWA</div><div class="ai-desc">${instalado ? 'Instalado como app' : 'Disponível para instalar'}</div></div></div>
+    <div class="blk-cloud purple" style="margin-top:12px"><h4>💡 Dica</h4><p>Abra uma dica nova todos os dias e instale o app para acesso rápido!</p></div>
     <div class="blk-cloud warn" style="margin-top:8px"><h4>⚠️ Aviso</h4><p>Não substitui orientação médica ou nutricional.</p></div>
     <div style="text-align:center;font-size:10px;color:var(--dimmer);font-weight:700;margin:14px 0">${APP_VERSION} · ${APP_VERSION_DATE}</div>
-    <button class="btn btn-soft" onclick="closeGenericModal()">Fechar</button>
-  `;
+    <button class="btn btn-soft" onclick="closeGenericModal()">Fechar</button>`;
   openGenericModal(html);
 }
 function openGenericModal(html){
@@ -3022,7 +2920,6 @@ function checkDailyReset(){
     saveState();
   }
 }
-
 async function init(){
   if(!CanvasRenderingContext2D.prototype.roundRect){
     CanvasRenderingContext2D.prototype.roundRect = function(x,y,w,h,r){
@@ -3031,6 +2928,11 @@ async function init(){
       this.arcTo(x,y+h,x,y,r); this.arcTo(x,y,x+w,y,r); this.closePath(); return this;
     };
   }
+  // ===== PWA =====
+  loadPwaState();
+  injetarManifest();
+  registrarServiceWorker();
+  // ===== App =====
   loadFbAuth(); loadFbSync(); loadNotifConfig(); loadDicaState();
   checkDailyReset();
   updateHeader(); renderHome(); renderSettings();
@@ -3065,14 +2967,12 @@ async function init(){
       setTimeout(()=> openProfileModal(true), 800);
     }, 500);
   } else {
-    // Usuário ok — mostra a dica do dia
     setTimeout(()=> renderTipNotif(), 2000);
   }
   document.addEventListener('visibilitychange', ()=>{
     if(document.visibilityState === 'visible'){
       setTimeout(checarLembrete, 1000);
       atualizarBadgeMenu();
-      // Verifica se mudou o dia
       const hoje = todayKey();
       if(dicaState.ultimaNotifData !== hoje){
         dicaState.ocultarNotifHoje = false; saveDicaState();
@@ -3087,7 +2987,7 @@ async function init(){
   }, 60000);
   setInterval(()=>{ if(Object.keys(state.records).length > 0) fazerBackupAutomatico('Automático'); }, 30 * 60 * 1000);
   window.addEventListener('beforeunload', saveState);
-  console.log('💪 Creatina Control ' + APP_VERSION + ' · ' + DICAS.length + ' dicas carregadas');
+  console.log('💪 Creatina Control ' + APP_VERSION + ' · ' + DICAS.length + ' dicas · PWA ' + (estaInstalado() ? 'instalado' : 'disponível'));
 }
 init();
 </script>
