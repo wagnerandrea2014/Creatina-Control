@@ -1,4 +1,4 @@
-const CACHE = 'creatina-v4.8';
+const CACHE = 'creatina-v4.9';
 const ASSETS = ['./', './index.html'];
 
 self.addEventListener('install', (e) => {
